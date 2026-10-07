@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function AboutUsPage() {
-  const { hero, timeline, vision, values } = page;
+  const { hero, whoWeAre, timeline, vision, values } = page;
 
   return (
     <>
@@ -24,53 +24,63 @@ export default function AboutUsPage() {
         eyebrow={hero.eyebrow}
         statement={hero.statement}
         image={hero.image}
-        nextId="history"
+        nextId="who-we-are"
         imagePosition="50% 60%"
       />
 
-      {/* 80 years of innovation — anchor kept from the old site (#history) */}
+      {/* Who we are */}
       <section
-        id="history"
-        aria-labelledby="history-title"
+        id="who-we-are"
+        aria-labelledby="who-we-are-title"
         className={`scroll-mt-16 ${sectionY} pt-[clamp(5rem,9vw,11rem)]`}
       >
-        <TimelineCarousel
-          entries={timeline.entries}
-          labelledBy="history-title"
-          heading={
-            <Eyebrow as="h2" id="history-title">
-              {timeline.eyebrow}
+        <div className={`container-site items-center ${split.textImage}`}>
+          <div className="reveal">
+            <Eyebrow as="h2" id="who-we-are-title">
+              {whoWeAre.eyebrow}
             </Eyebrow>
-          }
-        />
+            <p className="mt-[clamp(1.5rem,2.6vw,3rem)] font-serif text-quote font-light text-pretty text-copy">
+              {whoWeAre.statement}
+            </p>
+            <Paragraphs
+              items={whoWeAre.paragraphs}
+              className="mt-[clamp(1.25rem,2vw,2.25rem)] space-y-[1.15em]"
+            />
+          </div>
+          <Photo
+            image={whoWeAre.image}
+            alt={whoWeAre.imageAlt}
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
+        </div>
       </section>
 
-      {/* Vision and values — anchor kept from the old site (#vision-and-values) */}
+      {/* Why we exist — anchor kept from the old site (#vision-and-values) */}
       <section
         id="vision-and-values"
         aria-labelledby="vision-title"
         className={`scroll-mt-16 ${sectionY}`}
       >
         <div className="container-site">
-          <div className={`items-start ${split.textImage}`}>
-            <div className="reveal">
-              <Eyebrow as="h2" id="vision-title">
-                {vision.eyebrow}
-              </Eyebrow>
-              <p className="mt-[clamp(1.5rem,2.6vw,3rem)] font-serif text-quote font-light text-pretty text-copy">
+          <div>
+            <Eyebrow as="h2" id="vision-title" className="reveal">
+              {vision.eyebrow}
+            </Eyebrow>
+            {/* Statement and paragraphs share a row, so their first lines align. */}
+            <div className="mt-[clamp(1.5rem,2.6vw,3rem)] grid gap-[clamp(1.25rem,2.4vw,3rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-[5.3%]">
+              <p className="reveal font-serif text-quote font-light text-pretty text-copy">
                 {vision.statement}
               </p>
               <Paragraphs
                 items={vision.paragraphs}
-                className="mt-[clamp(1.25rem,2vw,2.25rem)] space-y-[1.15em]"
+                className="reveal reveal-delay-1 space-y-[1.15em]"
               />
             </div>
-            <Photo
-              image={vision.image}
-              alt={vision.imageAlt}
-              sizes="(min-width: 768px) 50vw, 100vw"
-            />
           </div>
+
+          <h3 className="reveal mt-[clamp(3rem,5vw,6rem)] text-label font-bold text-copy">
+            {vision.dimensionsTitle}
+          </h3>
 
           {/*
            * The three dimensions of the vision, styled after the homepage hero title.
@@ -78,7 +88,7 @@ export default function AboutUsPage() {
            * row and the descriptions on the next, so "Improving", "The nature" and
            * "Of shipping" always line up, whatever the length of each description.
            */}
-          <ul className="mt-[clamp(3rem,5vw,6rem)] grid gap-[clamp(1rem,1.7vw,2rem)] md:grid-cols-3 md:grid-rows-[minmax(clamp(14rem,23vw,27rem),1fr)_auto_auto] md:gap-y-0">
+          <ul className="mt-[clamp(1.25rem,2vw,2.25rem)] grid gap-[clamp(1rem,1.7vw,2rem)] md:grid-cols-3 md:grid-rows-[minmax(clamp(14rem,23vw,27rem),1fr)_auto_auto] md:gap-y-0">
             {vision.dimensions.map((dimension, index) => (
               <li
                 key={dimension.body}
@@ -112,10 +122,42 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Our values */}
-      <section aria-labelledby="values-title" className={`${sectionY} pb-[clamp(6rem,10vw,12rem)]`}>
+      {/* How we work — our values */}
+      <section aria-labelledby="values-title" className={sectionY}>
         <div className="container-site">
-          <ValuesExplorer title={values.title} items={values.items} />
+          <ValuesExplorer eyebrow={values.eyebrow} title={values.title} items={values.items} />
+        </div>
+      </section>
+
+      {/* 80 years of innovation — anchor kept from the old site (#history) */}
+      <section
+        id="history"
+        aria-labelledby="history-title"
+        className={`scroll-mt-16 ${sectionY} pb-[clamp(6rem,10vw,12rem)]`}
+      >
+        <div className="container-site">
+          <Eyebrow as="h2" id="history-title" className="reveal">
+            {timeline.eyebrow}
+          </Eyebrow>
+          {/* Statement and paragraphs share a row, so their first lines align. */}
+          <div className="mt-[clamp(1.5rem,2.6vw,3rem)] grid gap-[clamp(1.25rem,2.4vw,3rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-[5.3%]">
+            <p className="reveal font-serif text-quote font-light text-pretty text-copy">
+              {timeline.statement}
+            </p>
+            <Paragraphs
+              items={timeline.paragraphs}
+              className="reveal reveal-delay-1 space-y-[1.15em]"
+            />
+          </div>
+        </div>
+
+        <div className="mt-[clamp(2.5rem,4.4vw,5rem)]">
+          {/* The heading row only carries the previous/next buttons here. */}
+          <TimelineCarousel
+            entries={timeline.entries}
+            labelledBy="history-title"
+            heading={<span />}
+          />
         </div>
       </section>
     </>

@@ -39,11 +39,12 @@ src/
   content/             All copy and data — edit text here, not in components
     site.ts            Company details, navigation, legal links
     home.ts            Homepage copy and images
-    about.ts           About pages: About us, Holding, Governance, Financials, Compliance
+    about.ts           About pages: About us, Governance, Financials, Compliance
     leadership.ts      Leadership team and Board of directors: people, roles and bios
     documents.ts       Annual reports and compliance PDFs (hosted on Klaveness' HubSpot)
     careers.ts         Careers pages (client's Careers.docx, Aug 2026) and vacancies list
-    companies.ts       Klaveness Dry Bulk copy and images
+    companies.ts       Klaveness Dry Bulk and Klaveness Finance (formerly Klaveness Holding)
+    trading-efficiency.ts  Trading Efficiency page (client draft, Oct 2026)
     contact.ts         Offices page (addresses, phones, emails, photos) and Team page hero
     team.ts            Team directory: every department, team email and person (from klaveness.com/team)
     sustainability.ts  Sustainability, ESG priority and Stakeholders copy and images

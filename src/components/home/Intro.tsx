@@ -6,7 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { home } from "@/content/home";
 
 export function Intro() {
-  const { intro, pillars } = home;
+  const { intro, entryPoints } = home;
 
   return (
     <section
@@ -30,28 +30,26 @@ export function Intro() {
           </div>
         </div>
 
+        {/* Entry points: News, Trading Efficiency, Sustainability */}
         <ul className="reveal mt-20 grid rounded-media bg-panel px-6 py-4 md:mt-28 md:grid-cols-3 md:px-4 md:py-12">
-          {pillars.map((pillar, index) => {
-            const Icon = pillarIcons[pillar.icon];
+          {entryPoints.map((entry, index) => {
+            const Icon = pillarIcons[entry.icon];
             return (
               <li
-                key={pillar.title}
+                key={entry.title}
                 className={`flex flex-col items-center px-4 py-10 text-center md:py-2 lg:px-10 ${
                   index > 0 ? "border-t border-line md:border-t-0 md:border-l" : ""
                 }`}
               >
                 <Icon className="size-[clamp(2.25rem,2.6vw,3rem)] text-copy" strokeWidth={1.1} />
                 <h3 className="mt-5 text-[clamp(1.125rem,1.35vw,1.625rem)] font-medium text-copy">
-                  {pillar.title}
+                  {entry.title}
                 </h3>
-                <p className="mt-3 max-w-[18rem] flex-1 text-body-sm font-light text-copy">
-                  {pillar.body}
-                </p>
                 <Link
-                  href={pillar.href}
+                  href={entry.href}
                   className="mt-6 inline-flex h-[clamp(2.25rem,2.3vw,2.75rem)] items-center rounded-md border border-grey-50 px-5 text-[clamp(0.8125rem,0.94vw,1.125rem)] text-copy transition-colors duration-300 hover:border-navy hover:bg-navy hover:text-white"
                 >
-                  Read more<span className="sr-only"> about {pillar.title.toLowerCase()}</span>
+                  Read more<span className="sr-only"> about {entry.title}</span>
                 </Link>
               </li>
             );

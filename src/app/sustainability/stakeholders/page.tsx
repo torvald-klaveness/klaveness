@@ -36,13 +36,17 @@ export default function StakeholdersPage() {
         imagePosition="50% 30%"
       />
 
+      {/*
+       * Working with our stakeholders: intro on the left, the stakeholder groups as
+       * collapsible panels on the right (client's reference: norden.com/our-heritage).
+       */}
       <section
         id="working-with-stakeholders"
         aria-labelledby="intro-title"
         className={`scroll-mt-16 ${sectionY} pt-[clamp(5rem,9vw,11rem)]`}
       >
-        <div className={`container-site items-start ${split.textImage}`}>
-          <div className="reveal">
+        <div className="container-site grid gap-[clamp(2.5rem,4vw,4rem)] md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-[5.3%]">
+          <div className="reveal md:sticky md:top-28 md:self-start">
             <Eyebrow as="h2" id="intro-title">
               {intro.eyebrow}
             </Eyebrow>
@@ -51,42 +55,52 @@ export default function StakeholdersPage() {
               className="mt-[clamp(1.75rem,3.3vw,4rem)] space-y-[1.15em]"
             />
           </div>
+
+          <ul aria-label="Our stakeholder groups" className="reveal reveal-delay-1 space-y-3">
+            {groups.map((group) => {
+              const Icon = stakeholderIcons[group.icon];
+              const id = group.name.toLowerCase().replace(/[^a-z]+/g, "-");
+              return (
+                <li key={group.name}>
+                  <details
+                    id={id}
+                    name="stakeholders"
+                    className="disclosure group scroll-mt-28 rounded-xl bg-panel ring-1 ring-transparent transition-[background-color,box-shadow] duration-300 open:bg-white open:shadow-[0_12px_40px_-24px_rgb(0_20_70/0.35)] open:ring-grey-50/70 hover:bg-mist open:hover:bg-white"
+                  >
+                    <summary className="flex cursor-pointer list-none items-center gap-[clamp(1rem,1.6vw,1.75rem)] rounded-xl px-[clamp(1.25rem,2vw,2.25rem)] py-[clamp(1rem,1.5vw,1.6rem)] [&::-webkit-details-marker]:hidden">
+                      <Icon className="size-[clamp(2rem,2.4vw,2.75rem)] shrink-0 text-navy" />
+                      <h3 className="heading-display flex-1 text-[clamp(1.25rem,1.8vw,2.125rem)] text-copy">
+                        {group.name}
+                      </h3>
+                      {/* Plus that turns into a minus when open */}
+                      <span aria-hidden className="relative size-4 shrink-0 text-orange">
+                        <span className="absolute inset-x-0 top-1/2 h-[1.5px] -translate-y-1/2 bg-current" />
+                        <span className="absolute inset-y-0 left-1/2 w-[1.5px] -translate-x-1/2 bg-current transition-transform duration-300 group-open:scale-y-0" />
+                      </span>
+                    </summary>
+                    <dl className="space-y-[clamp(1.25rem,1.8vw,2rem)] px-[clamp(1.25rem,2vw,2.25rem)] pt-[clamp(0.25rem,0.6vw,0.75rem)] pb-[clamp(1.5rem,2.4vw,2.75rem)] md:pl-[calc(clamp(1.25rem,2vw,2.25rem)+clamp(2rem,2.4vw,2.75rem)+clamp(1rem,1.6vw,1.75rem))]">
+                      {columns.map((column) => (
+                        <div key={column.key}>
+                          <dt className="text-label font-bold text-copy">{column.label}</dt>
+                          <dd className="mt-[0.4em] text-body font-light text-pretty text-copy">
+                            {group[column.key]}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </details>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* Closing, with the digital ship from the design */}
+      <section aria-label="Closing" className={`${sectionY} pb-[clamp(6rem,10vw,12rem)]`}>
+        <div className={`container-site items-center ${split.imageText}`}>
           <Photo image={intro.image} alt={intro.imageAlt} sizes="(min-width: 768px) 50vw, 100vw" />
-        </div>
-      </section>
-
-      <section aria-label="Our stakeholder groups" className="pb-[clamp(4rem,6vw,7rem)]">
-        <div className="container-site space-y-[clamp(4rem,6.4vw,7.75rem)]">
-          {groups.map((group) => {
-            const Icon = stakeholderIcons[group.icon];
-            const id = group.name.toLowerCase().replace(/[^a-z]+/g, "-");
-            return (
-              <article key={group.name} aria-labelledby={id} className="reveal">
-                <header className="flex items-center gap-[clamp(1.25rem,2.3vw,2.75rem)] border-b border-grey-50/70 pb-[clamp(0.75rem,1.1vw,1.25rem)]">
-                  <Icon className="size-[clamp(2.75rem,3.4vw,4rem)] shrink-0 text-navy" />
-                  <h2 id={id} className="heading-display text-title text-copy">
-                    {group.name}
-                  </h2>
-                </header>
-                <dl className="mt-[clamp(1.5rem,2.3vw,2.75rem)] grid gap-8 md:grid-cols-3 md:gap-[clamp(2rem,4.7vw,5.75rem)]">
-                  {columns.map((column) => (
-                    <div key={column.key}>
-                      <dt className="font-serif text-label font-bold text-copy">{column.label}</dt>
-                      <dd className="mt-[1.1em] text-body font-light text-pretty text-copy">
-                        {group[column.key]}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section aria-label="Closing" className={`${sectionY} pt-[clamp(2rem,4vw,5rem)]`}>
-        <div className="container-site">
-          <Paragraphs items={[closing]} className="reveal md:w-[66.5%]" />
+          <Paragraphs items={[closing]} className="reveal" />
         </div>
       </section>
     </>

@@ -3,6 +3,7 @@
 import { type KeyboardEvent, useId, useRef, useState } from "react";
 
 import { valueIcons } from "@/components/icons/values";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 
 type Value = {
   name: string;
@@ -18,7 +19,16 @@ type Value = {
  * the height of the longest value and never jumps; the list rows stretch to
  * that same height, so both columns start and end on the same lines.
  */
-export function ValuesExplorer({ title, items }: { title: string; items: readonly Value[] }) {
+export function ValuesExplorer({
+  title,
+  items,
+  eyebrow,
+}: {
+  title: string;
+  items: readonly Value[];
+  /** Section label; when given it becomes the heading and the title an intro line. */
+  eyebrow?: string;
+}) {
   const [active, setActive] = useState(0);
   const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const id = useId();
@@ -34,12 +44,23 @@ export function ValuesExplorer({ title, items }: { title: string; items: readonl
 
   return (
     <>
-      <h2
-        id="values-title"
-        className="reveal max-w-[44rem] font-serif text-quote font-light text-pretty text-copy"
-      >
-        {title}
-      </h2>
+      {eyebrow ? (
+        <>
+          <Eyebrow as="h2" id="values-title" className="reveal">
+            {eyebrow}
+          </Eyebrow>
+          <p className="reveal mt-[clamp(1.5rem,2.6vw,3rem)] max-w-[52rem] font-serif text-quote font-light text-pretty text-copy">
+            {title}
+          </p>
+        </>
+      ) : (
+        <h2
+          id="values-title"
+          className="reveal max-w-[44rem] font-serif text-quote font-light text-pretty text-copy"
+        >
+          {title}
+        </h2>
+      )}
 
       <div className="reveal mt-[clamp(2.5rem,4vw,5rem)] grid gap-8 lg:grid-cols-[minmax(0,1fr)_50%] lg:gap-[5.3%]">
         <div

@@ -19,9 +19,15 @@ const nextConfig: NextConfig = {
         destination: "/careers/life-at-klaveness#equal-opportunities",
         permanent: true,
       },
+      // Klaveness Holding is now Klaveness Finance, under Companies.
+      ...["/businesses/klaveness-holding", "/about/klaveness-holding"].map((source) => ({
+        source,
+        destination: "/companies/klaveness-finance",
+        permanent: true,
+      })),
       {
-        source: "/businesses/klaveness-holding",
-        destination: "/about/klaveness-holding",
+        source: "/sustainability/trading-efficiency",
+        destination: "/trading-efficiency",
         permanent: true,
       },
       // Old individual bio pages open the bio panel on the leadership page.

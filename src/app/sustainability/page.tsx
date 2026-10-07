@@ -86,28 +86,19 @@ export default function SustainabilityPage() {
         className={`scroll-mt-16 ${sectionY}`}
       >
         <div className="container-site">
-          <div className="reveal">
-            <Eyebrow as="h2" id="trading-title">
-              {te.eyebrow}
-            </Eyebrow>
-            <div className="mt-[clamp(1.25rem,1.6vw,2rem)] grid gap-6 md:grid-cols-12 md:gap-8">
-              <Paragraphs items={[te.columns[0]]} className="md:col-span-6 lg:col-span-5" />
-              <Paragraphs
-                items={[te.columns[1]]}
-                className="md:col-span-6 lg:col-span-5 lg:col-start-7"
-              />
-            </div>
-          </div>
+          <Eyebrow as="h2" id="trading-title" className="reveal">
+            {te.eyebrow}
+          </Eyebrow>
 
           <Photo
             image={te.image}
             alt={te.imageAlt}
             sizes="(min-width: 1136px) 73vw, 100vw"
-            className="mt-[clamp(2.5rem,4vw,4.75rem)]"
+            className="mt-[clamp(1.5rem,2.6vw,3rem)]"
           />
 
           <div className="reveal mt-[clamp(2.5rem,4vw,4.75rem)] md:ml-[33.4%]">
-            <Paragraphs items={[te.closing]} />
+            <Paragraphs items={te.paragraphs} className="space-y-[1.15em]" />
             <ArrowLink href={te.link.href} className="mt-[clamp(1.5rem,2.6vw,3rem)]">
               {te.link.label}
             </ArrowLink>

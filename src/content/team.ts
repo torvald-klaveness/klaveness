@@ -672,7 +672,7 @@ export const teamSections: TeamSection[] = [
               },
               {
                 name: "Peter Bekkestad",
-                office: "Singapore",
+                office: "Dubai",
                 role: "Vice President, Head of Financial Trading and Bunker",
                 email: null,
               },

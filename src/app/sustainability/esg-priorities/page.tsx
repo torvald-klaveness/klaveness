@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { esgIconColor, esgIcons } from "@/components/icons/sustainability";
 import { PageHero } from "@/components/layout/PageHero";
@@ -134,8 +135,19 @@ export default function EsgPage() {
               <PillarEyebrow pillar="governance" label={gov.label} />
               <div className="mt-[clamp(1.5rem,2.6vw,3rem)]">
                 <SubHeading>{gov.heading}</SubHeading>
-                <Paragraphs items={gov.paragraphs} />
+                <Paragraphs items={gov.paragraphs} links={gov.links} />
                 <FocusList items={gov.focus} />
+                <p className="mt-[1.6em] text-body font-light text-copy">
+                  {gov.structureNote.text}{" "}
+                  <Link
+                    href={gov.structureNote.href}
+                    className="text-orange-ink underline decoration-orange/40 underline-offset-4 transition-colors hover:decoration-orange"
+                  >
+                    {gov.structureNote.linkLabel}
+                    <span className="sr-only"> (Governance)</span>
+                  </Link>
+                  .
+                </p>
               </div>
             </div>
             <Photo

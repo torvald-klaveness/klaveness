@@ -25,16 +25,18 @@ export const sustainabilityPage = {
     description:
       "Klaveness is committed to making a positive contribution to society by improving the nature of shipping.",
   },
+  // Client's revised text (October 2026).
   hero: {
     eyebrow: "Sustainability",
     statement: [
-      { text: "Klaveness is committed to making a positive contribution to society by " },
-      { text: "improving the nature of shipping", strong: true },
+      { text: "Committed to making a " },
+      { text: "positive contribution", strong: true },
+      { text: " to society" },
     ] satisfies RichLine,
     image: heroTemporary,
   },
   approach: {
-    eyebrow: "Our approach and strategy",
+    eyebrow: "Our approach",
     quote:
       "Shipping is essential for delivering food, energy, and metals to the world, but the industry must continue to evolve. For Klaveness, sustainability means taking responsibility for our impact today, while at the same time investing in the solutions, partnerships, and people that will help shape a safer and lower-emission future for shipping.",
     attribution: "Ernst Meyer, CEO Torvald Klaveness",
@@ -42,32 +44,30 @@ export const sustainabilityPage = {
     imageAlt: "Portrait of Ernst Meyer, CEO of Torvald Klaveness",
   },
   improving: {
-    eyebrow: "Improving the nature of shipping",
+    eyebrow: "What it means",
     paragraphs: [
-      "Improving the nature of shipping means more than reducing emissions. It means protecting the wellbeing of people, conducting business responsibly, and supporting the long-term resilience and sustainability of the maritime industry.",
-      "To accomplish this, we seek innovative business models, work closely with customers and partners, and realize the full potential of energy-efficiency technologies alongside operational excellence. This approach guides how we manage risk, engage with stakeholders, develop our people, and contribute to the industry’s transition towards a safer, lower-emission future.",
+      "For us, improving the nature of shipping means more than reducing emissions. It means conducting business responsibly, protecting the wellbeing of people, and strengthening the long-term resilience of the maritime industry.",
+      "We pursue this through innovative business models, collaboration, and operational excellence, working closely with our customers and partners. Our approach guides how we manage risk, engage with stakeholders, develop our people, and contribute to the industry’s transition towards a safer, lower-emission future.",
     ],
     image: baltazarImage,
     imageAlt: "The combination carrier MV Baltazar at sea, fitted with two rotor sails",
   },
   tradingEfficiency: {
     eyebrow: "Trading efficiency",
-    columns: [
-      "Shipping has many trade-offs. Every day, decisions are made between speed and fuel consumption, cost and reliability, flexibility and predictability. Typically, many of these decisions are taken at the level of a single vessel, voyage, or cargo movement and aren’t beneficial for the industry and society at large.",
-      "At Klaveness, we believe greater value can be created by improving decisions across the entire maritime supply chain. We call this ‘Trading Efficiency’ and is focused towards aligning commercial, operational, and environmental considerations that can improve overall system performance.",
-    ],
     image: tradingEfficiencyImage,
     imageAlt:
       "Aerial view of a red bulk carrier at sea with a digital data overlay tracing its route",
-    closing:
-      "Trading Efficiency is a key pillar of our sustainability approach. More efficient trading patterns, better utilization of assets, improved planning, and stronger coordination between stakeholders can reduce emissions, lower resource consumption, improve safety, and deliver greater value to customers. Through our vessels, freight solutions, and digital services, we seek to help customers navigate an increasingly complex operating environment while contributing to a more sustainable shipping industry.",
-    link: { label: "More about Trading Efficiency", href: "/sustainability/trading-efficiency" },
+    paragraphs: [
+      "Trading Efficiency is a key pillar of our sustainability approach. More efficient trading patterns, better asset utilization, improved planning, and stronger coordination between stakeholders can reduce emissions, lower resource consumption, improve safety, and create greater value across the supply chain.",
+      "Through our vessels, freight solutions, and digital services, we help customers navigate an increasingly complex operating environment while contributing to a more sustainable shipping industry.",
+    ],
+    link: { label: "More about Trading Efficiency", href: "/trading-efficiency" },
   },
   esg: {
     eyebrow: "Our ESG priorities",
     paragraphs: [
-      "Shipping plays a critical role in global trade, but the industry must also evolve to meet growing expectations around environmental performance, strong safety standards, and clear corporate governance that dictates responsible business conduct. At Klaveness, sustainability is not a stand-alone initiative, it’s embedded in how we operate, the decisions we make, and the solutions we develop for customers.",
-      "Our ESG priorities reflect the areas where we believe we can make the most meaningful contribution while creating long-term value for our stakeholders. Together, they guide our efforts to reduce environmental impact, protect and develop our people, conduct business responsibly, and support a more resilient and sustainable maritime industry.",
+      "Sustainability is embedded in how we operate, the decisions we make, and the solutions we develop for customers.",
+      "Our ESG priorities reflect the areas where we believe we can make the most meaningful contribution while creating long-term value for our stakeholders. Together, they guide our efforts to reduce environmental impact, develop and protect our people, conduct business responsibly, and support a more resilient maritime industry.",
     ],
     image: shipMountainsImage,
     imageAlt: "A bulk carrier sailing towards mountains at sunset, seen from behind",
@@ -116,7 +116,6 @@ export const esgPage = {
     label: "Environmental",
     heading: "Low-carbon future",
     paragraphs: [
-      "Shipping plays a vital role in global trade, and the industry must continue to reduce its environmental impact while maintaining the efficient movement of the food, energy, and raw materials that everyday life depends on.",
       "At Klaveness, we work to improve environmental performance through operational efficiency, technological development, responsible resource use, and collaboration across the maritime value chain. We believe meaningful progress will come from practical solutions that reduce emissions while creating value for customers and society.",
     ],
     focus: [
@@ -145,24 +144,30 @@ export const esgPage = {
     note: {
       text: "More on our carbon reduction targets can be viewed directly with Klaveness Combination Carriers",
       linkLabel: "here",
-      href: "https://www.combinationcarriers.com/sustainability/our-approach",
+      href: "https://www.combinationcarriers.com/sustainability/esg-priorities",
     },
   },
   social: {
     label: "Social",
     klass: {
-      heading: "Klaveness Always Safe and Secure (KLASS)",
+      heading: "Always safe and secure",
       paragraphs: [
-        "KLASS reflects our commitment to protecting people, operating responsibly, and maintaining high standards across our business. Safety is fundamental to how we work, whether onboard our vessels or in our offices.",
-        "Our ambition is simple: all of our people should feel safe at work and no one should be injured while undertaking work for Klaveness. We believe injuries and operational incidents are preventable, and we continuously work to strengthen our performance through learning, accountability, and a culture that encourages people to speak up and look out for one another.",
-        "Originally developed within Klaveness Ship Management and Klaveness Combination Carriers, KLASS has evolved into a shared foundation for how we approach safety, leadership, and continuous improvement across the wider Klaveness Group.",
-      ],
+        [
+          { text: "Klaveness Always Safe and Secure (KLASS)", strong: true },
+          {
+            text: " reflects our commitment to protecting people, operating responsibly, and maintaining high standards across the Klaveness Group. Safety is fundamental to how we work, both at sea and onshore.",
+          },
+        ],
+        "Our ambition is simple: everyone should return home safely. We believe injuries and operational incidents are preventable, and we continuously strengthen our performance through learning, accountability, and a culture where people look out for one another and speak up when it matters.",
+        "Originally developed within Klaveness Ship Management and Klaveness Combination Carriers, KLASS has evolved into a shared framework for safety, leadership, and continuous improvement across the Group.",
+      ] satisfies (string | RichLine)[],
     },
     people: {
       heading: "Commitment to our people and communities",
       paragraphs: [
-        "Our responsibility to people extends beyond safety performance alone. Across the Klaveness Group, we are committed to fair treatment, equal opportunities, and respectful working conditions for everyone who contributes to our business, whether onshore, at sea, or through our wider network of suppliers and business partners. Employment-related decisions are based on qualifications, merit, performance, and other job-related factors, and we work to promote diversity, inclusion, and equal rights across our organization. This includes our commitment to increasing the share of women in leading positions through the WISTA Norway “40 by 30” pledge, as well as clear expectations for human rights, labor rights, safe working conditions, and responsible conduct among suppliers and business partners.",
-        "We also recognize that our role in society extends beyond our own operations. Through humanitarian donations and community initiatives, we seek to support people affected by war, displacement, and hardship. In recent years, this has included support for Ukrainian soldiers and civilians through Fritt Ukraina and HMM Helsehjelp.",
+        "We are committed to providing a safe, inclusive, and respectful workplace for everyone who contributes to our business, whether onshore, at sea, or through our wider network of suppliers and partners.",
+        "Employment decisions are based on qualifications, merit, and performance, and we actively promote diversity, inclusion, and equal opportunities across the organization. This includes our commitment to increasing the share of women in leadership positions through WISTA Norway’s 40 by 30 initiative, alongside clear expectations for human rights, labor rights, and responsible business conduct throughout our value chain.",
+        "We also recognize our responsibility beyond our own operations. Through humanitarian and community initiatives, we support people affected by conflict, displacement, and hardship, including through organizations such as Fritt Ukraina and HMM Helsehjelp.",
       ],
     },
     focus: [
@@ -193,8 +198,9 @@ export const esgPage = {
     heading: "Trusted and responsible partner",
     paragraphs: [
       "Trust is essential in our global industry that is built on long-term relationships and complex supply chains. We are committed to conducting business with integrity, transparency, and accountability while maintaining high standards of governance and responsible business conduct.",
-      "Through strong compliance policies, effective risk management, and a clear set of values, we aim to be a trusted partner for customers, employees, investors, suppliers, and the communities in which we operate.",
+      "Through strong compliance policies, effective risk management, and a clear set of values, we aim to be a trusted partner for customers, employees, investors, suppliers, and the communities in which we operate. See our stakeholders for more information.",
     ],
+    links: { "our stakeholders": "/sustainability/stakeholders" },
     focus: [
       "Business ethics, compliance, and anti-corruption.",
       "Corporate governance and accountability.",
@@ -202,6 +208,11 @@ export const esgPage = {
       "Risk management and resilience.",
       "Respect for human rights and responsible conduct across our value chain.",
     ],
+    structureNote: {
+      text: "See the main governance structure",
+      linkLabel: "here",
+      href: "/about/governance",
+    },
     image: esgGovernanceImage,
     imageAlt: "Aerial view of deep teal ocean water",
     card: {
@@ -239,7 +250,7 @@ export const stakeholdersPage = {
   hero: {
     eyebrow: "Our stakeholders",
     statement: [
-      { text: "Klaveness prioritizes " },
+      { text: "Prioritizing " },
       { text: "transparency", strong: true },
       { text: " and " },
       { text: "trust", strong: true },
@@ -250,8 +261,8 @@ export const stakeholdersPage = {
   intro: {
     eyebrow: "Working with our stakeholders",
     paragraphs: [
-      "Strong relationships are essential to how we operate and create long-term value. We seek to maintain an open and transparent dialogue with our stakeholders to better understand their expectations, identify opportunities for improvement, and ensure we continue to develop our business responsibly. Engagement with stakeholders helps inform our decisions, strengthen trust, and support the Torvald Klaveness Group vision of improving the nature of shipping.",
-      "Our stakeholders provide valuable insight into the opportunities and challenges facing both our business and the maritime industry. Through regular engagement, we seek to understand their perspectives, respond to their concerns, and identify areas where collaboration can create shared value. These discussions help shape our strategy, ESG priorities, risk management, and long-term business development.",
+      "Strong relationships are essential to how we operate and create long-term value. We seek to maintain an open and transparent dialogue with our stakeholders to better understand their expectations, identify opportunities for improvement, and ensure we continue to develop our business responsibly.",
+      "Our stakeholders provide valuable insight into the opportunities and challenges facing both our business and the maritime industry. Through regular engagement, we aim to understand their perspectives, respond to their concerns, and identify areas where collaboration can create shared value. These discussions help shape our strategy, ESG priorities, risk management, and long-term business development.",
     ],
     image: digitalShipImage,
     imageAlt: "Digital illustration of a cargo ship drawn in lines of blue light on a dark sea",

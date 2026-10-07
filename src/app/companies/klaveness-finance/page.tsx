@@ -4,23 +4,22 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/layout/PageHero";
 import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/blocks";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { holdingPage as page } from "@/content/about";
+import { financePage as page } from "@/content/companies";
 import { bioHref, people } from "@/content/leadership";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
-  alternates: { canonical: "/about/klaveness-holding" },
+  alternates: { canonical: "/companies/klaveness-finance" },
   openGraph: {
     title: page.meta.title,
     description: page.meta.description,
-    url: "/about/klaveness-holding",
+    url: "/companies/klaveness-finance",
   },
 };
 
-export default function KlavenessHoldingPage() {
-  const { hero, intro, investments, contact } = page;
+export default function KlavenessFinancePage() {
+  const { hero, intro, strategy, investments, team } = page;
 
   return (
     <>
@@ -28,13 +27,13 @@ export default function KlavenessHoldingPage() {
         eyebrow={hero.eyebrow}
         statement={hero.statement}
         image={hero.image}
-        nextId="holding"
+        nextId="finance"
         imagePosition="50% 50%"
       />
 
       <section
-        id="holding"
-        aria-label="Klaveness Holding"
+        id="finance"
+        aria-label="Klaveness Finance"
         className={`scroll-mt-16 ${sectionY} pt-[clamp(5rem,9vw,11rem)]`}
       >
         <div className={`container-site items-center ${split.textImage}`}>
@@ -48,6 +47,23 @@ export default function KlavenessHoldingPage() {
         </div>
       </section>
 
+      {/* Driving strategy and active ownership */}
+      <section aria-labelledby="strategy-title" className={sectionY}>
+        <div className="container-site grid gap-[clamp(1.5rem,3vw,3rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] md:gap-[5.3%]">
+          <h2
+            id="strategy-title"
+            className="reveal heading-display text-section text-balance text-copy"
+          >
+            {strategy.title}
+          </h2>
+          <Paragraphs
+            items={strategy.paragraphs}
+            className="reveal reveal-delay-1 space-y-[1.15em]"
+          />
+        </div>
+      </section>
+
+      {/* Investing for future growth */}
       <section aria-labelledby="investments-title" className={sectionY}>
         <div className={`container-site items-center ${split.imageText}`}>
           <Photo
@@ -67,24 +83,16 @@ export default function KlavenessHoldingPage() {
         </div>
       </section>
 
-      {/* Investor contact */}
-      <section
-        aria-labelledby="contact-title"
-        className={`${sectionY} pb-[clamp(6rem,10vw,12rem)]`}
-      >
+      {/* Meet our investment team */}
+      <section aria-labelledby="team-title" className={`${sectionY} pb-[clamp(6rem,10vw,12rem)]`}>
         <div className="container-site">
           <div className="reveal grid gap-[clamp(2rem,4vw,5rem)] rounded-media bg-panel px-[clamp(1.5rem,4.5vw,5.5rem)] py-[clamp(2rem,4.4vw,5.25rem)] 2xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] 2xl:items-center">
-            <div>
-              <Eyebrow as="h2" id="contact-title">
-                {contact.eyebrow}
-              </Eyebrow>
-              <p className="mt-[clamp(1.25rem,2vw,2.25rem)] max-w-[40rem] text-body font-light text-pretty text-copy">
-                {contact.body}
-              </p>
-            </div>
+            <h2 id="team-title" className="heading-display text-section text-balance text-copy">
+              {team.title}
+            </h2>
 
             <ul className="grid gap-[clamp(1.5rem,2.6vw,3rem)] sm:grid-cols-2">
-              {contact.people.map(({ slug, email }) => {
+              {team.people.map(({ slug, email }) => {
                 const person = people[slug];
                 return (
                   <li key={slug} className="flex gap-[clamp(1rem,1.6vw,1.75rem)]">

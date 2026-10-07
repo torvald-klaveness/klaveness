@@ -1,6 +1,10 @@
 import Image, { type StaticImageData } from "next/image";
 import type { ReactNode } from "react";
 
+import { LinkedText } from "@/components/ui/LinkedText";
+import { RichText } from "@/components/ui/RichText";
+import type { RichLine } from "@/content/types";
+
 /* Small building blocks shared by the Sustainability, ESG and Stakeholders pages. */
 
 /** Vertical rhythm between sections, as in the XD artboards (~270px at 1920). */
@@ -13,17 +17,31 @@ export const split = {
 } as const;
 /* Combine with items-start (most sections) or items-center (balanced pairs). */
 
+/**
+ * Body paragraphs. An item can be plain text or a RichLine (bold runs);
+ * `links` turns the first mention of each phrase into a link.
+ */
 export function Paragraphs({
   items,
   className = "",
+  links,
 }: {
-  items: readonly string[];
+  items: readonly (string | RichLine)[];
   className?: string;
+  links?: Record<string, string>;
 }) {
   return (
     <div className={`text-body font-light text-pretty text-copy ${className}`}>
-      {items.map((text) => (
-        <p key={text.slice(0, 32)}>{text}</p>
+      {items.map((item, index) => (
+        <p key={index}>
+          {typeof item !== "string" ? (
+            <RichText line={item} />
+          ) : links ? (
+            <LinkedText text={item} links={links} />
+          ) : (
+            item
+          )}
+        </p>
       ))}
     </div>
   );

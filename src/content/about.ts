@@ -5,9 +5,6 @@ import complianceHeroImage from "@/assets/images/about/compliance-hero.webp";
 import financialsHeroImage from "@/assets/images/about/financials-hero.webp";
 import governanceHeroImage from "@/assets/images/about/governance-hero.webp";
 import heroImage from "@/assets/images/about/hero-mv-baltazar.webp";
-import holdingHeroImage from "@/assets/images/about/holding-hero.webp";
-import holdingInvestmentImage from "@/assets/images/about/holding-investment.webp";
-import holdingTeamImage from "@/assets/images/about/holding-team.webp";
 import t1946 from "@/assets/images/about/timeline/1946.webp";
 import t1958 from "@/assets/images/about/timeline/1958.webp";
 import t1960s from "@/assets/images/about/timeline/1960s.webp";
@@ -48,21 +45,36 @@ export const aboutPage = {
   meta: {
     title: "About us",
     description:
-      "Klaveness is a pioneering shipping company that delivers a portfolio of physical and digital services to the maritime industry.",
+      "Klaveness is a family-owned shipping group with nearly 80 years of heritage, working to improve trading efficiency across global seaborne supply chains.",
   },
   hero: {
     eyebrow: "About us",
     statement: [
-      { text: "Klaveness is a " },
-      { text: "pioneering shipping company", strong: true },
-      { text: " that delivers a portfolio of " },
-      { text: "physical and digital services", strong: true },
-      { text: " to the maritime industry." },
+      { text: "Improving", strong: true },
+      { text: " the nature of " },
+      { text: "shipping", strong: true },
     ] satisfies RichLine,
     image: heroImage,
   },
+  // Client's revised text (October 2026).
+  whoWeAre: {
+    eyebrow: "Who we are",
+    statement:
+      "Klaveness is a family-owned shipping group with nearly 80 years of heritage in the shipping industry. Through our portfolio companies, we work to improve trading efficiency across global seaborne supply chains by combining maritime expertise, innovative business models, and digital capabilities.",
+    paragraphs: [
+      "Since 1946, we have explored new ways to move cargo more efficiently. While our companies operate in different parts of the value chain, they are united by a shared vision: improving the nature of shipping.",
+    ],
+    image: visionImage,
+    imageAlt: "A vessel on the horizon at dusk",
+  },
   timeline: {
     eyebrow: "80 years of innovation",
+    statement:
+      "Since 1946, Klaveness has introduced new vessel concepts, business models, and technologies that have helped move the industry forward.",
+    paragraphs: [
+      "From combination carrier concepts and new operating models to digital solutions that improve decision-making across supply chains, our history is defined by a willingness to explore new ideas and challenge established thinking.",
+      "Explore the milestones, people, and ideas that continue to influence who we are today and where we are headed next.",
+    ],
     entries: [
       {
         label: "1946",
@@ -193,38 +205,39 @@ export const aboutPage = {
     ] satisfies TimelineEntry[],
   },
   vision: {
-    eyebrow: "Vision and values",
+    eyebrow: "Why we exist",
     statement:
-      "At the core of Torvald Klaveness are the values we live by and the vision we pursue. Our vision is to improve the nature of shipping.",
+      "At Klaveness, everything we do is guided by a single vision: Improving the Nature of Shipping.",
     paragraphs: [
-      "Our legacy is to challenge status quo, and much of our success has been, and is linked to, finding new ways to improve technology and business models in shipping.",
-      "The vision provides direction and guiding along three dimensions:",
+      "Shipping underpins global trade, yet many inefficiencies remain across the value chain. We believe better outcomes come from finding smarter ways for cargo owners, operators, and other stakeholders to work together. This belief is reflected in our focus on improving trading efficiency across global seaborne supply chains.",
+      "This vision continues to guide our investments, our businesses, and the solutions we bring to market.",
     ],
-    image: visionImage,
-    imageAlt: "A vessel on the horizon at dusk",
+    dimensionsTitle: "What it means to us:",
     dimensions: [
       {
         words: [{ text: "Improving", strong: true }],
-        body: "We always look for new solutions",
+        body: "We continuously seek better ways to solve challenges, create value, and advance the industry.",
         image: improvingImage,
         imageAlt: "Silhouette of a person looking through a telescope at sunset",
       },
       {
         words: [{ text: "The nature" }],
-        body: "Our ambition is to improve the very nature of the business we are in",
+        body: "Our ambition goes beyond improving individual processes. We aim to address the underlying inefficiencies that shape how shipping operates.",
         image: theNatureImage,
         imageAlt: "Sunset over the open sea",
       },
       {
         words: [{ text: "Of " }, { text: "shipping", strong: true }],
-        body: "Shipping is our market and where we can make a difference",
+        body: "Shipping is where we have deep expertise, where we see the greatest opportunity to make a difference, and where we continue to innovate.",
         image: ofShippingImage,
         imageAlt: "Aerial view of the deck of an orange bulk carrier",
       },
     ] satisfies { words: RichLine; body: string; image: StaticImageData; imageAlt: string }[],
   },
   values: {
-    title: "Our values define what we stand for and what you can expect from us:",
+    eyebrow: "How we work",
+    title:
+      "For generations, our values have shaped how we make decisions, build relationships, and create long-term value. They define what our customers, partners, and colleagues can expect from us.",
     items: [
       {
         name: "Craftsmanship",
@@ -261,49 +274,6 @@ export const aboutPage = {
           "Try a little, learn a lot",
         ],
       },
-    ],
-  },
-} as const;
-
-/* Content from klaveness.com/businesses/klaveness-holding. */
-export const holdingPage = {
-  meta: {
-    title: "Klaveness Holding",
-    description:
-      "Klaveness Holding facilitates active ownership, and strategic and financial investments across the maritime and energy industries.",
-  },
-  hero: {
-    eyebrow: "Klaveness Holding",
-    statement: [
-      { text: "Facilitating " },
-      { text: "active ownership", strong: true },
-      { text: ", and " },
-      { text: "strategic and financial investments", strong: true },
-    ] satisfies RichLine,
-    image: holdingHeroImage,
-  },
-  intro: {
-    statement:
-      "Klaveness Holding has a top management team responsible for developing and implementing corporate strategy and capital allocation.",
-    body: "The Holding team executes active ownership of the existing portfolio of companies, drives new strategic investments, and actively manages a portfolio of liquid financial investments.",
-    image: holdingTeamImage,
-    imageAlt: "Two Klaveness colleagues working together in front of a screen",
-  },
-  investments: {
-    title: "Strategic & Financial Investments for Growth",
-    paragraphs: [
-      "Our investment team utilizes deep industrial expertise and an established network to identify and capitalize on compelling opportunities across the maritime and energy industries.",
-      "In addition, they manage a diversified financial portfolio consisting of equity and fixed income funds.",
-    ],
-    image: holdingInvestmentImage,
-    imageAlt: "Members of the Klaveness investment team at work in the office",
-  },
-  contact: {
-    eyebrow: "Investor contact",
-    body: "For any enquiries related to financial or strategic investments, please do not hesitate to get in touch with us using the details enclosed.",
-    people: [
-      { slug: "goran-andreassen", email: "gan@klaveness.com" },
-      { slug: "nadia-naess", email: "nan@klaveness.com" },
     ],
   },
 } as const;

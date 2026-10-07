@@ -132,11 +132,6 @@ export default function WorkingWithUsPage() {
               sizes="(min-width: 768px) 50vw, 100vw"
             />
           </div>
-
-          <Paragraphs
-            items={[benefits.closing]}
-            className="reveal mt-[clamp(2.5rem,4vw,5rem)] max-w-[52rem]"
-          />
         </div>
       </section>
 

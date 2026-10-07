@@ -6,7 +6,6 @@ import { Hero } from "@/components/home/Hero";
 import { History } from "@/components/home/History";
 import { Intro } from "@/components/home/Intro";
 import { LatestNews } from "@/components/home/LatestNews";
-import { Sustainability } from "@/components/home/Sustainability";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -17,9 +16,8 @@ export default function HomePage() {
     <>
       <Hero />
       <Intro />
-      <History />
       <Businesses />
-      <Sustainability />
+      <History />
       <GlobalPresence />
       <LatestNews />
     </>

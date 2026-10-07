@@ -47,26 +47,28 @@ export const careersHome = {
     ] satisfies RichLine,
     image: heroCareers,
   },
+  // Client's revised text (October 2026).
   intro: [
-    "The challenges facing the global shipping industry are evolving rapidly. Decarbonization, digitalization, changing trade patterns, and increasing complexity across global supply chains are reshaping the future of shipping. At Klaveness, we believe these challenges create opportunities for people who are curious, ambitious, and eager to make a meaningful contribution.",
-    "Whether you are early in your career or an experienced professional, we offer opportunities to learn, grow, and help shape the future of maritime trade alongside talented colleagues around the world.",
+    "The shipping industry is evolving rapidly. Decarbonization, digitalization, changing trade patterns, and increasing complexity across global supply chains are reshaping how cargo moves around the world.",
+    "At Klaveness, we see these challenges as opportunities. We are looking for curious, ambitious people who want to learn, grow, and contribute to shaping the future of shipping.",
+    "Whether you are early in your career or an experienced professional, you’ll have the opportunity to work alongside talented colleagues from around the world and contribute to solutions that make shipping more efficient, resilient, and sustainable.",
   ],
   joining: {
     title: "Joining our team",
     paragraphs: [
-      "Klaveness offers opportunities across a diverse range of roles, including commercial shipping, operations, technology, finance, compliance, sustainability, and corporate services.",
-      "Our people work across five locations, collaborating closely across functions, cultures, and time zones. Regardless of role, every employee contributes to helping customers move the food, energy, and raw materials that society depends on every day.",
+      "Klaveness offers opportunities across a wide range of disciplines, including commercial shipping, operations, technology, finance, compliance, sustainability, and corporate services.",
+      "With colleagues across five locations, we work closely across functions, cultures, and time zones. Whatever the role, every employee contributes to helping customers move the food, energy, and raw materials the world depends on every day.",
     ],
-    cta: "View our current vacancies and discover where a career at Klaveness could take you.",
+    cta: "Explore our current vacancies and discover where a career at Klaveness could take you.",
     image: joiningImage,
     imageAlt: "Two Klaveness colleagues working together at a screen in the Singapore office",
   },
   students: {
     title: "Students and internships",
     paragraphs: [
-      "We believe attracting future talent starts with providing meaningful opportunities early in a career.",
-      "Through collaboration with educational institutions in Norway and internationally, we offer internships and student opportunities that provide practical experience, exposure to the maritime industry, and the opportunity to work alongside experienced professionals.",
-      "At Klaveness, students are encouraged to contribute, challenge ideas, and develop skills that will support their future careers, whether that journey continues with us or takes them elsewhere.",
+      "We believe meaningful careers often start with meaningful opportunities.",
+      "Through partnerships with educational institutions in Norway and internationally, we offer internships and student opportunities that provide practical experience, industry exposure, and the chance to work alongside experienced professionals.",
+      "Students at Klaveness are encouraged to contribute, challenge established thinking, and develop skills that support their future careers, whether that journey continues with us or takes them elsewhere.",
     ],
     image: studentsImage,
     imageAlt: "A smiling Klaveness intern in orange overalls and a hard hat on site",
@@ -84,16 +86,16 @@ export const workingWithUs = {
   },
   hero: {
     eyebrow: "Working with us",
-    statement: [{ text: "Improving the Nature of Shipping", strong: true }] satisfies RichLine,
+    statement: [{ text: "Our " }, { text: "vision and values", strong: true }] satisfies RichLine,
     image: heroWorking,
   },
   vision: {
-    eyebrow: "Our vision and values",
+    eyebrow: "Our vision",
     statement: [
       { text: "Our vision, " },
       { text: "Improving the Nature of Shipping", strong: true },
       {
-        text: ", reflects our belief that shipping can create greater value for society through safer, more efficient, and more sustainable maritime supply chains.",
+        text: ", reflects our belief that shipping can work better. By challenging convention and finding smarter ways to move cargo, we aim to support more resilient, decarbonized, and cost-effective seaborne supply chains.",
       },
     ] satisfies RichLine,
     valuesTitle:
@@ -104,12 +106,12 @@ export const workingWithUs = {
   development: {
     title: "Personal and professional development",
     paragraphs: [
-      "We believe professional growth is a shared responsibility between employees and leaders. Through annual performance and development reviews, regular feedback, training opportunities, and practical experience, we support employees in building rewarding long-term careers.",
-      "Learning is embedded in how we work. Employees are encouraged to develop new skills, broaden their expertise, and explore opportunities across functions and businesses. As an organization, we believe that continuous learning, adaptability, and knowledge sharing are essential to both personal success and long-term business performance.",
+      "Professional growth is a shared responsibility between employees and leaders. Through ongoing feedback, development conversations, training, and practical experience, we support employees in building rewarding long-term careers.",
+      "Learning is embedded in our culture. We encourage employees to broaden their expertise, develop new skills, and explore opportunities across functions and businesses. We believe continuous learning, adaptability, and knowledge sharing are essential to individual growth and long-term business success.",
     ],
     academy: {
       name: "Klaveness Academy",
-      text: "The Klaveness Academy serves as our internal learning platform, helping employees build knowledge and capabilities relevant to both their current and future roles as well as complete regular compliance training.",
+      text: "The Klaveness Academy serves as our internal learning platform, supporting the development of capabilities relevant to both current and future roles.",
     },
     image: developmentImage,
     imageAlt: "A Klaveness employee reading in the office library corner",
@@ -117,7 +119,7 @@ export const workingWithUs = {
   benefits: {
     title: "Employee benefits",
     intro:
-      "We aim to provide a working environment that supports both professional development and personal wellbeing.",
+      "We believe people do their best work when they have opportunities to grow, contribute, and maintain a healthy work-life balance. That’s why we focus on creating an environment where employees can develop their skills, take on new challenges, and build rewarding long-term careers.",
     listIntro: "Benefits vary by role and location but include:",
     items: [
       { icon: "compensation", text: "Competitive compensation and benefits packages" },
@@ -127,8 +129,6 @@ export const workingWithUs = {
       { icon: "flexible", text: "Flexible working practices where appropriate" },
       { icon: "wellbeing", text: "Health and wellbeing support initiatives" },
     ] satisfies { icon: BenefitIcon; text: string }[],
-    closing:
-      "At Klaveness, we recognize that attracting and retaining talented people requires more than competitive compensation alone. We strive to create an environment where employees can grow professionally, maintain a healthy work-life balance, and build meaningful, long-term careers.",
     image: benefitsImage,
     imageAlt: "Colleagues at work in the Klaveness Dubai office",
   },
@@ -149,21 +149,21 @@ export const lifeAtKlaveness = {
     image: heroLife,
   },
   impact: {
-    lead: "At Klaveness, our employees have the opportunity to work across different businesses, functions, and geographies while contributing to challenges that matter to global trade and maritime supply chains.",
+    lead: "At Klaveness, employees have the opportunity to work across businesses, functions, and geographies while helping address some of the most important challenges facing global trade and maritime supply chains.",
     paragraphs: [
-      "We combine the reach and opportunities of an international business with the agility and responsibility that come from being a Group company with multiple portfolio subsidiaries. This creates opportunities for people to take ownership, broaden their experience, and make a visible impact on the development of our business. Across the Group, our work is guided by a shared focus on Trading Efficiency; an ambition to seek better ways of aligning commercial, operational, and environmental considerations to create value for customers, society, and the wider maritime industry.",
-      "Our culture is built on collaboration, trust, curiosity, and a shared commitment to continuous improvement. We encourage employees to challenge ideas, learn from one another, and contribute to shaping the future of shipping.",
+      "We combine the reach of an international business with the agility and responsibility that comes from being a Group with a diverse portfolio of companies. This creates opportunities to take ownership, broaden experience, and make a meaningful impact.",
+      "Across the Group, we are united by a shared ambition to improve Trading Efficiency by finding better ways to align commercial, operational, and environmental considerations. Our culture is built on collaboration, trust, curiosity, and continuous improvement. We encourage employees to challenge established thinking, learn from one another, and contribute to shaping the future of shipping.",
     ],
-    links: { "Trading Efficiency": "/sustainability#trading-efficiency" },
+    links: { "Trading Efficiency": "/trading-efficiency" },
     image: placeToGrowImage,
     imageAlt: "Two Klaveness colleagues discussing ideas at a whiteboard in the Manila office",
   },
   equalOpportunities: {
     title: "Equal opportunities",
     paragraphs: [
-      "Klaveness is committed to providing equal opportunities for all employees and applicants. Employment-related decisions are based on relevant qualifications, merit, performance, and other job-related factors.",
-      "We believe diversity strengthens our business by bringing together people with different backgrounds, experiences, perspectives, and ideas.",
-      "Our commitment extends across recruitment, development, compensation, promotion, and leadership opportunities regardless of gender, gender identification, ethnicity, religion, sexual orientation, disability, or social status.",
+      "At Klaveness, we are committed to providing equal opportunities for all employees and applicants. Employment-related decisions are based on qualifications, merit, performance, and other job-related factors.",
+      "We believe diverse perspectives make us a stronger business. By bringing together people with different backgrounds, experiences, and ideas, we create a more inclusive workplace and better outcomes for our customers and stakeholders.",
+      "Our commitment extends across recruitment, development, compensation, promotion, and leadership opportunities, regardless of gender, gender identity, ethnicity, religion, sexual orientation, disability, or social status.",
     ],
     image: equalOpportunitiesImage,
     imageAlt: "The Klaveness team in Manila gathered outside the office",
@@ -213,8 +213,9 @@ export const meetOurPeople = {
     image: heroMeet,
   },
   intro: [
-    "Across the Klaveness Group, employees contribute in many ways, from developing commercial relationships and optimizing vessel operations to building digital solutions, supporting customers, managing risk, and driving innovation across the maritime industry.",
-    "Read the stories of colleagues from across Klaveness and learn more about their experiences, career paths, and perspectives on working in our industry.",
+    "Across the Klaveness Group, employees contribute in many ways, from building commercial relationships and optimizing vessel operations to developing digital solutions, supporting customers, managing risk, and advancing new ideas across the maritime industry.",
+    "What connects us is a shared ambition to improve the nature of shipping. Whether working in shipping, technology, finance, sustainability, or corporate functions, every employee plays a role in helping customers navigate an increasingly complex operating environment.",
+    "Read the stories of colleagues across Klaveness and learn more about their experiences, career journeys, and perspectives on working in a constantly evolving industry.",
   ],
   stories: [
     {

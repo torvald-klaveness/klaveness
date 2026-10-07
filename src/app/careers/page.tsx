@@ -42,8 +42,8 @@ export default function CareersPage() {
           <div className="reveal max-w-[60rem]">
             <p className="font-serif text-quote font-light text-pretty text-copy">{intro[0]}</p>
             <Paragraphs
-              items={[intro[1]]}
-              className="mt-[clamp(1.25rem,2vw,2.25rem)] max-w-[46rem]"
+              items={intro.slice(1)}
+              className="mt-[clamp(1.25rem,2vw,2.25rem)] max-w-[46rem] space-y-[1.15em]"
             />
           </div>
         </div>

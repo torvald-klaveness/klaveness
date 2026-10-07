@@ -12,13 +12,14 @@ export type PlaceholderPage = {
 export const builtPages = [
   "/",
   "/about/about-us",
-  "/about/klaveness-holding",
   "/about/governance",
   "/about/executive-committee",
   "/about/board-of-directors",
   "/about/financials",
   "/about/compliance",
   "/companies/klaveness-dry-bulk",
+  "/companies/klaveness-finance",
+  "/trading-efficiency",
   "/careers",
   "/careers/working-with-us",
   "/careers/life-at-klaveness",
@@ -56,13 +57,6 @@ function buildPlaceholders() {
       });
     }
   }
-
-  add({
-    path: "/sustainability/trading-efficiency",
-    title: "Trading Efficiency",
-    section: "Sustainability",
-    sectionHref: "/sustainability",
-  });
 
   // Linked from Meet our people; keeps the old article address alive until News is built.
   add({

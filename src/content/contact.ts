@@ -147,14 +147,14 @@ export const teamPage = {
   meta: {
     title: "Team",
     description:
-      "Find your department from our team of 150+ across the world: Klaveness Holding, Klaveness Combination Carriers, Klaveness Digital, Klaveness Dry Bulk and Klaveness Shore Services.",
+      "Find your department from our team across the world: Klaveness Finance, Klaveness Combination Carriers, Klaveness Digital, Klaveness Dry Bulk and Klaveness Shore Services.",
   },
   hero: {
     eyebrow: "Team",
     statement: [
+      // Client (Oct 2026): "150+" is the whole group, not everyone listed here, so no number.
       { text: "Find your department from our " },
-      { text: "team of 150+", strong: true },
-      { text: " across the world" },
+      { text: "team across the world", strong: true },
     ] satisfies RichLine,
     image: worldImage,
   },

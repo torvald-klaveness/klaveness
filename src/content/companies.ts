@@ -2,6 +2,10 @@ import baumarineImage from "@/assets/images/companies/klaveness-dry-bulk/baumari
 import heroImage from "@/assets/images/companies/klaveness-dry-bulk/hero-operations.webp";
 import marketManagerImage from "@/assets/images/companies/klaveness-dry-bulk/market-manager.webp";
 import teamImage from "@/assets/images/companies/klaveness-dry-bulk/team-and-logo.webp";
+import financeHeroImage from "@/assets/images/companies/klaveness-finance/hero.webp";
+import financeInvestmentImage from "@/assets/images/companies/klaveness-finance/investment.webp";
+import financeTeamImage from "@/assets/images/companies/klaveness-finance/team.webp";
+import type { PersonSlug } from "@/content/leadership";
 import type { RichLine } from "@/content/types";
 
 /*
@@ -92,5 +96,57 @@ export const dryBulkPage = {
     link: { label: "Explore Klaveness Digital", href: "https://www.klavenessdigital.com" },
     image: marketManagerImage,
     imageAlt: "Tablet showing the Market Manager dashboard with freight charts",
+  },
+} as const;
+
+/*
+ * Klaveness Finance (formerly Klaveness Holding, moved from About to Companies).
+ * Client's revised text, October 2026.
+ */
+export const financePage = {
+  meta: {
+    title: "Klaveness Finance",
+    description:
+      "Klaveness Finance provides strategic direction, capital allocation, and active ownership across the Klaveness portfolio, and invests across the maritime and energy sectors.",
+  },
+  hero: {
+    eyebrow: "Klaveness Finance",
+    statement: [
+      { text: "Building " },
+      { text: "long-term value", strong: true },
+      { text: " through " },
+      { text: "strategy, ownership, and investment", strong: true },
+    ] satisfies RichLine,
+    image: financeHeroImage,
+  },
+  intro: {
+    statement:
+      "Klaveness Finance provides strategic direction, capital allocation, and active ownership across the Klaveness portfolio.",
+    body: "Through long-term ownership and disciplined investment management, we support the development of businesses and create financial flexibility for future growth.",
+    image: financeTeamImage,
+    imageAlt: "Two Klaveness colleagues working together in front of a screen",
+  },
+  strategy: {
+    title: "Driving strategy and active ownership",
+    paragraphs: [
+      "Klaveness Finance is responsible for Group strategy, capital allocation, and investment priorities.",
+      "Working closely with our portfolio companies, we provide active ownership and strategic direction to support long-term growth, helping to strengthen their market positions, develop new opportunities, and create sustainable value over time.",
+    ],
+  },
+  investments: {
+    title: "Investing for future growth",
+    paragraphs: [
+      "In addition to our portfolio companies, Klaveness Finance invests in opportunities across the maritime and energy sectors where we can apply our industry expertise and long-term investment approach.",
+      "We also manage a diversified portfolio of liquid financial investments, including equity and fixed income funds. These investments support capital preservation, financial resilience, and flexibility for future strategic opportunities.",
+    ],
+    image: financeInvestmentImage,
+    imageAlt: "Members of the Klaveness investment team at work in the office",
+  },
+  team: {
+    title: "Meet our investment team",
+    people: [
+      { slug: "goran-andreassen", email: "gan@klaveness.com" },
+      { slug: "nadia-naess", email: "nan@klaveness.com" },
+    ] satisfies { slug: PersonSlug; email: string }[],
   },
 } as const;
