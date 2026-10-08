@@ -18,6 +18,7 @@ export const builtPages = [
   "/about/financials",
   "/about/compliance",
   "/companies/klaveness-dry-bulk",
+  "/companies/klaveness-dry-bulk/baumarine",
   "/companies/klaveness-finance",
   "/trading-efficiency",
   "/careers",

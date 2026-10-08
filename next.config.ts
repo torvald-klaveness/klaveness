@@ -63,6 +63,11 @@ const nextConfig: NextConfig = {
         destination: "/companies/klaveness-dry-bulk",
         permanent: true,
       },
+      {
+        source: "/baumarine",
+        destination: "/companies/klaveness-dry-bulk/baumarine",
+        permanent: true,
+      },
       // The About menu item opens About us; /about may get its own page later.
       { source: "/about", destination: "/about/about-us", permanent: false },
       { source: "/contact", destination: "/contact/offices", permanent: false },

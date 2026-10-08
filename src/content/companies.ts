@@ -1,3 +1,6 @@
+import baumarineFleetImage from "@/assets/images/companies/baumarine/fleet.webp";
+import baumarineHeroImage from "@/assets/images/companies/baumarine/hero-propeller.webp";
+import baumarineTeamImage from "@/assets/images/companies/baumarine/michael-jorgensen-waterfront.webp";
 import baumarineImage from "@/assets/images/companies/klaveness-dry-bulk/baumarine-mv-barramundi.webp";
 import heroImage from "@/assets/images/companies/klaveness-dry-bulk/hero-operations.webp";
 import marketManagerImage from "@/assets/images/companies/klaveness-dry-bulk/market-manager.webp";
@@ -11,8 +14,7 @@ import type { RichLine } from "@/content/types";
 /*
  * Content from the current klaveness.com/businesses/klaveness-dry-bulk page,
  * presented in the new design. Left out until their pages exist on the new
- * site: the "Explore Baumarine" button, the VEP calculator banner and the
- * Knowledge hub.
+ * site: the VEP calculator banner and the Knowledge hub.
  */
 export const dryBulkPage = {
   meta: {
@@ -83,6 +85,7 @@ export const dryBulkPage = {
       "Baumarine is our global Panamax and Kamsarmax pool and strategic platform for shipowners in volatile freight markets.",
       "Through scale, collaboration and data driven insight, we offer owners an alternative to traditional employment structures, putting owners back in control of their assets.",
     ],
+    link: { label: "Explore Baumarine", href: "/companies/klaveness-dry-bulk/baumarine" },
     image: baumarineImage,
     imageAlt: "A bulk carrier on the horizon at sunset, framed by dark cliffs",
   },
@@ -96,6 +99,79 @@ export const dryBulkPage = {
     link: { label: "Explore Klaveness Digital", href: "https://www.klavenessdigital.com" },
     image: marketManagerImage,
     imageAlt: "Tablet showing the Market Manager dashboard with freight charts",
+  },
+} as const;
+
+/*
+ * Baumarine, Klaveness Dry Bulk's Panamax and Kamsarmax pool. Content from the
+ * current klaveness.com/baumarine page, presented in the new design.
+ */
+export const baumarinePage = {
+  meta: {
+    title: "Baumarine",
+    description:
+      "Baumarine, the largest dry bulk Panamax and Kamsarmax pool worldwide, connects shipowners globally. Through close collaboration, scale, and advanced data analytics, we put owners back in control of their assets.",
+  },
+  hero: {
+    eyebrow: "Baumarine",
+    statement: [
+      { text: "Klaveness is " },
+      { text: "the pioneer in pools", strong: true },
+      {
+        text: ", from designing the first-ever concept in 1963 and through 60 years of successful operations",
+      },
+    ] satisfies RichLine,
+    image: baumarineHeroImage,
+  },
+  intro: {
+    title: "Tradition meets innovation in the world of dry bulk shipping",
+    paragraphs: [
+      "In 1963, the first shipping pool ever was created by shipping visionary Mr. Torvald Klaveness. The idea was spun out of his belief in providing cost-efficient and predictable transport services to his customers, and finding new and creative ways to do so.",
+      "In Klaveness we believe in partnerships and collaboration and Baumarine, the largest dry bulk Panamax and Kamsarmax pool worldwide, is our flagship brand, connecting shipowners globally by leveraging our extensive market and industry expertise. In a volatile market where charterers often dictate timing, we empower owners by offering a compelling alternative.",
+      "Through close collaboration, scale, and advanced data analytics, we put owners back in control of their assets. Our dedicated operations team ensures the preservation of your valuable assets and the well-being of your crew. We strive to be your trusted partner and closest ally throughout the decision-making process, providing guidance on purchase, employment alternatives, earnings potential, and asset sales.",
+      "Welcome to Baumarine, where we truly believe in being Stronger Together!",
+    ],
+    image: baumarineTeamImage,
+    imageAlt: "Michael Jørgensen walking and laughing with a colleague by the waterfront",
+  },
+  valueProposition: {
+    title: "Our unique value proposition to shipowners",
+    // Bold lead phrases as on the current page.
+    points: [
+      [
+        { text: "Flexible commitment", strong: true },
+        { text: " and exit options for owners’ convenience" },
+      ],
+      [
+        { text: "Enhancing asset value", strong: true },
+        { text: " through well-maintained vessels and strategic scheduling" },
+      ],
+      [
+        { text: "Transparent earnings distribution", strong: true },
+        { text: ", prioritizing fairness and equality" },
+      ],
+      [{ text: "Optimal fleet utilization", strong: true }, { text: " and global exposure" }],
+      [
+        { text: "Comprehensive support", strong: true },
+        { text: " from chartering to legal advice, plus market insights and networking" },
+      ],
+      [
+        { text: "Building a strong ship owner community", strong: true },
+        { text: " for mutual success and industry impact" },
+      ],
+    ] satisfies RichLine[],
+    // Background under a navy veil, as on the current page.
+    image: baumarineFleetImage,
+  },
+  closing: {
+    statement: [
+      {
+        text: "Pooling assets provides an easier way to consolidate in the market to become bigger, smarter and ",
+      },
+      { text: "Stronger Together", strong: true },
+    ] satisfies RichLine,
+    // Same address as the current page's "contact the team" button.
+    contact: { label: "Contact the team", href: "mailto:ipi@klaveness.com" },
   },
 } as const;
 

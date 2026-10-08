@@ -142,6 +142,9 @@ export default function KlavenessDryBulkPage() {
               items={baumarine.paragraphs}
               className="mt-[clamp(1.25rem,2vw,2.25rem)] space-y-[1.15em]"
             />
+            <ArrowLink href={baumarine.link.href} className="mt-[clamp(1.5rem,2.6vw,3rem)]">
+              {baumarine.link.label}
+            </ArrowLink>
           </div>
         </div>
       </section>
