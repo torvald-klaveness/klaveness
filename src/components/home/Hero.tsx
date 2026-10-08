@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { HeroVideo } from "@/components/home/HeroVideo";
 import { ArrowRight } from "@/components/icons";
 import { home } from "@/content/home";
 
@@ -13,18 +14,23 @@ export function Hero() {
     >
       <div aria-hidden className="absolute inset-0 -z-10">
         <Image
-          src={hero.image}
+          src={hero.video.poster}
           alt=""
           fill
           preload
           placeholder="blur"
           sizes="100vw"
-          className="motion-safe-only animate-hero-zoom object-cover object-[62%_35%]"
+          className="object-cover"
         />
-        {/* Navy veil as in the design: the orange sky turns dusky mauve, the sun a pale blue disc. */}
+        <HeroVideo
+          src={hero.video.src}
+          portraitSrc={hero.video.portraitSrc}
+          className="absolute inset-0 size-full object-cover"
+        />
+        {/* Navy veil as in the design (the old site showed the video at 50% over the same navy). */}
         <div className="absolute inset-0 bg-navy/60" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgb(0_12_44/0.45)_100%)]" />
-        {/* Extra scrim on phones, where the copy sits over the sun's reflection. */}
+        {/* Extra scrim on phones, where the copy sits over the white superstructure and wake. */}
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(0deg,rgb(0_12_44/0.55),transparent)] md:hidden" />
       </div>
 

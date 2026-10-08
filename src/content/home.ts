@@ -1,4 +1,4 @@
-import heroImage from "@/assets/images/home/hero-ocean.webp";
+import heroPoster from "@/assets/images/home/hero-video-poster.webp";
 import historyImage from "@/assets/images/home/history.webp";
 import kccImage from "@/assets/images/home/klaveness-combination-carriers.webp";
 import kdImage from "@/assets/images/home/klaveness-digital.webp";
@@ -7,8 +7,15 @@ import financeImage from "@/assets/images/companies/klaveness-finance/team.webp"
 
 export const home = {
   hero: {
-    image: heroImage,
-    imageAlt: "Close-up of ocean waves at sunset",
+    // Background video from the old site's homepage: drone footage of MV Ballard
+    // (Klaveness Combination Carriers) off Kwinana, October 2023. Files in public/videos.
+    video: {
+      src: "/videos/home-hero.mp4",
+      // Centre crop for phones, where the hero is portrait.
+      portraitSrc: "/videos/home-hero-portrait.mp4",
+      // First frame, shown while the video loads and instead of it for reduced motion.
+      poster: heroPoster,
+    },
     // Rendered as three lines; `strong` lines are set in bold.
     title: [
       { text: "Improving", strong: true },
