@@ -14,7 +14,6 @@ import kristinaRep from "@/assets/images/careers/people/kristina-rep.webp";
 import magnusNoodt from "@/assets/images/careers/people/magnus-noodt.webp";
 import martinWattum from "@/assets/images/careers/people/martin-wattum.webp";
 import monicaLauritzen from "@/assets/images/careers/people/monica-lauritzen.webp";
-import tonyElmqvist from "@/assets/images/careers/people/tony-elmqvist.webp";
 import placeToGrowImage from "@/assets/images/careers/place-to-grow.webp";
 import studentsImage from "@/assets/images/careers/students-and-internships.webp";
 import visionImage from "@/assets/images/careers/vision-and-values.webp";
@@ -218,20 +217,6 @@ export const meetOurPeople = {
     "Read the stories of colleagues across Klaveness and learn more about their experiences, career journeys, and perspectives on working in a constantly evolving industry.",
   ],
   stories: [
-    {
-      slug: "tony-elmqvist",
-      name: "John Anton ‘Tony’ Elmqvist",
-      role: "Front-End Lead, Klaveness Digital",
-      quote:
-        "It’s not just about the code being fun — it’s about building the right things, with the right people, in a space that actually needs it",
-      link: {
-        label: "Read Tony’s story",
-        href: "https://www.klavenessdigital.com/news-and-insights/its-not-just-about-the-code-being-fun-its-about-building-the-right-things-with-the-right-people-in-a-space-that-actually-needs-it",
-        external: true,
-      },
-      image: tonyElmqvist,
-      imageAlt: "Tony Elmqvist at his desk in the Klaveness Digital office",
-    },
     {
       slug: "magnus-noodt",
       name: "Magnus Noodt",

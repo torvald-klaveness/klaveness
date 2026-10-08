@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { stakeholderIcons } from "@/components/icons/sustainability";
 import { PageHero } from "@/components/layout/PageHero";
-import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/blocks";
+import { Paragraphs, sectionY } from "@/components/sustainability/blocks";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { stakeholdersPage as page } from "@/content/sustainability";
 
@@ -24,7 +24,7 @@ const columns = [
 ] as const;
 
 export default function StakeholdersPage() {
-  const { hero, intro, groups, closing } = page;
+  const { hero, intro, groups } = page;
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function StakeholdersPage() {
       <section
         id="working-with-stakeholders"
         aria-labelledby="intro-title"
-        className={`scroll-mt-16 ${sectionY} pt-[clamp(5rem,9vw,11rem)]`}
+        className={`scroll-mt-16 ${sectionY} pt-[clamp(5rem,9vw,11rem)] pb-[clamp(6rem,10vw,12rem)]`}
       >
         <div className="container-site grid gap-[clamp(2.5rem,4vw,4rem)] md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-[5.3%]">
           <div className="reveal md:sticky md:top-28 md:self-start">
@@ -93,14 +93,6 @@ export default function StakeholdersPage() {
               );
             })}
           </ul>
-        </div>
-      </section>
-
-      {/* Closing, with the digital ship from the design */}
-      <section aria-label="Closing" className={`${sectionY} pb-[clamp(6rem,10vw,12rem)]`}>
-        <div className={`container-site items-center ${split.imageText}`}>
-          <Photo image={intro.image} alt={intro.imageAlt} sizes="(min-width: 768px) 50vw, 100vw" />
-          <Paragraphs items={[closing]} className="reveal" />
         </div>
       </section>
     </>

@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 
 /** Where each photo is cropped, so faces stay in frame in the 4:5 card. */
 const focus: Record<string, string> = {
-  "tony-elmqvist": "30% 40%",
   "magnus-noodt": "52% 55%",
   "kristina-rep": "50% 35%",
   "martin-wattum": "52% 30%",

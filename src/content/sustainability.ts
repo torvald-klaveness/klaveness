@@ -5,7 +5,6 @@ import esgSocialImage from "@/assets/images/sustainability/esg-social.webp";
 import ceoImage from "@/assets/images/sustainability/ernst-meyer-square.webp";
 import baltazarImage from "@/assets/images/sustainability/mv-baltazar.webp";
 import shipMountainsImage from "@/assets/images/sustainability/ship-towards-mountains.webp";
-import digitalShipImage from "@/assets/images/sustainability/stakeholders-digital-ship.webp";
 import tradingEfficiencyImage from "@/assets/images/sustainability/trading-efficiency.webp";
 import type { RichLine } from "@/content/types";
 
@@ -264,8 +263,6 @@ export const stakeholdersPage = {
       "Strong relationships are essential to how we operate and create long-term value. We seek to maintain an open and transparent dialogue with our stakeholders to better understand their expectations, identify opportunities for improvement, and ensure we continue to develop our business responsibly.",
       "Our stakeholders provide valuable insight into the opportunities and challenges facing both our business and the maritime industry. Through regular engagement, we aim to understand their perspectives, respond to their concerns, and identify areas where collaboration can create shared value. These discussions help shape our strategy, ESG priorities, risk management, and long-term business development.",
     ],
-    image: digitalShipImage,
-    imageAlt: "Digital illustration of a cargo ship drawn in lines of blue light on a dark sea",
   },
   groups: [
     {
@@ -338,6 +335,4 @@ export const stakeholdersPage = {
     concerns: string;
     engage: string;
   }[],
-  closing:
-    "Stakeholder engagement is an important part of how we identify opportunities, manage risks, and make informed decisions across the Klaveness Group. The insights we gain through ongoing dialogue help shape our strategy, strengthen our ESG priorities, and ensure we remain focused on the issues that matter most to our business and stakeholders. By listening, learning, and collaborating, we seek to build lasting relationships that support long-term value creation and responsible business practices.",
 } as const;

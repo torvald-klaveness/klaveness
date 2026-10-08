@@ -22,6 +22,8 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Desktop dropdown closed by a click on one of its links, until the pointer leaves.
+  const [dismissed, setDismissed] = useState<string | null>(null);
   const lastY = useRef(0);
 
   // Solid background once the page scrolls; tuck the bar away while scrolling
@@ -46,7 +48,7 @@ export function SiteHeader() {
     };
   }, []);
 
-  // Close the mobile menu on navigation.
+  // Close the mobile menu on navigation (back/forward included).
   const [menuPath, setMenuPath] = useState(pathname);
   if (menuPath !== pathname) {
     setMenuPath(pathname);
@@ -102,7 +104,18 @@ export function SiteHeader() {
               {mainNav.map((item) => {
                 const active = inSection(pathname, item);
                 return (
-                  <li key={item.href} className="group/nav relative">
+                  <li
+                    key={item.href}
+                    className="group/nav relative"
+                    // The dropdown opens on hover and focus, both of which outlast a
+                    // click: drop the focus and hide it until the pointer moves away.
+                    onClick={(event) => {
+                      if (!(event.target as Element).closest("a")) return;
+                      (document.activeElement as HTMLElement | null)?.blur();
+                      setDismissed(item.href);
+                    }}
+                    onMouseLeave={() => setDismissed(null)}
+                  >
                     <Link
                       href={item.href}
                       aria-current={active ? (pathname === item.href ? "page" : "true") : undefined}
@@ -118,7 +131,13 @@ export function SiteHeader() {
                     </Link>
 
                     {item.children && (
-                      <div className="invisible absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 transition-[opacity,visibility,transform] duration-300 ease-out-expo group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:opacity-100">
+                      <div
+                        className={`invisible absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 transition-[opacity,visibility,transform] duration-300 ease-out-expo ${
+                          dismissed === item.href
+                            ? ""
+                            : "group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:opacity-100"
+                        }`}
+                      >
                         <ul className="min-w-64 rounded-xl bg-white p-2 text-ink shadow-[0_24px_60px_-20px_rgb(0_20_70/0.35),0_0_0_1px_rgb(0_20_70/0.06)]">
                           {item.children.map((child) => (
                             <li key={child.href + child.label}>
@@ -169,12 +188,20 @@ export function SiteHeader() {
       </header>
 
       {/* Outside <header>: its transform would otherwise trap this fixed overlay. */}
-      <MobileMenu open={menuOpen} pathname={pathname} />
+      <MobileMenu open={menuOpen} pathname={pathname} onNavigate={() => setMenuOpen(false)} />
     </>
   );
 }
 
-function MobileMenu({ open, pathname }: { open: boolean; pathname: string }) {
+function MobileMenu({
+  open,
+  pathname,
+  onNavigate,
+}: {
+  open: boolean;
+  pathname: string;
+  onNavigate: () => void;
+}) {
   return (
     <div
       id="mobile-menu"
@@ -183,7 +210,12 @@ function MobileMenu({ open, pathname }: { open: boolean; pathname: string }) {
         open ? "visible opacity-100" : "invisible opacity-0"
       }`}
     >
-      <nav aria-label="Mobile" className="container-site flex min-h-full flex-col pt-28 pb-10">
+      <nav
+        aria-label="Mobile"
+        className="container-site flex min-h-full flex-col pt-28 pb-10"
+        // Any link closes the menu, including one to the page already open.
+        onClick={(event) => (event.target as Element).closest("a") && onNavigate()}
+      >
         <ul className="divide-y divide-white/10 border-y border-white/10">
           {mainNav.map((item, index) => (
             <li
