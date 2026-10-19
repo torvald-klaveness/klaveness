@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { Logo } from "@/components/brand/Logo";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export type Crumb = { label: string; href?: string };
@@ -49,12 +48,6 @@ export function TitleBand({
       <div
         aria-hidden
         className="absolute inset-0 -z-10 bg-[radial-gradient(70%_90%_at_85%_0%,rgb(48_80_162/0.55),transparent_70%)]"
-      />
-      <Logo
-        variant="symbol"
-        aria-hidden
-        title=""
-        className="pointer-events-none absolute -right-20 -bottom-20 -z-10 h-72 w-auto text-white/[0.03] md:h-[26rem]"
       />
 
       <div className="container-site">
