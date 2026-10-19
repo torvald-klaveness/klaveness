@@ -21,6 +21,7 @@ export const builtPages = [
   "/companies/klaveness-dry-bulk/baumarine",
   "/companies/klaveness-finance",
   "/trading-efficiency",
+  "/news",
   "/careers",
   "/careers/working-with-us",
   "/careers/life-at-klaveness",
@@ -58,16 +59,6 @@ function buildPlaceholders() {
       });
     }
   }
-
-  // Linked from Meet our people; keeps the old article address alive until News is built.
-  add({
-    path: "/news/from-desk-to-deck-an-interns-time-as-a-seafarer",
-    title: "From Desk to Deck: An Intern’s Time as a Seafarer",
-    section: "News",
-    sectionHref: "/news",
-    description:
-      "This summer, Torvald Klaveness welcomed Magnus Noodt, a marine engineering student from NTNU, as part of our summer internship program.",
-  });
 
   for (const link of legalNav) {
     add({ path: link.href, title: link.label, section: "Legal" });

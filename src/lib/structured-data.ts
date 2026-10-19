@@ -52,3 +52,27 @@ export const websiteJsonLd = () => ({
   inLanguage: "en",
   publisher: { "@id": orgId },
 });
+
+export const newsArticleJsonLd = (article: {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  image?: string;
+}) => {
+  const url = `${site.url}/news/${article.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "@id": `${url}#article`,
+    headline: article.title,
+    description: article.description || undefined,
+    datePublished: article.date,
+    image: article.image ? [article.image] : undefined,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: "en",
+    author: { "@id": orgId },
+    publisher: { "@id": orgId },
+  };
+};

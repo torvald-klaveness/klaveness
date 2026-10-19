@@ -6,7 +6,7 @@ import { ArrowRight, LinkedInIcon } from "@/components/icons";
 import { PageHero } from "@/components/layout/PageHero";
 import { sectionY } from "@/components/sustainability/blocks";
 import { careersPages, vacanciesPage as page } from "@/content/careers";
-import { formatNewsDate } from "@/content/news";
+import { formatNewsDate } from "@/lib/news/shared";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {

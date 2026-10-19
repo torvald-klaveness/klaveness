@@ -6,6 +6,12 @@
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["dev", "--port", "3417"],
       "port": 3417
+    },
+    {
+      "name": "klaveness-dev-local-news",
+      "runtimeExecutable": "env",
+      "runtimeArgs": ["NEWS_CONTENT_DIR=../klaveness-content", "pnpm", "dev", "--port", "3418"],
+      "port": 3418
     }
   ]
 }

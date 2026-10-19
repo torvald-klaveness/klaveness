@@ -7,13 +7,16 @@ import { keepRangesTogether } from "@/lib/typography";
 
 type MediaCardProps = {
   href: string;
-  image: StaticImageData;
+  /** A static import, or an address (news covers from the content repo). */
+  image: StaticImageData | string;
   imageAlt: string;
+  /** For addresses next/image is not allowed to optimise. */
+  unoptimized?: boolean;
   title: string;
   body?: string;
   meta?: ReactNode;
   cta: string;
-  headingLevel?: "h3" | "h4";
+  headingLevel?: "h2" | "h3" | "h4";
   /** Another website: opens in a new tab, with an ↗ after the call to action. */
   external?: boolean;
   sizes?: string;
@@ -40,6 +43,7 @@ export function MediaCard({
   external,
   sizes = "(min-width: 1136px) 340px, (min-width: 768px) 30vw, 100vw",
   aligned,
+  unoptimized,
 }: MediaCardProps) {
   const linkClass = "after:absolute after:inset-0 focus-visible:outline-none";
   return (
@@ -51,7 +55,8 @@ export function MediaCard({
           src={image}
           alt={imageAlt}
           fill
-          placeholder="blur"
+          placeholder={typeof image === "string" ? "empty" : "blur"}
+          unoptimized={unoptimized}
           sizes={sizes}
           className="object-cover transition-transform duration-[1.2s] ease-out-expo group-hover:scale-[1.04]"
         />

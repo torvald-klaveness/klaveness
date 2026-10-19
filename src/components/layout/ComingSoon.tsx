@@ -1,16 +1,14 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { Logo } from "@/components/brand/Logo";
+import { TitleBand, type Crumb } from "@/components/layout/TitleBand";
 import { ArrowLink } from "@/components/ui/ArrowLink";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { site } from "@/content/site";
 
 type ComingSoonProps = {
   eyebrow: string;
   title: string;
   description?: string;
-  breadcrumb?: { label: string; href?: string }[];
+  breadcrumb?: Crumb[];
   children?: ReactNode;
 };
 
@@ -18,63 +16,12 @@ type ComingSoonProps = {
 export function ComingSoon({ eyebrow, title, description, breadcrumb, children }: ComingSoonProps) {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-navy pt-36 pb-20 text-white md:pt-48 md:pb-28">
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(70%_90%_at_85%_0%,rgb(48_80_162/0.55),transparent_70%)]"
-        />
-        <Logo
-          variant="symbol"
-          aria-hidden
-          title=""
-          className="pointer-events-none absolute -right-20 -bottom-20 -z-10 h-72 w-auto text-white/[0.03] md:h-[26rem]"
-        />
-
-        <div className="container-site">
-          {breadcrumb?.length ? (
-            <nav aria-label="Breadcrumb" className="motion-safe-only mb-10 animate-rise">
-              <ol className="flex flex-wrap items-center gap-2 text-[0.8125rem] text-white/55">
-                <li>
-                  <Link href="/" className="transition-colors hover:text-white">
-                    Home
-                  </Link>
-                </li>
-                {breadcrumb.map((crumb) => (
-                  <li key={crumb.label} className="flex items-center gap-2">
-                    <span aria-hidden className="text-orange">
-                      /
-                    </span>
-                    {crumb.href ? (
-                      <Link href={crumb.href} className="transition-colors hover:text-white">
-                        {crumb.label}
-                      </Link>
-                    ) : (
-                      <span aria-current="page" className="text-white/85">
-                        {crumb.label}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </nav>
-          ) : null}
-
-          <div
-            className="motion-safe-only max-w-3xl animate-rise"
-            style={{ animationDelay: "120ms" }}
-          >
-            <Eyebrow tone="light">{eyebrow}</Eyebrow>
-            <h1 className="heading-display mt-8 text-[clamp(2.25rem,1.4rem+3vw,3.75rem)]">
-              {title}
-            </h1>
-            {description ? (
-              <p className="mt-6 max-w-xl text-[1.0625rem] leading-relaxed font-light text-white/70">
-                {description}
-              </p>
-            ) : null}
-          </div>
-        </div>
-      </section>
+      <TitleBand
+        eyebrow={eyebrow}
+        title={title}
+        description={description}
+        breadcrumb={breadcrumb}
+      />
 
       <section className="py-20 md:py-28">
         <div className="container-site grid gap-12 md:grid-cols-12">
