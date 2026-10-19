@@ -32,6 +32,8 @@ export type NavLink = {
 
 export type NavItem = NavLink & {
   children?: NavLink[];
+  /** Only opens its dropdown: there is no page at `href` (which then just groups the section). */
+  menuOnly?: boolean;
 };
 
 /**
@@ -54,7 +56,7 @@ export const mainNav: NavItem[] = [
   {
     label: "Companies",
     href: "/companies",
-    description: "A diversified maritime group built on long-term ownership.",
+    menuOnly: true,
     // Same as the current site: these companies have their own websites.
     children: [
       {

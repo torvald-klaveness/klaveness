@@ -47,7 +47,13 @@ function buildPlaceholders() {
   };
 
   for (const item of mainNav) {
-    add({ path: item.href, title: item.label, section: item.label, description: item.description });
+    if (!item.menuOnly)
+      add({
+        path: item.href,
+        title: item.label,
+        section: item.label,
+        description: item.description,
+      });
     for (const child of item.children ?? []) {
       if (child.external) continue;
       add({

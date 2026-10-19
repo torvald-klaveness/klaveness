@@ -57,11 +57,14 @@ export function SiteFooter() {
 
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 pt-16 sm:grid-cols-3 lg:auto-cols-[minmax(0,1fr)] lg:grid-flow-col lg:grid-cols-none lg:gap-x-[clamp(2rem,4vw,6rem)]">
           <FooterColumn title="Explore">
-            {mainNav.map((item) => (
-              <li key={item.href}>
-                <FooterLink href={item.href}>{item.label}</FooterLink>
-              </li>
-            ))}
+            {/* Dropdown-only sections (Companies) have no page; their column lists the links. */}
+            {mainNav
+              .filter((item) => !item.menuOnly)
+              .map((item) => (
+                <li key={item.href}>
+                  <FooterLink href={item.href}>{item.label}</FooterLink>
+                </li>
+              ))}
           </FooterColumn>
 
           {sectionColumns.map((column) => (

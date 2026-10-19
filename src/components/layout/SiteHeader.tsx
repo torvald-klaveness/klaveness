@@ -116,19 +116,38 @@ export function SiteHeader() {
                     }}
                     onMouseLeave={() => setDismissed(null)}
                   >
-                    <Link
-                      href={item.href}
-                      aria-current={active ? (pathname === item.href ? "page" : "true") : undefined}
-                      className="relative inline-flex h-11 items-center px-[clamp(0.875rem,1.5vw,1.75rem)] text-[clamp(0.875rem,0.9375vw,1.125rem)] font-medium"
-                    >
-                      {item.label}
-                      <span
-                        aria-hidden
-                        className={`absolute inset-x-[clamp(0.875rem,1.5vw,1.75rem)] bottom-2 h-px origin-left bg-orange transition-transform duration-500 ease-out-expo group-focus-within/nav:scale-x-100 group-hover/nav:scale-x-100 ${
-                          active ? "scale-x-100" : "scale-x-0"
-                        }`}
-                      />
-                    </Link>
+                    {item.menuOnly ? (
+                      <button
+                        type="button"
+                        aria-haspopup="true"
+                        aria-current={active ? "true" : undefined}
+                        className="relative inline-flex h-11 cursor-default items-center px-[clamp(0.875rem,1.5vw,1.75rem)] text-[clamp(0.875rem,0.9375vw,1.125rem)] font-medium"
+                      >
+                        {item.label}
+                        <span
+                          aria-hidden
+                          className={`absolute inset-x-[clamp(0.875rem,1.5vw,1.75rem)] bottom-2 h-px origin-left bg-orange transition-transform duration-500 ease-out-expo group-focus-within/nav:scale-x-100 group-hover/nav:scale-x-100 ${
+                            active ? "scale-x-100" : "scale-x-0"
+                          }`}
+                        />
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        aria-current={
+                          active ? (pathname === item.href ? "page" : "true") : undefined
+                        }
+                        className="relative inline-flex h-11 items-center px-[clamp(0.875rem,1.5vw,1.75rem)] text-[clamp(0.875rem,0.9375vw,1.125rem)] font-medium"
+                      >
+                        {item.label}
+                        <span
+                          aria-hidden
+                          className={`absolute inset-x-[clamp(0.875rem,1.5vw,1.75rem)] bottom-2 h-px origin-left bg-orange transition-transform duration-500 ease-out-expo group-focus-within/nav:scale-x-100 group-hover/nav:scale-x-100 ${
+                            active ? "scale-x-100" : "scale-x-0"
+                          }`}
+                        />
+                      </Link>
+                    )}
 
                     {item.children && (
                       <div
@@ -237,7 +256,7 @@ function MobileMenu({
                   <ul className="space-y-1 pb-5">
                     {/* Keep the section page reachable when it isn't one of its sub-links. */}
                     {[
-                      ...(item.children.some((child) => child.href === item.href)
+                      ...(item.menuOnly || item.children.some((child) => child.href === item.href)
                         ? []
                         : [{ label: item.label, href: item.href }]),
                       ...item.children,
