@@ -70,6 +70,7 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
         eyebrow="News"
         title={article.title}
         breadcrumb={[{ label: "News", href: "/news" }, { label: article.title }]}
+        image={cover ? { src: cover.src, unoptimized: !cover.optimized } : undefined}
       >
         <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-body-sm font-light text-white/75">
           <time dateTime={article.date}>{formatNewsDate(article.date)}</time>
@@ -93,7 +94,7 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
         aria-labelledby="page-title"
         className="container-site pt-[clamp(3rem,5vw,6rem)] pb-[clamp(4.5rem,7vw,8.5rem)]"
       >
-        <div className="max-w-[52rem]">
+        <div className="mx-auto max-w-[52rem]">
           {cover && article.cover ? (
             <figure className="mb-[clamp(2.5rem,4vw,4.5rem)]">
               <Image
@@ -102,7 +103,6 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
                 width={cover.width}
                 height={cover.height}
                 unoptimized={!cover.optimized}
-                preload
                 sizes="(min-width: 1136px) 52rem, 100vw"
                 className="h-auto max-h-[80svh] w-full rounded-media bg-mist object-cover"
               />
