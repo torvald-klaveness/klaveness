@@ -21,7 +21,7 @@ import { categorySlug, formatNewsDate } from "@/lib/news/shared";
 import { newsArticleJsonLd } from "@/lib/structured-data";
 
 // Articles come from the content repo; new ones render on their first visit.
-export const revalidate = 3600;
+export const revalidate = 900;
 
 export async function generateStaticParams() {
   return (await getNewsArticles()).map((article) => ({ slug: article.slug }));

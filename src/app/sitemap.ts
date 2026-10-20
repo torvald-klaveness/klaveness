@@ -4,7 +4,7 @@ import { builtPages } from "@/content/routes";
 import { site } from "@/content/site";
 import { getNewsArticles } from "@/lib/news/articles";
 
-export const revalidate = 3600;
+export const revalidate = 900;
 
 /**
  * Lists finished pages and every news article. Placeholder ("coming soon")

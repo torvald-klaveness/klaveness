@@ -7,7 +7,7 @@ import { mainNav } from "@/content/site";
 import { getNewsArticles, getNewsCategories, toNewsCard } from "@/lib/news/articles";
 
 // Articles come from the content repo; see src/lib/news/config.ts.
-export const revalidate = 3600;
+export const revalidate = 900;
 
 const description = mainNav.find((item) => item.href === "/news")?.description;
 

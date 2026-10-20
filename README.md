@@ -27,7 +27,7 @@ pnpm dev          # http://localhost:3000
 | `NEWS_CONTENT_REPO`             | `ynnhlr/klaveness-content`  | GitHub repository the news articles are read from                                           |
 | `NEWS_CONTENT_BRANCH`           | `main`                      | Branch of that repository                                                                   |
 | `NEWS_CONTENT_GITHUB_TOKEN`     | —                           | Read-only token (Contents: read) so builds are not hit by GitHub's anonymous rate limit     |
-| `NEWS_WEBHOOK_SECRET`           | —                           | Secret of the GitHub webhook that refreshes the news after a push                           |
+| `NEWS_WEBHOOK_SECRET`           | —                           | Optional: secret of a GitHub webhook that refreshes the news instantly after a push         |
 | `NEWS_CONTENT_DIR`              | —                           | Local only: read articles from a checkout (e.g. `../klaveness-content`) to preview them     |
 
 ## News
@@ -36,10 +36,11 @@ Articles live in their own repository, [ynnhlr/klaveness-content](https://github
 (format in its `AGENTS.md`). The site reads it at the latest commit through the GitHub API and
 regenerates the news pages with ISR:
 
-- A push to the content repo triggers the webhook `POST /api/revalidate/news` (GitHub → Settings →
-  Webhooks: content type `application/json`, the `NEWS_WEBHOOK_SECRET`, push events only). Pages are
-  refreshed in the background on their next visit; new articles render on their first visit.
-- Without the webhook, news pages still check the repo every hour.
+- News pages check the repo every 15 minutes, so a pushed article appears within 15 minutes with
+  no webhook and no redeploy. Pages are refreshed in the background on their next visit; new
+  articles render on their first visit.
+- Optional, for instant updates: a GitHub webhook to `POST /api/revalidate/news` (GitHub → Settings
+  → Webhooks: content type `application/json`, the `NEWS_WEBHOOK_SECRET`, push events only).
 - To preview articles before pushing, run with `NEWS_CONTENT_DIR=../klaveness-content` (the
   `klaveness-dev-local-news` launch configuration does this on port 3418).
 - `scripts/import-old-news.mjs` imported the old Squarespace Newsroom (articles from 2021 on) and

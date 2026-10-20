@@ -1,13 +1,14 @@
 import path from "node:path";
 
-/** Every request to the content repo carries this tag; the GitHub webhook revalidates it. */
+/** Every request to the content repo carries this tag; the optional GitHub webhook revalidates it. */
 export const NEWS_CACHE_TAG = "news";
 
 /**
- * Safety net if a webhook is missed: news pages check the repo at most this
- * often (seconds). The routes repeat the value because `revalidate` must be a literal.
+ * News pages check the repo at most this often (seconds), so a pushed article
+ * appears within 15 minutes without a webhook. The routes repeat the value
+ * because `revalidate` must be a literal.
  */
-export const NEWS_REVALIDATE_SECONDS = 3600;
+export const NEWS_REVALIDATE_SECONDS = 900;
 
 /** Folder in the content repo that holds the articles (news/<year>/<slug>.md). */
 export const NEWS_ROOT = "news";

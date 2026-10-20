@@ -8,7 +8,7 @@ import { Intro } from "@/components/home/Intro";
 import { LatestNews } from "@/components/home/LatestNews";
 
 // The latest news comes from the content repo; see src/lib/news/config.ts.
-export const revalidate = 3600;
+export const revalidate = 900;
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
