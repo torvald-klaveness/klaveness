@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 import newsRedirects from "./src/content/news-redirects.json";
 
 // News images are served from the content repo (see src/lib/news/config.ts).
-const newsRepo = process.env.NEWS_CONTENT_REPO?.trim() || "ynnhlr/klaveness-content";
+const newsRepo = process.env.NEWS_CONTENT_REPO?.trim() || "torvald-klaveness/klaveness-content";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,

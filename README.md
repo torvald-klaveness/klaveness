@@ -19,20 +19,20 @@ pnpm dev          # http://localhost:3000
 
 ## Environment
 
-| Variable                        | Default                     | Purpose                                                                                     |
-| ------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`          | `https://www.klaveness.com` | Canonical URLs, sitemap, Open Graph                                                         |
-| `VERCEL_ENV`                    | set by Vercel               | Indexing is allowed only on `production` …                                                  |
-| `VERCEL_PROJECT_PRODUCTION_URL` | set by Vercel               | … and only once the production domain is klaveness.com (not the vercel.app staging address) |
-| `NEWS_CONTENT_REPO`             | `ynnhlr/klaveness-content`  | GitHub repository the news articles are read from                                           |
-| `NEWS_CONTENT_BRANCH`           | `main`                      | Branch of that repository                                                                   |
-| `NEWS_CONTENT_GITHUB_TOKEN`     | —                           | Read-only token (Contents: read) so builds are not hit by GitHub's anonymous rate limit     |
-| `NEWS_WEBHOOK_SECRET`           | —                           | Optional: secret of a GitHub webhook that refreshes the news instantly after a push         |
-| `NEWS_CONTENT_DIR`              | —                           | Local only: read articles from a checkout (e.g. `../klaveness-content`) to preview them     |
+| Variable                        | Default                               | Purpose                                                                                     |
+| ------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`          | `https://www.klaveness.com`           | Canonical URLs, sitemap, Open Graph                                                         |
+| `VERCEL_ENV`                    | set by Vercel                         | Indexing is allowed only on `production` …                                                  |
+| `VERCEL_PROJECT_PRODUCTION_URL` | set by Vercel                         | … and only once the production domain is klaveness.com (not the vercel.app staging address) |
+| `NEWS_CONTENT_REPO`             | `torvald-klaveness/klaveness-content` | GitHub repository the news articles are read from                                           |
+| `NEWS_CONTENT_BRANCH`           | `main`                                | Branch of that repository                                                                   |
+| `NEWS_CONTENT_GITHUB_TOKEN`     | —                                     | Read-only token (Contents: read) so builds are not hit by GitHub's anonymous rate limit     |
+| `NEWS_WEBHOOK_SECRET`           | —                                     | Optional: secret of a GitHub webhook that refreshes the news instantly after a push         |
+| `NEWS_CONTENT_DIR`              | —                                     | Local only: read articles from a checkout (e.g. `../klaveness-content`) to preview them     |
 
 ## News
 
-Articles live in their own repository, [ynnhlr/klaveness-content](https://github.com/ynnhlr/klaveness-content)
+Articles live in their own repository, [torvald-klaveness/klaveness-content](https://github.com/torvald-klaveness/klaveness-content)
 (format in its `AGENTS.md`). The site reads it at the latest commit through the GitHub API and
 regenerates the news pages with ISR:
 

@@ -19,9 +19,11 @@ export type NewsSource =
 
 const env = (name: string) => process.env[name]?.trim() || undefined;
 
-/** The articles live in their own repository (github.com/ynnhlr/klaveness-content). */
+/** The articles live in their own repository (github.com/torvald-klaveness/klaveness-content). */
 export function getNewsRepo() {
-  const [owner, repo] = (env("NEWS_CONTENT_REPO") ?? "ynnhlr/klaveness-content").split("/");
+  const [owner, repo] = (env("NEWS_CONTENT_REPO") ?? "torvald-klaveness/klaveness-content").split(
+    "/",
+  );
   return { owner, repo, branch: env("NEWS_CONTENT_BRANCH") ?? "main" };
 }
 
