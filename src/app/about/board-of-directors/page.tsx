@@ -4,12 +4,14 @@ import { PeopleDirectory } from "@/components/about/PeopleDirectory";
 import { PageHero } from "@/components/layout/PageHero";
 import { sectionY } from "@/components/sustainability/blocks";
 import { boardPage as page } from "@/content/leadership";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/about/board-of-directors" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/about/board-of-directors",

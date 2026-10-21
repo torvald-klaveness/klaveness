@@ -7,12 +7,14 @@ import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { careersHome as page, careersPages } from "@/content/careers";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: careersPages.home.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: careersPages.home.href,

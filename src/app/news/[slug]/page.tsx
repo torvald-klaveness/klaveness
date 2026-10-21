@@ -19,6 +19,7 @@ import {
 } from "@/lib/news/articles";
 import { categorySlug, formatNewsDate } from "@/lib/news/shared";
 import { newsArticleJsonLd } from "@/lib/structured-data";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 // Articles come from the content repo; new ones render on their first visit.
 export const revalidate = 900;
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }: PageProps<"/news/[slug]">): P
     description: article.description || undefined,
     alternates: { canonical: path },
     openGraph: {
+      ...sharedOpenGraph,
       type: "article",
       title: article.title,
       description: article.description || undefined,
@@ -55,7 +57,7 @@ export async function generateMetadata({ params }: PageProps<"/news/[slug]">): P
                 alt: article.cover.alt,
               },
             ]
-          : undefined,
+          : sharedOpenGraph.images,
     },
   };
 }

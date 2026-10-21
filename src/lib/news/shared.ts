@@ -31,6 +31,12 @@ export type NewsCard = Pick<NewsArticle, "slug" | "title" | "date" | "categories
 
 export type NewsCategory = { name: string; slug: string; count: number };
 
+/** Cards per step of "Show more news", and per archive page (/news/page/2, …). */
+export const NEWS_PAGE_SIZE = 12;
+
+/** Address of an archive page; page 1 is the Newsroom itself. */
+export const newsPageHref = (page: number) => (page <= 1 ? "/news" : `/news/page/${page}`);
+
 export const categorySlug = (name: string) =>
   name
     .toLowerCase()

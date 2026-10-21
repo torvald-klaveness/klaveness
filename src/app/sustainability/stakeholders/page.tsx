@@ -5,12 +5,14 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Paragraphs, sectionY } from "@/components/sustainability/blocks";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { stakeholdersPage as page } from "@/content/sustainability";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/sustainability/stakeholders" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/sustainability/stakeholders",

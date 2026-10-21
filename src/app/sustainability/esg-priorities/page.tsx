@@ -14,12 +14,14 @@ import {
 } from "@/components/sustainability/blocks";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { esgPage as page, type EsgPillarKey } from "@/content/sustainability";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/sustainability/esg-priorities" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/sustainability/esg-priorities",

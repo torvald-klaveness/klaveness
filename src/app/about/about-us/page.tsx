@@ -7,12 +7,18 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/blocks";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { aboutPage as page } from "@/content/about";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/about/about-us" },
-  openGraph: { title: page.meta.title, description: page.meta.description, url: "/about/about-us" },
+  openGraph: {
+    ...sharedOpenGraph,
+    title: page.meta.title,
+    description: page.meta.description,
+    url: "/about/about-us",
+  },
 };
 
 export default function AboutUsPage() {
