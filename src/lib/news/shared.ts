@@ -16,6 +16,8 @@ export type NewsArticle = {
   description: string;
   /** ISO date (YYYY-MM-DD). */
   date: string;
+  /** ISO date of the last real edit (optional `updatedAt` in the frontmatter). */
+  updated?: string;
   categories: string[];
   cover?: NewsImage;
   /** Markdown body. */

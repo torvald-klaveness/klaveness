@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: PageProps<"/news/[slug]">): P
   const article = await getNewsArticle((await params).slug);
   if (!article) return {};
   const path = `/news/${article.slug}`;
+  const { cover } = await getArticleImages(article);
   return {
     title: article.title,
     description: article.description || undefined,
@@ -43,9 +44,18 @@ export async function generateMetadata({ params }: PageProps<"/news/[slug]">): P
       description: article.description || undefined,
       url: path,
       publishedTime: article.date,
-      images: article.cover
-        ? [{ url: absolute(article.cover.src), alt: article.cover.alt }]
-        : undefined,
+      modifiedTime: article.updated,
+      images:
+        cover && article.cover
+          ? [
+              {
+                url: absolute(cover.src),
+                width: cover.width,
+                height: cover.height,
+                alt: article.cover.alt,
+              },
+            ]
+          : undefined,
     },
   };
 }
@@ -62,7 +72,9 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
       <JsonLd
         data={newsArticleJsonLd({
           ...article,
-          image: article.cover ? absolute(article.cover.src) : undefined,
+          image: cover
+            ? { url: absolute(cover.src), width: cover.width, height: cover.height }
+            : undefined,
         })}
       />
 
