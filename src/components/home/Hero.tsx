@@ -47,10 +47,10 @@ export function Hero() {
         </h1>
 
         <div
-          className="motion-safe-only max-w-[clamp(24rem,26vw,31rem)] animate-rise md:pb-2"
+          className="motion-safe-only max-w-[clamp(26rem,30vw,36rem)] animate-rise md:pb-2"
           style={{ animationDelay: "180ms" }}
         >
-          <p className="text-body font-light text-white/90">{hero.lead}</p>
+          <p className="text-[clamp(1.25rem,1.46vw,1.75rem)] leading-[1.45] font-light text-white/90">{hero.lead}</p>
           <a
             href={hero.cta.href}
             className="group mt-8 inline-flex items-center gap-4 text-label font-semibold"
