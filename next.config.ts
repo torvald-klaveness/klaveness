@@ -38,7 +38,6 @@ const nextConfig: NextConfig = {
         "ernst-meyer",
         "trine-hellum",
         "fabian-flaaten",
-        "goran-andreassen",
         "engebret-dahm",
         "ingrid-kylstad",
         "michael-jorgensen",
@@ -49,6 +48,12 @@ const nextConfig: NextConfig = {
         destination: `/about/executive-committee#${slug}`,
         permanent: true,
       })),
+      // Gøran Andreassen has left; his old bio page goes to the team page.
+      {
+        source: "/goran-andreassen",
+        destination: "/about/executive-committee",
+        permanent: true,
+      },
       // Same for the Board of Directors bios (the old site spelled one slug "trstad").
       ...[
         ["trond-harald-klaveness", "trond-harald-klaveness"],

@@ -62,7 +62,7 @@ export function PeopleDirectory({ teams }: { teams: readonly Readonly<Team>[] })
               // Each card spans three shared rows (photo, name, role), so names and
               // roles line up across a row even when a name wraps to two lines.
               className={`mt-[clamp(1.75rem,3vw,3.5rem)] grid grid-cols-2 gap-x-[clamp(1rem,2vw,2.5rem)] gap-y-[clamp(2rem,3.4vw,4rem)] ${
-                compact ? "md:grid-cols-3 lg:grid-cols-5" : "md:grid-cols-3 lg:grid-cols-4"
+                compact ? "md:grid-cols-4 lg:grid-cols-4" : "md:grid-cols-3 lg:grid-cols-3"
               }`}
             >
               {team.members.map((slug, index) => {

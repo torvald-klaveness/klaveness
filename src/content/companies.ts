@@ -221,7 +221,6 @@ export const financePage = {
   team: {
     title: "Meet our investment team",
     people: [
-      { slug: "goran-andreassen", email: "gan@klaveness.com" },
       { slug: "nadia-naess", email: "nan@klaveness.com" },
     ] satisfies { slug: PersonSlug; email: string }[],
   },
