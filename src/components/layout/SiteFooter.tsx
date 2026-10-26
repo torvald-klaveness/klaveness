@@ -31,7 +31,8 @@ export function SiteFooter() {
               <Logo variant="stacked" className="h-10 w-auto" />
             </Link>
             <p className="heading-display mt-12 max-w-md text-[clamp(1.75rem,1.2rem+1.6vw,2.5rem)] text-white">
-              {site.tagline}.
+              <strong className="font-bold">Improving</strong> the nature of{" "}
+              <strong className="font-bold">shipping</strong>.
             </p>
           </div>
           <address className="text-[0.9375rem] leading-relaxed text-white/60 not-italic md:col-span-4 md:col-start-9">
