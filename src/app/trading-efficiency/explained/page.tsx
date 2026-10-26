@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
 import { ExplainerEffects } from "@/components/trading-efficiency/ExplainerEffects";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Ic } from "@/components/trading-efficiency/ExplainerIcon";
 
 import "./explained.css";
@@ -64,9 +65,6 @@ export default function TradingEfficiencyExplainedPage() {
             </h4>
           </div>
           <div className="te-hero-visual te-reveal" aria-hidden>
-            <div className="te-route" />
-            <span className="te-route-dot a" />
-            <span className="te-route-dot b" />
             <Ic n="ship" className="te-hero-ship" sizes="(min-width: 1050px) 690px, 100vw" />
           </div>
         </div>
@@ -403,11 +401,11 @@ export default function TradingEfficiencyExplainedPage() {
             </article>
           </div>
           <div className="te-close te-reveal">
-            <strong>
+            <p>
               Improving trading efficiency is Klaveness’ approach to creating better outcomes across
               the maritime value chain.
-            </strong>
-            <span>People. Perspective. Progress.</span>
+            </p>
+            <ArrowLink href="/trading-efficiency">Our approach to trading efficiency</ArrowLink>
           </div>
         </div>
       </section>
