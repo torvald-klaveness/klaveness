@@ -13,13 +13,15 @@ const line = {
   focusable: false,
 } as const;
 
-/* ESG pillar icons — single colour, coloured per pillar as in the XD design. */
+const accent = "var(--color-navy-50)";
+
+/* ESG pillar icons — navy with a Blue 50 % accent. */
 
 function EsgLeaf(props: IconProps) {
   return (
     <svg viewBox="0 0 32 32" strokeWidth={1.4} {...line} {...props}>
       <path d="M27 5C14.5 5 7 10.6 7 19c0 2.3.8 4.4 2.1 6C17.6 25 27 20.2 27 5Z" />
-      <path d="M5 27c5.2-6 10.4-11.6 16.8-17" />
+      <path d="M5 27c5.2-6 10.4-11.6 16.8-17" stroke={accent} />
     </svg>
   );
 }
@@ -29,8 +31,8 @@ function EsgPeople(props: IconProps) {
     <svg viewBox="0 0 32 32" strokeWidth={1.4} {...line} {...props}>
       <circle cx="11.5" cy="10" r="4.5" />
       <path d="M3.5 27v-3.2a6.3 6.3 0 0 1 6.3-6.3h3.4a6.3 6.3 0 0 1 6.3 6.3V27" />
-      <circle cx="22" cy="11.5" r="3.6" />
-      <path d="M21.5 18.6h1.7a5.3 5.3 0 0 1 5.3 5.3V27" />
+      <circle cx="22" cy="11.5" r="3.6" stroke={accent} />
+      <path d="M21.5 18.6h1.7a5.3 5.3 0 0 1 5.3 5.3V27" stroke={accent} />
     </svg>
   );
 }
@@ -39,7 +41,7 @@ function EsgShield(props: IconProps) {
   return (
     <svg viewBox="0 0 32 32" strokeWidth={1.4} {...line} {...props}>
       <path d="M16 4 6 7.5V15c0 6.6 4.2 11 10 13 5.8-2 10-6.4 10-13V7.5L16 4Z" />
-      <path d="M16 10.5v9" />
+      <path d="M16 10.5v9" stroke={accent} />
     </svg>
   );
 }
@@ -52,9 +54,9 @@ export const esgIcons: Record<EsgPillarKey, (props: IconProps) => JSX.Element> =
 
 /** Accent colour per pillar (sampled from the XD icons). */
 export const esgIconColor: Record<EsgPillarKey, string> = {
-  environmental: "text-esg-environment",
-  social: "text-esg-social",
-  governance: "text-orange",
+  environmental: "text-navy",
+  social: "text-navy",
+  governance: "text-navy",
 };
 
 /*
@@ -62,7 +64,6 @@ export const esgIconColor: Record<EsgPillarKey, string> = {
  * The `accent` stroke uses the secondary brand blue.
  */
 
-const accent = "var(--color-navy-50)";
 
 function Employees(props: IconProps) {
   return (
