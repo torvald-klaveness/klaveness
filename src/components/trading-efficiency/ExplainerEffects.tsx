@@ -6,7 +6,6 @@ type Chapter = { key: string; label: string; target: string };
 
 /**
  * Scroll behaviour for the explainer:
- * - fades each `.te-reveal` block in as it enters the viewport;
  * - steps through each pinned `[data-scrolly]` block (sets `data-step`);
  * - drives the chapter timeline fixed along the bottom of the screen.
  */
@@ -19,15 +18,6 @@ export function ExplainerEffects({ chapters }: { chapters: Chapter[] }) {
   useEffect(() => {
     const root = document.getElementById("te-story");
     if (!root) return;
-
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) e.target.classList.add("is-visible");
-        }),
-      { threshold: 0.16 },
-    );
-    root.querySelectorAll(".te-reveal").forEach((el) => io.observe(el));
 
     const scrollies = Array.from(root.querySelectorAll<HTMLElement>("[data-scrolly]"));
     const sections = Array.from(root.querySelectorAll<HTMLElement>("[data-chapter]"));
@@ -66,7 +56,6 @@ export function ExplainerEffects({ chapters }: { chapters: Chapter[] }) {
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     return () => {
-      io.disconnect();
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
