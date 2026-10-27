@@ -9,12 +9,14 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RichText } from "@/components/ui/RichText";
 import { aboutPage } from "@/content/about";
 import { careersPages, workingWithUs as page } from "@/content/careers";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: careersPages.workingWithUs.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: careersPages.workingWithUs.href,

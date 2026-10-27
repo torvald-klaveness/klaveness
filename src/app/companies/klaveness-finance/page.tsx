@@ -6,12 +6,14 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/blocks";
 import { financePage as page } from "@/content/companies";
 import { bioHref, people } from "@/content/leadership";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/companies/klaveness-finance" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/companies/klaveness-finance",

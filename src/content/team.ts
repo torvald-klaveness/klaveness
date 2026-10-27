@@ -46,12 +46,6 @@ export const teamSections: TeamSection[] = [
                 email: null,
               },
               {
-                name: "Gøran Andreassen",
-                office: "Oslo",
-                role: "Chief Strategic Investment Officer",
-                email: null,
-              },
-              {
                 name: "Fabian Flaaten",
                 office: "Oslo",
                 role: "Chief Financial Officer",
@@ -96,12 +90,6 @@ export const teamSections: TeamSection[] = [
                 name: "Ernst Meyer",
                 office: "Oslo",
                 role: "Chief Executive Officer",
-                email: null,
-              },
-              {
-                name: "Gøran Andreassen",
-                office: "Oslo",
-                role: "Chief Strategic Investment Officer",
                 email: null,
               },
               {

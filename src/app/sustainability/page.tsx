@@ -8,12 +8,18 @@ import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { sustainabilityPage as page } from "@/content/sustainability";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/sustainability" },
-  openGraph: { title: page.meta.title, description: page.meta.description, url: "/sustainability" },
+  openGraph: {
+    ...sharedOpenGraph,
+    title: page.meta.title,
+    description: page.meta.description,
+    url: "/sustainability",
+  },
 };
 
 export default function SustainabilityPage() {

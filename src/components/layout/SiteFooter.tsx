@@ -31,7 +31,8 @@ export function SiteFooter() {
               <Logo variant="stacked" className="h-10 w-auto" />
             </Link>
             <p className="heading-display mt-12 max-w-md text-[clamp(1.75rem,1.2rem+1.6vw,2.5rem)] text-white">
-              {site.tagline}.
+              <strong className="font-bold">Improving</strong> the nature of{" "}
+              <strong className="font-bold">shipping</strong>.
             </p>
           </div>
           <address className="text-[0.9375rem] leading-relaxed text-white/60 not-italic md:col-span-4 md:col-start-9">
@@ -55,7 +56,10 @@ export function SiteFooter() {
           </address>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 pt-16 sm:grid-cols-3 lg:auto-cols-[minmax(0,1fr)] lg:grid-flow-col lg:grid-cols-none lg:gap-x-[clamp(2rem,4vw,6rem)]">
+        <nav
+          aria-label="Footer"
+          className="grid grid-cols-2 gap-x-8 gap-y-12 pt-16 sm:grid-cols-3 lg:auto-cols-[minmax(0,1fr)] lg:grid-flow-col lg:grid-cols-none lg:gap-x-[clamp(2rem,4vw,6rem)]"
+        >
           <FooterColumn title="Explore">
             {/* Dropdown-only sections (Companies) have no page; their column lists the links. */}
             {mainNav
@@ -89,7 +93,7 @@ export function SiteFooter() {
               <FooterLink href="/contact/team">Team directory</FooterLink>
             </li>
           </FooterColumn>
-        </div>
+        </nav>
 
         <div className="mt-20 flex flex-col gap-6 border-t border-white/10 pt-8 text-[0.8125rem] text-white/50 md:mt-28 md:flex-row md:items-center md:justify-between">
           <p>
@@ -121,11 +125,17 @@ export function SiteFooter() {
   );
 }
 
+/** Column labels are not headings, so the footer adds no h2s to every page's outline. */
 function FooterColumn({ title, children }: { title: string; children: ReactNode }) {
+  const id = `footer-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
   return (
     <div>
-      <h2 className="text-eyebrow font-semibold text-white/85 uppercase">{title}</h2>
-      <ul className="mt-5 space-y-3">{children}</ul>
+      <p id={id} className="text-eyebrow font-semibold text-white/85 uppercase">
+        {title}
+      </p>
+      <ul aria-labelledby={id} className="mt-5 space-y-3">
+        {children}
+      </ul>
     </div>
   );
 }

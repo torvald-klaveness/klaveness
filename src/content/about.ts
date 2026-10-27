@@ -4,7 +4,7 @@ import annualReportCover from "@/assets/images/about/annual-report-cover.webp";
 import complianceHeroImage from "@/assets/images/about/compliance-hero.webp";
 import financialsHeroImage from "@/assets/images/about/financials-hero.webp";
 import governanceHeroImage from "@/assets/images/about/governance-hero.webp";
-import heroImage from "@/assets/images/about/hero-mv-baltazar.webp";
+import heroImage from "@/assets/images/about/hero-hull-wake.webp";
 import t1946 from "@/assets/images/about/timeline/1946.webp";
 import t1958 from "@/assets/images/about/timeline/1958.webp";
 import t1960s from "@/assets/images/about/timeline/1960s.webp";

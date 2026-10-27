@@ -8,12 +8,14 @@ import { CountUp } from "@/components/ui/CountUp";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LinkedText } from "@/components/ui/LinkedText";
 import { careersPages, lifeAtKlaveness as page } from "@/content/careers";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: careersPages.life.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: careersPages.life.href,

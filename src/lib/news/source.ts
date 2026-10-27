@@ -121,10 +121,9 @@ async function openGitHub(source: GitHubSource): Promise<NewsSnapshot> {
         .then((response) => (response.ok ? response.arrayBuffer() : null))
         .then((buffer) => (buffer ? new Uint8Array(buffer) : null))
         .catch(() => null),
-    // Branch address, not the commit: the URL stays the same between pushes,
-    // so optimised images stay cached.
-    imageUrl: (repoPath) =>
-      `https://raw.githubusercontent.com/${repo}/${encodeURIComponent(source.branch)}/${encodePath(repoPath)}`,
+    // Served from our own domain by src/app/news-media/[...path]/route.ts. The
+    // address stays the same between pushes, so optimised images stay cached.
+    imageUrl: (repoPath) => `/news-media/${encodePath(repoPath)}`,
   };
 }
 

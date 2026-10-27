@@ -41,7 +41,7 @@ export function Intro() {
                   index > 0 ? "border-t border-line md:border-t-0 md:border-l" : ""
                 }`}
               >
-                <Icon className="size-[clamp(2.25rem,2.6vw,3rem)] text-copy" strokeWidth={1.1} />
+                <Icon className="size-[clamp(2.25rem,2.6vw,3rem)] text-navy" strokeWidth={1.1} />
                 <h3 className="mt-5 text-[clamp(1.125rem,1.35vw,1.625rem)] font-medium text-copy">
                   {entry.title}
                 </h3>

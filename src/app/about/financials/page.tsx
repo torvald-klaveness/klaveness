@@ -9,12 +9,14 @@ import { DocumentCard } from "@/components/ui/DocumentCard";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { financialsPage as page } from "@/content/about";
 import { annualReports } from "@/content/documents";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/about/financials" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/about/financials",

@@ -9,7 +9,6 @@ import trondHaraldKlaveness from "@/assets/images/about/people/trond-harald-klav
 import engebretDahm from "@/assets/images/about/people/engebret-dahm.webp";
 import ernstMeyer from "@/assets/images/about/people/ernst-meyer.webp";
 import fabianFlaaten from "@/assets/images/about/people/fabian-flaaten.webp";
-import goranAndreassen from "@/assets/images/about/people/goran-andreassen.webp";
 import henrikSembRonningen from "@/assets/images/about/people/henrik-semb-ronningen.webp";
 import ingridKylstad from "@/assets/images/about/people/ingrid-kylstad.webp";
 import michaelJorgensen from "@/assets/images/about/people/michael-jorgensen.webp";
@@ -64,17 +63,6 @@ export const people = {
     bio: [
       "Fabian Flaaten has been with Torvald Klaveness as Chief Financial Officer (CFO) since October 2025. Prior to that, he served as CFO of House of Control for over 10 years, where he played a key role in scaling the company from a venture-backed growth phase through IPO and later acquisition. Earlier experience included 10 years with Aker Solutions in Norway and the U.S., taking on roles in commercial management, cost control, and business development on large subsea projects.",
       "He holds a Master of Arts in Economics & Management from The University of St. Andrews and studies at BI Norwegian Business School.",
-    ],
-  },
-  "goran-andreassen": {
-    group: "leadership",
-    slug: "goran-andreassen",
-    name: "Gøran Andreassen",
-    role: "Chief Strategic Investment Officer",
-    image: goranAndreassen,
-    bio: [
-      "Gøran Andreassen has more than 20 years of experience across private equity, investment banking and industry positions. He joined Torvald Klaveness from the role as Senior Partner in OMP Capital and prior to that Partner in HitecVision, where he served on the board of multiple portfolio companies during his seven years with the firm. Previous positions include Partner with Clarksons Platou and various managerial and engineering roles in DNV and Aker Solutions.",
-      "Andreassen holds a MSc in Mechanical Engineering from NTNU.",
     ],
   },
   "engebret-dahm": {
@@ -221,7 +209,6 @@ export const leadershipPage = {
         "ernst-meyer",
         "trine-hellum",
         "fabian-flaaten",
-        "goran-andreassen",
         "engebret-dahm",
         "ingrid-kylstad",
         "michael-jorgensen",
@@ -233,7 +220,6 @@ export const leadershipPage = {
       layout: "compact",
       members: [
         "ernst-meyer",
-        "goran-andreassen",
         "henrik-semb-ronningen",
         "fabian-flaaten",
         "nadia-naess",

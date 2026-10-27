@@ -6,6 +6,7 @@ import { sectionY } from "@/components/sustainability/blocks";
 import { LinkedText } from "@/components/ui/LinkedText";
 import { governancePage as page } from "@/content/about";
 import { bioHref, people, type PersonSlug } from "@/content/leadership";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 // People named in the principles link to their bio (board and leadership pages).
 const personLinks = Object.fromEntries(
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   description: page.meta.description,
   alternates: { canonical: "/about/governance" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/about/governance",

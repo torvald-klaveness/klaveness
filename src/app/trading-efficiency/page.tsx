@@ -6,12 +6,14 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 import { CountUp } from "@/components/ui/CountUp";
 import { RichText } from "@/components/ui/RichText";
 import { tradingEfficiencyPage as page } from "@/content/trading-efficiency";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: page.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: page.href,
