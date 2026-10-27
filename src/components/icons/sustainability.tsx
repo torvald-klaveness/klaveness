@@ -86,15 +86,6 @@ function Customers(props: IconProps) {
   );
 }
 
-function Investors(props: IconProps) {
-  return (
-    <svg viewBox="0 0 64 64" strokeWidth={2} {...line} {...props}>
-      <path d="M10 54V40h8v14M28 54V30h8v24M46 54V22h8v32" />
-      <path d="m10 28 14-10 10 6 18-14m0 0h-7m7 0v7" stroke={accent} />
-    </svg>
-  );
-}
-
 function Financing(props: IconProps) {
   return (
     <svg viewBox="0 0 64 64" strokeWidth={2} {...line} {...props}>
@@ -143,7 +134,6 @@ function Communities(props: IconProps) {
 export const stakeholderIcons: Record<StakeholderIcon, (props: IconProps) => JSX.Element> = {
   employees: Employees,
   customers: Customers,
-  investors: Investors,
   financing: Financing,
   regulators: Regulators,
   suppliers: Suppliers,

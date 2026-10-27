@@ -46,13 +46,13 @@ export const sustainabilityPage = {
     eyebrow: "What it means",
     paragraphs: [
       "For us, improving the nature of shipping means more than reducing emissions. It means conducting business responsibly, protecting the wellbeing of people, and strengthening the long-term resilience of the maritime industry.",
-      "We pursue this through innovative business models, collaboration, and operational excellence, working closely with our customers and partners. Our approach guides how we manage risk, engage with stakeholders, develop our people, and contribute to the industry’s transition towards a safer, lower-emission future.",
+      "We pursue this through innovative business models, new collaborations, and operational excellence working closely with our customers and partners. Our approach guides how we manage risk, engage with stakeholders, develop our people, and contribute to the industry's transition towards a safer, lower-emission future.",
     ],
     image: baltazarImage,
     imageAlt: "The combination carrier MV Baltazar at sea, fitted with two rotor sails",
   },
   tradingEfficiency: {
-    eyebrow: "Trading efficiency",
+    eyebrow: "Trading Efficiency",
     image: tradingEfficiencyImage,
     imageAlt:
       "Aerial view of a red bulk carrier at sea with a digital data overlay tracing its route",
@@ -63,10 +63,10 @@ export const sustainabilityPage = {
     link: { label: "More about Trading Efficiency", href: "/trading-efficiency" },
   },
   esg: {
-    eyebrow: "Our ESG priorities",
+    eyebrow: "Our sustainability priorities",
     paragraphs: [
-      "Sustainability is embedded in how we operate, the decisions we make, and the solutions we develop for customers.",
-      "Our ESG priorities reflect the areas where we believe we can make the most meaningful contribution while creating long-term value for our stakeholders. Together, they guide our efforts to reduce environmental impact, develop and protect our people, conduct business responsibly, and support a more resilient maritime industry.",
+      "As an owner and investor, Torvald Klaveness has a responsibility to create long-term value while considering the environmental and social impact of our activities and investments.",
+      "We set expectations for responsible business conduct across the Group, integrate sustainability-related risks and opportunities into strategy, ownership and capital-allocation decisions, and support our portfolio companies in addressing the issues most relevant to their operations. Operational targets and initiatives are developed and reported by the individual companies responsible for delivering them, while Torvald Klaveness provides strategic direction, oversight and support where relevant.",
     ],
     image: shipMountainsImage,
     imageAlt: "A bulk carrier sailing towards mountains at sunset, seen from behind",
@@ -90,8 +90,6 @@ export const sustainabilityPage = {
   },
 } as const;
 
-type TargetsCard = { targets: string[]; performance: string[] };
-
 export const esgPage = {
   meta: {
     title: "ESG priority",
@@ -113,98 +111,62 @@ export const esgPage = {
   },
   environmental: {
     label: "Environmental",
-    heading: "Low-carbon future",
+    heading: "Supporting the transition to more sustainable shipping",
     paragraphs: [
-      "At Klaveness, we work to improve environmental performance through operational efficiency, technological development, responsible resource use, and collaboration across the maritime value chain. We believe meaningful progress will come from practical solutions that reduce emissions while creating value for customers and society.",
+      "Torvald Klaveness supports the transition towards a lower-emission and more resource-efficient maritime industry through its ownership, investments and strategic priorities. We encourage our portfolio companies to identify and manage their most material environmental impacts, develop credible transition plans and explore commercial solutions that can improve both environmental and economic performance.",
+      "Our role is to support progress across the portfolio while recognizing that environmental priorities, targets and actions must reflect the activities and responsibilities of each individual business.",
     ],
+    focusTitle: "We do this through:",
     focus: [
-      "Emission reductions through more efficient vessel operations and trading patterns.",
-      "Development and adoption of lower-emission technologies and fuels.",
-      "Reducing environmental impact from our offices and shore-based activities.",
-      "Responsible waste management, resource efficiency, and ship recycling.",
-      "Supporting customers through data, insights, and services that improve environmental performance.",
+      "Integrating environmental risks and opportunities into strategy and investment decisions.",
+      "Supporting portfolio companies in developing relevant targets and transition plans.",
+      "Encouraging innovation, collaboration and more efficient use of assets and resources.",
+      "Monitoring environmental performance through active ownership and governance.",
+      "Reducing the impact of activities directly controlled by Torvald Klaveness.",
     ],
     image: esgEnvironmentalImage,
     imageAlt: "Close-up of ocean waves at sunset",
-    card: {
-      targets: [
-        "Zero environmental spills.",
-        "Reduce the carbon intensity (EEOI) of the KCC fleet by 33-42% by 2030 compared with the 2018 baseline.",
-        "Net-zero from fleet operations by 2050.",
-        "Improve environmental performance through trading efficiency, operational excellence, innovation, and collaboration across the maritime value chain.",
-      ],
-      performance: [
-        "Zero environmental spills recorded during the year.",
-        "Fleet carbon intensity (EEOI) improved by 7.4% compared with 2024.",
-        "KCC’s fleet continues to achieve approximately 35% lower carbon intensity than conventional tanker and dry bulk vessels operating in comparable trades.",
-        "Continued development of digital solutions and decision-support tools that help customers improve efficiency, planning, and environmental performance across maritime supply chains.",
-      ],
-    } satisfies TargetsCard,
-    note: {
-      text: "More on our carbon reduction targets can be viewed directly with Klaveness Combination Carriers",
-      linkLabel: "here",
-      href: "https://www.combinationcarriers.com/sustainability/esg-priorities",
-    },
   },
   social: {
     label: "Social",
-    klass: {
-      heading: "Always safe and secure",
+    working: {
+      heading: "Creating a safe, inclusive and responsible working environment",
       paragraphs: [
-        [
-          { text: "Klaveness Always Safe and Secure (KLASS)", strong: true },
-          {
-            text: " reflects our commitment to protecting people, operating responsibly, and maintaining high standards across the Klaveness Group. Safety is fundamental to how we work, both at sea and onshore.",
-          },
-        ],
-        "Our ambition is simple: everyone should return home safely. We believe injuries and operational incidents are preventable, and we continuously strengthen our performance through learning, accountability, and a culture where people look out for one another and speak up when it matters.",
-        "Originally developed within Klaveness Ship Management and Klaveness Combination Carriers, KLASS has evolved into a shared framework for safety, leadership, and continuous improvement across the Group.",
-      ] satisfies (string | RichLine)[],
+        "Torvald Klaveness seeks to provide a safe, inclusive and respectful working environment and to promote responsible employment practices across the Group.",
+        "We set expectations for health and safety, equal opportunities, professional development and respect for human and labor rights, while recognizing that individual portfolio companies must manage the specific people-related risks associated with their operations.",
+        "Through active ownership, dialogue and shared learning, we support our businesses in strengthening their organizational capabilities, workplace cultures and approach to people-related risks.",
+      ],
     },
-    people: {
-      heading: "Commitment to our people and communities",
+    beyond: {
+      heading: "Contributing beyond our business",
       paragraphs: [
-        "We are committed to providing a safe, inclusive, and respectful workplace for everyone who contributes to our business, whether onshore, at sea, or through our wider network of suppliers and partners.",
-        "Employment decisions are based on qualifications, merit, and performance, and we actively promote diversity, inclusion, and equal opportunities across the organization. This includes our commitment to increasing the share of women in leadership positions through WISTA Norway’s 40 by 30 initiative, alongside clear expectations for human rights, labor rights, and responsible business conduct throughout our value chain.",
-        "We also recognize our responsibility beyond our own operations. Through humanitarian and community initiatives, we support people affected by conflict, displacement, and hardship, including through organizations such as Fritt Ukraina and HMM Helsehjelp.",
+        "We recognize a responsibility beyond our own activities and seek to contribute positively to the communities and societies connected to our business.",
+        "Our contribution includes promoting equal opportunities and responsible business conduct, supporting learning and competence development, and maintaining clear expectations for human and labor rights across our value chain.",
+        "We also support selected humanitarian and community initiatives, including organizations assisting people affected by conflict, displacement and hardship.",
       ],
     },
     focus: [
-      "Health, safety, and the wellbeing of our seafarers and vessels.",
-      "Health, safety, and the wellbeing of our onshore employees.",
-      "Diversity, inclusion, and equal opportunities.",
-      "Learning, competence development, and human capital growth.",
+      "Health, safety and wellbeing across the Group.",
+      "Diversity, inclusion and equal opportunities.",
+      "Learning, competence development and organizational capability.",
+      "Respect for human and labor rights.",
+      "Responsible engagement with communities and society.",
     ],
     image: esgSocialImage,
     imageAlt: "Two Klaveness colleagues in conversation in the office",
-    card: {
-      targets: [
-        "Zero serious incidents across our operations.",
-        "<0.5 Lost Time Injury Frequency (LTIF) with KCC.",
-        ">90% crew retention rate with KCC.",
-        "Continue building a diverse and inclusive workplace onshore, ensuring both genders are represented in final interviews for new positions.",
-      ],
-      performance: [
-        "Zero serious incidents or high-risk potential accidents were recorded during the year.",
-        "0.6 LTIF reported by KCC following two minor injuries, and continues to focus on safety learning and prevention.",
-        "100% crew retention rate in 2025.",
-        "Women represented 48% of the Group workforce in 2025, with 36% of management positions held by women.",
-      ],
-    } satisfies TargetsCard,
   },
   governance: {
     label: "Governance",
-    heading: "Trusted and responsible partner",
+    heading: "Responsible ownership and sound governance",
     paragraphs: [
-      "Trust is essential in our global industry that is built on long-term relationships and complex supply chains. We are committed to conducting business with integrity, transparency, and accountability while maintaining high standards of governance and responsible business conduct.",
-      "Through strong compliance policies, effective risk management, and a clear set of values, we aim to be a trusted partner for customers, employees, investors, suppliers, and the communities in which we operate. See our stakeholders for more information.",
+      "Responsible ownership is central to how Torvald Klaveness creates and protects long-term value. We set clear expectations for integrity, compliance, risk management and accountability, and work through the boards and management teams of our portfolio companies to support sound governance and responsible business conduct.",
+      "Our approach is grounded in clear decision-making structures, transparent reporting, and respect for internationally recognized principles relating to business ethics, human rights and responsible value chains. Through active ownership and ongoing dialogue, we seek to ensure that sustainability-related risks and opportunities receive appropriate attention across the portfolio.",
     ],
-    links: { "our stakeholders": "/sustainability/stakeholders" },
     focus: [
-      "Business ethics, compliance, and anti-corruption.",
-      "Corporate governance and accountability.",
-      "Responsible and transparent business practices.",
-      "Risk management and resilience.",
+      "Responsible ownership, corporate governance and accountability.",
+      "Business ethics, compliance and anti-corruption.",
+      "Integration of sustainability-related risks and opportunities into strategy and capital allocation.",
+      "Effective risk management, resilience and transparent reporting.",
       "Respect for human rights and responsible conduct across our value chain.",
     ],
     structureNote: {
@@ -214,27 +176,12 @@ export const esgPage = {
     },
     image: esgGovernanceImage,
     imageAlt: "Aerial view of deep teal ocean water",
-    card: {
-      targets: [
-        "Zero corruption cases.",
-        "Zero facilitation payments accepted or paid.",
-        "100% participation in cybersecurity awareness training with continuous improvement of cyber resilience across shore and vessel operations.",
-      ],
-      performance: [
-        "Zero corruption convictions or fines.",
-        "Three reported facilitation payment requests, down from seven in 2024.",
-        "DNV Cyber assessments confirmed generally strong cybersecurity maturity across assessed systems",
-        "Continued active participation in the Maritime Anti-Corruption Network (MACN).",
-      ],
-    } satisfies TargetsCard,
   },
-  performanceYear: 2025,
 } as const;
 
 export type StakeholderIcon =
   | "employees"
   | "customers"
-  | "investors"
   | "financing"
   | "regulators"
   | "suppliers"
@@ -244,95 +191,84 @@ export const stakeholdersPage = {
   meta: {
     title: "Our stakeholders",
     description:
-      "Klaveness prioritizes transparency and trust through open dialogue with its stakeholders.",
+      "Klaveness builds trust through clear expectations and open dialogue with its stakeholders.",
   },
   hero: {
     eyebrow: "Our stakeholders",
     statement: [
-      { text: "Prioritizing " },
-      { text: "transparency", strong: true },
-      { text: " and " },
+      { text: "Building " },
       { text: "trust", strong: true },
-      { text: " through open dialogue" },
+      { text: " through clear expectations and " },
+      { text: "open dialogue", strong: true },
     ] satisfies RichLine,
     image: shipMountainsImage,
   },
   intro: {
     eyebrow: "Working with our stakeholders",
     paragraphs: [
-      "Strong relationships are essential to how we operate and create long-term value. We seek to maintain an open and transparent dialogue with our stakeholders to better understand their expectations, identify opportunities for improvement, and ensure we continue to develop our business responsibly.",
-      "Our stakeholders provide valuable insight into the opportunities and challenges facing both our business and the maritime industry. Through regular engagement, we aim to understand their perspectives, respond to their concerns, and identify areas where collaboration can create shared value. These discussions help shape our strategy, ESG priorities, risk management, and long-term business development.",
+      "Constructive stakeholder relationships support responsible ownership and long-term value creation. Torvald Klaveness engages directly with the stakeholders connected to our role as owner, investor and employer, while our portfolio companies lead engagement with the customers, employees, suppliers, regulators and communities most closely connected to their operations. Across the Group, we expect engagement to be open, relevant and grounded in a clear understanding of responsibilities.",
     ],
   },
   groups: [
     {
       name: "Employees",
       icon: "employees",
-      who: "Employees of the Torvald Klaveness Group, directly or indirectly, across our offices and operations worldwide.",
-      concerns:
-        "Health and safety, wellbeing, professional and personal development, leadership, diversity and inclusion, fair employment practices, and long-term opportunities.",
+      who: "Employees of Torvald Klaveness and, more broadly, the people employed by our portfolio companies.",
+      priorities:
+        "Health, safety and wellbeing; fair and inclusive employment practices; strong leadership; professional development; and confidence in the long-term direction of the business.",
       engage:
-        "Through regular dialogue, development reviews, training programs, employee surveys, leadership engagement, and ongoing competence development initiatives.",
+        "Torvald Klaveness engages directly with its own employees through regular dialogue, development conversations, surveys, training and leadership communication. Portfolio companies are responsible for engagement with their employees, supported by Group expectations and opportunities for shared learning.",
     },
     {
       name: "Customers",
       icon: "customers",
-      who: "Industrial customers, cargo owners, charterers, traders, and users of our digital services.",
-      concerns:
-        "Service quality, reliability, safety, commercial performance, transparency, emissions, and operational efficiency.",
+      who: "The industrial companies, cargo owners, charterers, traders and other users served by our portfolio companies.",
+      priorities:
+        "Reliable and high-quality services, safety, commercial performance, transparency, operational efficiency and progress on relevant environmental impacts.",
       engage:
-        "Through daily operational collaboration, regular customer meetings, joint improvement initiatives, and long-term partnerships focused on creating value across maritime supply chains.",
-    },
-    {
-      name: "Investors",
-      icon: "investors",
-      who: "Shareholders and investment partners.",
-      concerns:
-        "Financial performance, dividends, long-term value creation, governance, risk management, strategy, and sustainability-related opportunities and risks.",
-      engage:
-        "Through annual and quarterly reporting, investor presentations, meetings with management, and ongoing communication regarding strategy and business performance.",
+        "Customer relationships are managed by the relevant portfolio companies through day-to-day collaboration, regular meetings, improvement initiatives and long-term commercial partnerships. Torvald Klaveness supports its businesses in strengthening their customer propositions and addressing material risks and opportunities.",
     },
     {
       name: "Financing partners",
       icon: "financing",
-      who: "Banks, bond investors, and other capital providers.",
-      concerns:
-        "Financial strength, liquidity, debt servicing capability, governance, compliance, environmental performance, and long-term business resilience.",
+      who: "Banks, bond investors and other providers of capital to Torvald Klaveness or its portfolio companies.",
+      priorities:
+        "Financial strength, liquidity, governance, compliance, risk management, relevant environmental performance and long-term business resilience.",
       engage:
-        "Through regular reporting, financing discussions, sustainability-related disclosures, and ongoing dialogue throughout the duration of financing arrangements.",
+        "Through financial and sustainability-related reporting, financing discussions and ongoing dialogue relevant to each arrangement. Engagement is led by the entity responsible for the financing, with Torvald Klaveness providing oversight where appropriate.",
     },
     {
       name: "Regulators and industry bodies",
       icon: "regulators",
-      who: "International, regional, and national regulatory authorities, industry associations, classification societies, and flag states.",
-      concerns:
-        "Compliance, safety, environmental performance, fair business practices, and responsible operations.",
+      who: "Authorities and industry organizations relevant to Torvald Klaveness’ ownership activities and to the operations of our portfolio companies, including national and international regulators, industry associations, classification societies and flag states.",
+      priorities:
+        "Compliance, safety, environmental performance, transparent reporting, fair business practices and responsible conduct.",
       engage:
-        "Through compliance activities, industry working groups, consultation processes, and participation in industry forums and associations.",
+        "Torvald Klaveness participates in dialogue relevant to its role as owner and investor. Operational regulatory engagement, compliance activities and participation in specialized industry forums are led by the relevant portfolio companies.",
     },
     {
       name: "Suppliers and business partners",
       icon: "suppliers",
-      who: "Suppliers, service providers, shipyards, agents, technology partners, and other counterparties.",
-      concerns:
-        "Long-term relationships, responsible business conduct, financial reliability, and clear commercial expectations.",
+      who: "Advisers, service providers, technology partners and other counterparties to Torvald Klaveness, together with the suppliers and operational partners engaged by our portfolio companies.",
+      priorities:
+        "Clear expectations, fair and reliable commercial relationships, responsible business conduct, timely decision-making and appropriate management of risk.",
       engage:
-        "Through regular collaboration, supplier assessments, contract management, and ongoing dialogue focused on quality, safety, compliance, and performance.",
+        "Through procurement and contracting processes, assessments, regular collaboration and dialogue on quality, integrity, compliance and performance. Each Group company is responsible for managing the relationships and risks within its own supply chain.",
     },
     {
       name: "Communities and society",
       icon: "communities",
-      who: "The communities in which we operate, educational institutions, industry partners, NGOs, and society at large.",
-      concerns:
-        "Environmental impact, responsible business conduct, maritime safety, employment opportunities, transparency, and the industry’s contribution to sustainable development.",
+      who: "The communities connected to our offices and investments, educational and research institutions, non-governmental organizations and wider society.",
+      priorities:
+        "Responsible business conduct, environmental and social impacts, transparency, employment and competence development, and the contribution of shipping to society.",
       engage:
-        "Through educational partnerships, industry initiatives, community engagement, sustainability reporting, and collaboration with organizations with like-minded interests.",
+        "Through selected educational, humanitarian and community initiatives; industry collaboration; public reporting; and dialogue about issues relevant to our role as a long-term owner. Portfolio companies engage separately with the communities most directly affected by their operations.",
     },
   ] satisfies {
     name: string;
     icon: StakeholderIcon;
     who: string;
-    concerns: string;
+    priorities: string;
     engage: string;
   }[],
 } as const;

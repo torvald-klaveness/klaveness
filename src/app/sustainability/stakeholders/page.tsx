@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const columns = [
   { key: "who", label: "Who they are:" },
-  { key: "concerns", label: "Their concerns:" },
+  { key: "priorities", label: "Their priorities:" },
   { key: "engage", label: "How we engage:" },
 ] as const;
 
