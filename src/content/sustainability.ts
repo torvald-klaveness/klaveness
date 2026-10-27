@@ -1,9 +1,10 @@
+import icebergImage from "@/assets/images/sustainability/iceberg.webp";
 import heroTemporary from "@/assets/images/home/hero-ocean.webp";
 import esgEnvironmentalImage from "@/assets/images/sustainability/esg-environmental.webp";
 import esgGovernanceImage from "@/assets/images/sustainability/esg-governance.webp";
 import esgSocialImage from "@/assets/images/sustainability/esg-social.webp";
 import ceoImage from "@/assets/images/sustainability/ernst-meyer-square.webp";
-import baltazarImage from "@/assets/images/sustainability/mv-baltazar.webp";
+import portholeImage from "@/assets/images/sustainability/porthole.webp";
 import shipMountainsImage from "@/assets/images/sustainability/ship-towards-mountains.webp";
 import tradingEfficiencyImage from "@/assets/images/sustainability/trading-efficiency.webp";
 import type { RichLine } from "@/content/types";
@@ -48,8 +49,8 @@ export const sustainabilityPage = {
       "For us, improving the nature of shipping means more than reducing emissions. It means conducting business responsibly, protecting the wellbeing of people, and strengthening the long-term resilience of the maritime industry.",
       "We pursue this through innovative business models, new collaborations, and operational excellence working closely with our customers and partners. Our approach guides how we manage risk, engage with stakeholders, develop our people, and contribute to the industry's transition towards a safer, lower-emission future.",
     ],
-    image: baltazarImage,
-    imageAlt: "The combination carrier MV Baltazar at sea, fitted with two rotor sails",
+    image: portholeImage,
+    imageAlt: "Waves breaking on the open sea, seen through a blue porthole",
   },
   tradingEfficiency: {
     eyebrow: "Trading Efficiency",
@@ -68,8 +69,8 @@ export const sustainabilityPage = {
       "As an owner and investor, Torvald Klaveness has a responsibility to create long-term value while considering the environmental and social impact of our activities and investments.",
       "We set expectations for responsible business conduct across the Group, integrate sustainability-related risks and opportunities into strategy, ownership and capital-allocation decisions, and support our portfolio companies in addressing the issues most relevant to their operations. Operational targets and initiatives are developed and reported by the individual companies responsible for delivering them, while Torvald Klaveness provides strategic direction, oversight and support where relevant.",
     ],
-    image: shipMountainsImage,
-    imageAlt: "A bulk carrier sailing towards mountains at sunset, seen from behind",
+    image: icebergImage,
+    imageAlt: "An iceberg floating in calm turquoise water beside a mountainside in Greenland",
     pillars: [
       {
         key: "environmental",
