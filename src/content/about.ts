@@ -60,9 +60,9 @@ export const aboutPage = {
   whoWeAre: {
     eyebrow: "Who we are",
     statement:
-      "Klaveness is a family-owned shipping group with nearly 80 years of heritage in the shipping industry. Through our portfolio companies, we work to improve trading efficiency across global seaborne supply chains by combining maritime expertise, innovative business models, and digital capabilities.",
+      "Torvald Klaveness is a family-owned shipping group with nearly 80 years of heritage in the shipping industry. Through our portfolio companies, we focus on exploring new ways to move cargo more efficiently across global seaborne supply chains by combining maritime expertise, innovative business models, and digital capabilities.",
     paragraphs: [
-      "Since 1946, we have explored new ways to move cargo more efficiently. While our companies operate in different parts of the value chain, they are united by a shared vision: improving the nature of shipping.",
+      "While our companies operate in different parts of the value chain, they are united by a shared vision: improving the nature of shipping.",
     ],
     image: visionImage,
     imageAlt: "A vessel on the horizon at dusk",
@@ -209,7 +209,7 @@ export const aboutPage = {
     statement:
       "At Klaveness, everything we do is guided by a single vision: Improving the Nature of Shipping.",
     paragraphs: [
-      "Shipping underpins global trade, yet many inefficiencies remain across the value chain. We believe better outcomes come from finding smarter ways for cargo owners, operators, and other stakeholders to work together. This belief is reflected in our focus on improving trading efficiency across global seaborne supply chains.",
+      "Shipping underpins global trade, yet many inefficiencies remain across the way we trade and transport cargo. We believe better outcomes come from finding smarter ways for cargo owners, ship owners, operators, and other stakeholders to work together. This belief is reflected in our focus on improving trading efficiency across global seaborne supply chains.",
       "This vision continues to guide our investments, our businesses, and the solutions we bring to market.",
     ],
     dimensionsTitle: "What it means to us:",
@@ -306,43 +306,6 @@ export const governancePage = {
       "Safety, Risk Management, Compliance, Cyber-security, Human Rights and ESG in general are integral parts of our business. We have dedicated people, functions, policies, governance, and management attention in place to execute safe and responsible business practices. Our compliance program is mandatory for all employees, officers, and directors.",
       "We operate under a Code of Conduct that is accepted in writing by each employee, officer, and director.",
     ],
-  },
-  /** Group structure diagram — every figure comes from the principles above. */
-  structure: {
-    eyebrow: "Group structure",
-    owner: {
-      name: "Rederiaksjeselskapet Torvald Klaveness",
-      detail: "Owner and Chair of the Board: Trond Harald Klaveness",
-    },
-    holding: {
-      name: "Klaveness Holding",
-      detail: "President & CEO: Ernst Meyer · Executive Committee",
-    },
-    companies: [
-      {
-        name: "Klaveness Digital",
-        share: "100%",
-        detail: "Fully owned",
-        href: "https://www.klavenessdigital.com",
-        external: true,
-      },
-      {
-        name: "Klaveness Dry Bulk",
-        share: "75%",
-        detail: "25% Marubeni Corporation · Own Board of Directors",
-        href: "/companies/klaveness-dry-bulk",
-        external: false,
-      },
-      {
-        name: "Klaveness Combination Carriers",
-        share: "≈44%",
-        detail: "Listed on the Oslo Stock Exchange · Own Board of Directors",
-        href: "https://www.combinationcarriers.com",
-        external: true,
-      },
-    ],
-    footnote:
-      "Headquarters in Oslo, Norway, with subsidiaries operating in Singapore, Japan, Manila, and Dubai.",
   },
 } as const;
 

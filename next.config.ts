@@ -17,15 +17,25 @@ const nextConfig: NextConfig = {
     return [
       { source: "/sustainability/our-approach", destination: "/sustainability", permanent: true },
       { source: "/about-us", destination: "/about/about-us", permanent: true },
+      // The Board of Directors now lives on the Governance page.
+      {
+        source: "/about/board-of-directors",
+        destination: "/about/governance#board-of-directors",
+        permanent: true,
+      },
       {
         source: "/careers/equal-opportunities",
         destination: "/careers/life-at-klaveness#equal-opportunities",
         permanent: true,
       },
-      // Klaveness Holding is now Klaveness Finance, under Companies.
-      ...["/businesses/klaveness-holding", "/about/klaveness-holding"].map((source) => ({
+      // Klaveness Holding is now Ownership and Investments, under About.
+      ...[
+        "/businesses/klaveness-holding",
+        "/about/klaveness-holding",
+        "/companies/klaveness-finance",
+      ].map((source) => ({
         source,
-        destination: "/companies/klaveness-finance",
+        destination: "/about/ownership-and-investments",
         permanent: true,
       })),
       {
@@ -63,7 +73,7 @@ const nextConfig: NextConfig = {
         ["mehrdad-amini", "mehrdad-amini"],
       ].map(([from, to]) => ({
         source: `/${from}`,
-        destination: `/about/board-of-directors#${to}`,
+        destination: `/about/governance#${to}`,
         permanent: true,
       })),
       {
@@ -92,7 +102,7 @@ const nextConfig: NextConfig = {
         ],
         ["/market-manager", "/companies/klaveness-dry-bulk"],
         ["/vep", "/companies/klaveness-dry-bulk"],
-        ["/tellef-thorleifsson", "/about/board-of-directors"],
+        ["/tellef-thorleifsson", "/about/governance"],
         ["/sustainability/our-partners", "/sustainability/stakeholders"],
         ["/emergency", "/contact/offices"],
         ["/recruitment-privacy-notice", "/privacy-policy#recruitment-privacy-notice"],

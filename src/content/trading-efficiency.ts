@@ -12,12 +12,12 @@ import type { RichLine } from "@/content/types";
 export const tradingEfficiencyPage = {
   href: "/trading-efficiency",
   meta: {
-    title: "Trading Efficiency",
+    title: "Strategy",
     description:
       "Improving the nature of shipping through trading efficiency: why it matters, the opportunity, where inefficiencies exist, and Klaveness' approach.",
   },
   hero: {
-    eyebrow: "Trading Efficiency",
+    eyebrow: "Strategy",
     statement: [
       { text: "Improving the nature of shipping through " },
       { text: "trading efficiency", strong: true },
@@ -113,6 +113,6 @@ export const tradingEfficiencyPage = {
     title: "Explore trading efficiency",
     body: "Trading efficiency represents one of the largest opportunities for value creation in shipping. Explore our latest research, insights, and industry perspectives on the challenges and opportunities ahead.",
     // Not linked yet: destinations to come from the client.
-    topics: ["Research & reports", "Customer stories", "Industry insights", "Thought leadership"],
+    topics: ["What is trading efficiency", "Research and reports", "Customer stories", "Through leadership"],
   },
 } as const;

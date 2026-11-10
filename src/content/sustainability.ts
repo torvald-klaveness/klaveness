@@ -61,7 +61,7 @@ export const sustainabilityPage = {
       "Trading Efficiency is a key pillar of our sustainability approach. More efficient trading patterns, better asset utilization, improved planning, and stronger coordination between stakeholders can reduce emissions, lower resource consumption, improve safety, and create greater value across the supply chain.",
       "Through our vessels, freight solutions, and digital services, we help customers navigate an increasingly complex operating environment while contributing to a more sustainable shipping industry.",
     ],
-    link: { label: "More about Trading Efficiency", href: "/trading-efficiency" },
+    link: { label: "More about our strategy", href: "/trading-efficiency" },
   },
   esg: {
     eyebrow: "Our sustainability priorities",

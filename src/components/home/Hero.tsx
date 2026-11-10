@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { HeroVideo } from "@/components/home/HeroVideo";
 import { ArrowRight } from "@/components/icons";
@@ -50,10 +51,9 @@ export function Hero() {
           className="motion-safe-only max-w-[clamp(26rem,30vw,36rem)] animate-rise md:pb-2"
           style={{ animationDelay: "180ms" }}
         >
-          <p className="text-[clamp(1.25rem,1.46vw,1.75rem)] leading-[1.45] font-light text-white/90">{hero.lead}</p>
-          <a
+          <Link
             href={hero.cta.href}
-            className="group mt-8 inline-flex items-center gap-4 text-label font-semibold"
+            className="group inline-flex items-center gap-4 text-label font-semibold"
           >
             <span className="relative inline-flex size-11 items-center justify-center rounded-full bg-white text-navy transition-transform duration-500 ease-out-expo group-hover:scale-110">
               <span
@@ -63,7 +63,7 @@ export function Hero() {
               <ArrowRight className="size-4 transition-transform duration-500 ease-out-expo group-hover:translate-x-0.5" />
             </span>
             {hero.cta.label}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

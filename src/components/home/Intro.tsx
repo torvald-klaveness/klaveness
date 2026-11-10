@@ -21,9 +21,15 @@ export function Intro() {
             <h2 id="who-we-are-title" className="heading-display mt-8 text-section text-copy">
               {intro.title}
             </h2>
+            <div className="mt-8 max-w-[44rem]">
+              {intro.story.map((paragraph) => (
+                <p key={paragraph} className="prose-soft text-body not-first:mt-5">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
           <div className="reveal reveal-delay-1 md:col-span-4 md:col-start-9 md:pt-16">
-            <p className="prose-soft text-body">{intro.body}</p>
             <ArrowLink href={intro.link.href} className="mt-6">
               {intro.link.label}
             </ArrowLink>

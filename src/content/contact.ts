@@ -147,7 +147,7 @@ export const teamPage = {
   meta: {
     title: "Team",
     description:
-      "Find your department from our team across the world: Klaveness Finance, Klaveness Combination Carriers, Klaveness Digital, Klaveness Dry Bulk and Klaveness Shore Services.",
+      "Find your department from our team across the world: Klaveness Finance, Klaveness Dry Bulk and Klaveness Shore Services.",
   },
   hero: {
     eyebrow: "Team",

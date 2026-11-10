@@ -11,12 +11,12 @@ import { sharedOpenGraph } from "@/lib/metadata";
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
-  alternates: { canonical: "/companies/klaveness-finance" },
+  alternates: { canonical: "/about/ownership-and-investments" },
   openGraph: {
     ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
-    url: "/companies/klaveness-finance",
+    url: "/about/ownership-and-investments",
   },
 };
 
@@ -35,7 +35,7 @@ export default function KlavenessFinancePage() {
 
       <section
         id="finance"
-        aria-label="Klaveness Finance"
+        aria-label="Ownership and Investments"
         className={`scroll-mt-16 ${sectionY} pt-[clamp(5rem,9vw,11rem)]`}
       >
         <div className={`container-site items-center ${split.textImage}`}>
@@ -98,12 +98,12 @@ export default function KlavenessFinancePage() {
                 const person = people[slug];
                 return (
                   <li key={slug} className="flex gap-[clamp(1rem,1.6vw,1.75rem)]">
-                    <div className="relative aspect-[4/5] w-[clamp(5.5rem,7.5vw,8.5rem)] shrink-0 overflow-hidden rounded-[clamp(0.75rem,1vw,1.25rem)] bg-mist">
+                    <div className="relative aspect-[4/5] w-[clamp(9rem,15vw,17rem)] shrink-0 overflow-hidden rounded-[clamp(0.75rem,1vw,1.25rem)] bg-mist">
                       <Image
                         src={person.image}
                         alt={`Portrait of ${person.name}`}
                         fill
-                        sizes="136px"
+                        sizes="(min-width: 768px) 15vw, 144px"
                         className="object-cover object-[50%_20%]"
                       />
                     </div>

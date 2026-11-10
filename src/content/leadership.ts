@@ -218,32 +218,13 @@ export const leadershipPage = {
       id: "holding-management-team",
       title: "Holding Management Team",
       layout: "compact",
-      members: [
-        "ernst-meyer",
-        "henrik-semb-ronningen",
-        "fabian-flaaten",
-        "nadia-naess",
-      ],
+      members: ["ernst-meyer", "henrik-semb-ronningen", "fabian-flaaten", "nadia-naess"],
     },
   ] satisfies Team[],
 } as const;
 
-/* Content from klaveness.com/about/board-of-directors. */
+/* Board of Directors, shown on the Governance page (the old Board page redirects there). */
 export const boardPage = {
-  meta: {
-    title: "Board of directors",
-    description:
-      "Klaveness’ Board of Directors comprises a diverse background of experiences and perspectives.",
-  },
-  hero: {
-    eyebrow: "Board of directors",
-    statement: [
-      { text: "Klaveness’ Board of Directors comprises a diverse background of " },
-      { text: "experiences and perspectives", strong: true },
-    ] satisfies RichLine,
-    // Same photograph as on the current site's Board page.
-    image: heroImage,
-  },
   teams: [
     {
       id: "board-of-directors",
@@ -270,7 +251,7 @@ export type Team = {
 
 export const bioPages = {
   leadership: "/about/executive-committee",
-  board: "/about/board-of-directors",
+  board: "/about/governance",
 } as const;
 
 /** Link that opens a person's bio panel on the page it lives on. */

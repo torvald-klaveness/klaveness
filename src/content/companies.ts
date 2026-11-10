@@ -181,12 +181,12 @@ export const baumarinePage = {
  */
 export const financePage = {
   meta: {
-    title: "Klaveness Finance",
+    title: "Ownership and Investments",
     description:
       "Klaveness Finance provides strategic direction, capital allocation, and active ownership across the Klaveness portfolio, and invests across the maritime and energy sectors.",
   },
   hero: {
-    eyebrow: "Klaveness Finance",
+    eyebrow: "Ownership and Investments",
     statement: [
       { text: "Building " },
       { text: "long-term value", strong: true },

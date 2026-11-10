@@ -3,7 +3,6 @@ import historyImage from "@/assets/images/home/history.webp";
 import kccImage from "@/assets/images/home/klaveness-combination-carriers.webp";
 import kdImage from "@/assets/images/home/klaveness-digital.webp";
 import kdbImage from "@/assets/images/home/klaveness-dry-bulk.webp";
-import financeImage from "@/assets/images/companies/klaveness-finance/team.webp";
 
 export const home = {
   hero: {
@@ -22,30 +21,30 @@ export const home = {
       { text: "the nature of", strong: false },
       { text: "Shipping", strong: true },
     ],
-    // Client's corrected text (email, October 2026).
-    lead: "Klaveness is a pioneering shipping group delivering a portfolio of physical and digital solutions to the maritime industry. We focus on increasing trading efficiency to support more resilient, decarbonized and cost-effective seaborne supply chains.",
-    cta: { label: "Explore Klaveness", href: "#who-we-are" },
+    cta: { label: "Who we are", href: "/about/about-us" },
   },
 
   // Client's revised homepage text (October 2026).
   intro: {
     eyebrow: "Who we are",
-    title: "For 80 years, Klaveness has challenged the status quo in shipping.",
-    body: "Founded in 1946, we’ve built a portfolio of businesses centered on finding better ways to move cargo and improve how shipping works.",
+    title: "For 80 years, Torvald Klaveness has challenged the status quo.",
+    // Under the heading, left column.
+    story: [
+      "Shipping has been our business since 1946, and we’ve never stopped asking how it could be better. Today, we believe global trade can be far less wasteful.",
+      "We are a family-owned shipping group that develops and invests in companies working to cut waste in how cargo is traded and transported. Better for our customers, and better for the world they ship in.",
+    ],
     link: { label: "About us", href: "/about/about-us" },
   },
 
   // Entry points (client: "News, Trading Efficiency, Sustainability").
   entryPoints: [
     { icon: "news", title: "News", href: "/news" },
-    { icon: "chart", title: "Trading Efficiency", href: "/trading-efficiency" },
+    { icon: "chart", title: "Strategy", href: "/trading-efficiency" },
     { icon: "leaf", title: "Sustainability", href: "/sustainability" },
   ],
 
   businesses: {
     eyebrow: "Our portfolio companies",
-    title:
-      "Our portfolio companies combine maritime expertise, innovative business models, and digital capabilities to address some of shipping’s most complex challenges.",
     items: [
       {
         name: "Klaveness Combination Carriers",
@@ -72,14 +71,6 @@ export const home = {
         image: kdbImage,
         imageAlt:
           "Aerial view of bulk carriers moored at a terminal, with the Klaveness Dry Bulk logo",
-      },
-      {
-        name: "Klaveness Finance",
-        body: "Klaveness Finance provides strategic direction, capital allocation, and active ownership across the Klaveness portfolio.",
-        href: "/companies/klaveness-finance",
-        external: false,
-        image: financeImage,
-        imageAlt: "Two Klaveness colleagues talking in the office, with the Klaveness symbol",
       },
     ],
   },

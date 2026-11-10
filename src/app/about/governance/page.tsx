@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-import { GroupStructure } from "@/components/about/GroupStructure";
+import { PeopleDirectory } from "@/components/about/PeopleDirectory";
 import { PageHero } from "@/components/layout/PageHero";
 import { sectionY } from "@/components/sustainability/blocks";
 import { LinkedText } from "@/components/ui/LinkedText";
 import { governancePage as page } from "@/content/about";
-import { bioHref, people, type PersonSlug } from "@/content/leadership";
+import { bioHref, boardPage, people, type PersonSlug } from "@/content/leadership";
 import { sharedOpenGraph } from "@/lib/metadata";
 
 // People named in the principles link to their bio (board and leadership pages).
@@ -69,9 +69,9 @@ export default function GovernancePage() {
         </div>
       </section>
 
-      <section aria-label="Group structure" className={`${sectionY} pb-[clamp(6rem,10vw,12rem)]`}>
-        <div className="reveal container-site">
-          <GroupStructure />
+      <section className={`${sectionY} pb-[clamp(6rem,10vw,12rem)]`}>
+        <div className="container-site">
+          <PeopleDirectory teams={boardPage.teams} />
         </div>
       </section>
     </>
