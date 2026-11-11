@@ -30,6 +30,7 @@ export const home = {
     title: "For 80 years, Torvald Klaveness has challenged the status quo.",
     // Under the heading, left column.
     story: [
+      "Shipping has been our business since 1946, and we’ve never stopped asking how it could be better. Today, we believe global trade can be far less wasteful.",
       "We are a pioneering shipping group that develops and invests in companies working to remove inefficiencies in the way cargo is traded and transported by sea.",
       "Better for our customers, and better for the world they ship in.",
     ],
