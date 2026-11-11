@@ -12,7 +12,7 @@ export function Businesses() {
           <Eyebrow>{businesses.eyebrow}</Eyebrow>
         </div>
 
-        <ul className="mt-10 grid gap-14 md:mt-12 md:grid-cols-2 md:gap-x-6 md:gap-y-14 lg:grid-cols-4 lg:gap-x-8">
+        <ul className="mt-10 grid gap-14 md:mt-12 md:grid-cols-2 md:gap-x-6 md:gap-y-14 lg:grid-cols-[repeat(3,minmax(0,21rem))] lg:justify-between lg:gap-x-8">
           {businesses.items.map((item, index) => (
             <li
               key={item.name}
@@ -26,7 +26,7 @@ export function Businesses() {
                 body={item.body}
                 cta={item.external ? "Visit website" : "Learn more"}
                 external={item.external}
-                sizes="(min-width: 1024px) 23vw, (min-width: 768px) 46vw, 100vw"
+                sizes="(min-width: 1024px) 336px, (min-width: 768px) 46vw, 100vw"
                 aligned
               />
             </li>
