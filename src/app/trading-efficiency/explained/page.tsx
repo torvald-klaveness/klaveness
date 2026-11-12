@@ -67,18 +67,15 @@ const rings = [
 
 /**
  * "Zoom out": the same three rings around our vessel icon in every card, each
- * card highlighting its own ring in orange. Rings inside it are drawn, rings
- * outside it are faded.
+ * card highlighting its own ring in orange; the other rings stay a quiet grey so
+ * the focus area stands out.
  */
 function LevelArt({ level }: { level: number }) {
   return (
     <div className="te-rings" aria-hidden>
       <svg viewBox="0 0 240 120" className="te-art">
         {rings.map((ring, i) => (
-          <g
-            key={ring.r}
-            className={i === level ? "te-art-on" : i > level ? "te-art-faint" : undefined}
-          >
+          <g key={ring.r} className={i === level ? "te-art-on" : "te-art-faint"}>
             <circle cx="120" cy="60" r={ring.r} />
             {i === level
               ? ring.dots.map(([cx, cy]) => (
@@ -97,7 +94,7 @@ const levels = [
   {
     title: "Vessel efficiency",
     text: "How efficiently one ship uses energy.",
-    focus: "Fuel used for the transport work done",
+    focus: "Fuel used for the transport work done per individual voyage",
   },
   {
     title: "Port and voyage efficiency",
@@ -131,7 +128,7 @@ const journey = [
 const leaks = [
   {
     n: "vessel-position",
-    title: "Ships rush to wait",
+    title: "Ships race to wait",
     cap: "cap-a",
     text: "Vessels speed up to arrive early, then wait at anchor for a berth or for cargo.",
   },
@@ -295,6 +292,20 @@ export default function TradingEfficiencyExplainedPage() {
                           strokeLinejoin="round"
                         />
                       </marker>
+                      {ring.map((p) => (
+                        <linearGradient
+                          key={p.n}
+                          id={`te-spoke-${p.n}`}
+                          gradientUnits="userSpaceOnUse"
+                          x1="50"
+                          y1="50"
+                          x2={p.x}
+                          y2={p.y}
+                        >
+                          <stop offset="0" stopColor="#ff5b29" stopOpacity="0.9" />
+                          <stop offset="1" stopColor="#ff5b29" stopOpacity="0" />
+                        </linearGradient>
+                      ))}
                     </defs>
                     <g className="arrows">
                       {ring.map((p) => (
@@ -309,9 +320,17 @@ export default function TradingEfficiencyExplainedPage() {
                       ))}
                     </g>
                     <g className="links">
-                      <polygon points={ring.map((p) => `${p.x},${p.y}`).join(" ")} />
+                      <circle cx="50" cy="50" r="28" className="te-orbit" />
+                      <circle cx="50" cy="50" r="11" className="te-halo" />
                       {ring.map((p) => (
-                        <line key={p.n} x1="50" y1="50" x2={p.x} y2={p.y} />
+                        <line
+                          key={p.n}
+                          x1="50"
+                          y1="50"
+                          x2={p.x}
+                          y2={p.y}
+                          stroke={`url(#te-spoke-${p.n})`}
+                        />
                       ))}
                     </g>
                   </svg>
