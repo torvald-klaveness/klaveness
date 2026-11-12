@@ -51,66 +51,45 @@ function Heading({
   );
 }
 
-/** Side view of a bulk carrier, 64 x 26 units; the hull is filled so lines behind it are hidden. */
-function Ship({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
-  return (
-    <g transform={`translate(${x} ${y}) scale(${s})`}>
-      <path d="M0 16H64L57 26H6Z" className="te-art-fill" />
-      <path d="M8 16V6H20V16M10 9.5H18M12 6V2H16V6" />
-      <path d="M26 16V12H34V16M38 16V12H46V16M50 16V12H57V16" />
-    </g>
-  );
-}
+/** Points on a ring around (120, 60), at the given angles in degrees (0 = right). */
+const onRing = (r: number, angles: number[]) =>
+  angles.map((deg) => [
+    120 + r * Math.cos((deg * Math.PI) / 180),
+    60 + r * Math.sin((deg * Math.PI) / 180),
+  ]);
 
-/** Wavy waterline from x over n crests of the given width. */
-const water = (x: number, y: number, n: number, w = 24) =>
-  `M${x} ${y}` + ` q${w / 2} -4 ${w} 0`.repeat(n);
+/** Rings from the ship outwards: the vessel, its voyage between two ports, the trade around it. */
+const rings = [
+  { r: 20, dots: [] as number[][] },
+  { r: 38, dots: onRing(38, [180, 0]) },
+  { r: 56, dots: onRing(56, [-90, 0, 50, 130, 180]) },
+];
 
 /**
- * Line illustrations for the three levels of efficiency, each a wider scope
- * than the last: one ship, one voyage between two ports, the network of trades.
+ * "Zoom out": the same three rings around our vessel icon in every card, each
+ * card highlighting its own ring in orange. Rings inside it are drawn, rings
+ * outside it are faded.
  */
 function LevelArt({ level }: { level: number }) {
   return (
-    <svg viewBox="0 0 240 140" className="te-art" aria-hidden>
-      {level === 0 ? (
-        <>
-          <Ship x={72} y={58} s={1.5} />
-          <path d={water(36, 106, 7)} />
-          <path d="M93 28c0 0-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z" className="te-art-accent" />
-        </>
-      ) : level === 1 ? (
-        <>
-          <path d="M14 100H58M30 100V50M22 54H62M56 54V66M53 66H59" />
-          <path d="M182 100H226M210 100V50M178 54H218M184 54V66M181 66H187" />
-          <path d="M62 96Q120 52 178 96" strokeDasharray="3 5" />
-          <Ship x={101} y={58} s={0.6} />
-          <path d={water(10, 108, 11, 20)} />
-          <circle cx="150" cy="30" r="10" className="te-art-accent" />
-          <path d="M150 24V30H155" className="te-art-accent" />
-        </>
-      ) : (
-        <>
-          <path d="M44 38L120 22L196 38M44 38L64 110H176L196 38" />
-          <path
-            d="M120 70L44 38M120 70L120 22M120 70L196 38M120 70L64 110M120 70L176 110"
-            className="te-art-accent"
-          />
-          {[
-            [44, 38],
-            [120, 22],
-            [196, 38],
-            [64, 110],
-            [176, 110],
-          ].map(([cx, cy]) => (
-            <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="8" className="te-art-fill" />
-          ))}
-          <Ship x={104} y={96} s={0.5} />
-          <circle cx="120" cy="70" r="11" className="te-art-fill te-art-accent" />
-          <circle cx="120" cy="70" r="4.5" className="te-art-dot" />
-        </>
-      )}
-    </svg>
+    <div className="te-rings" aria-hidden>
+      <svg viewBox="0 0 240 120" className="te-art">
+        {rings.map((ring, i) => (
+          <g
+            key={ring.r}
+            className={i === level ? "te-art-on" : i > level ? "te-art-faint" : undefined}
+          >
+            <circle cx="120" cy="60" r={ring.r} />
+            {i === level
+              ? ring.dots.map(([cx, cy]) => (
+                  <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3.5" className="te-art-dot" />
+                ))
+              : null}
+          </g>
+        ))}
+      </svg>
+      <Ic n="ship" className="te-rings-ship" sizes="64px" />
+    </div>
   );
 }
 

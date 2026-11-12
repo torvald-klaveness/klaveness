@@ -87,12 +87,15 @@
 .te-flow{list-style:none;margin:clamp(2rem,3.6vw,4rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,2.4vw,3rem)}
 .te-flow-step{position:relative;padding:clamp(1.25rem,1.8vw,2rem);background:var(--color-panel);border-radius:var(--radius-media);min-height:clamp(15rem,17vw,20rem);display:flex;flex-direction:column}
 .te-flow-step .num{font-size:var(--text-eyebrow);font-weight:500;color:var(--color-orange-ink)}
-.te-art{display:block;width:100%;max-width:15rem;height:auto;margin:1rem 0 0;color:var(--color-navy);--te-art-bg:var(--color-panel)}
-.te-art path,.te-art circle{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
-.te-art .te-art-fill{fill:var(--te-art-bg)}
-.te-art .te-art-accent{stroke:var(--color-orange)}
-.te-art .te-art-dot{fill:var(--color-orange);stroke:none}
-.te-flow-step.is-final .te-art{color:#fff;--te-art-bg:var(--color-navy)}
+.te-rings{position:relative;margin-top:1.25rem}
+.te-art{display:block;width:100%;height:auto;color:var(--color-navy)}
+.te-art circle{fill:none;stroke:currentColor;stroke-width:1.4;vector-effect:non-scaling-stroke}
+.te-art .te-art-faint{opacity:.28}
+.te-art .te-art-on circle{stroke:var(--color-orange);stroke-width:1.8}
+.te-art .te-art-on .te-art-dot{fill:var(--color-orange);stroke:none}
+.te-rings-ship{position:absolute;left:50%;top:50%;width:12%;height:auto;transform:translate(-50%,-50%)}
+.te-flow-step.is-final .te-art{color:#fff}
+.te-flow-step.is-final .te-rings-ship{filter:brightness(0) invert(1)}
 .te-flow-step strong{display:block;margin-top:1.5rem;font-size:var(--text-label);line-height:var(--text-label--line-height);font-weight:700;color:var(--color-copy)}
 .te-flow-step .sub{display:block;margin:.25rem 0 1.25rem;font-size:var(--text-body-sm);font-weight:300;color:var(--color-copy)}
 .te-flow-step:not(:last-child)::after{content:"";position:absolute;right:calc(-1 * clamp(1.5rem,2.4vw,3rem) + 6px);top:50%;width:calc(clamp(1.5rem,2.4vw,3rem) - 14px);height:1px;background:var(--color-copy)}
