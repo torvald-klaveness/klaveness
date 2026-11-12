@@ -15,8 +15,6 @@ import t2017 from "@/assets/images/about/timeline/2017.webp";
 import t2019 from "@/assets/images/about/timeline/2019.webp";
 import t2020 from "@/assets/images/about/timeline/2020.webp";
 import t2022 from "@/assets/images/about/timeline/2022.webp";
-import t2022to23 from "@/assets/images/about/timeline/2022-23.webp";
-import t2023 from "@/assets/images/about/timeline/2023.webp";
 import t2024 from "@/assets/images/about/timeline/2024.webp";
 import t2026 from "@/assets/images/about/timeline/2026.webp";
 import tFounder from "@/assets/images/about/timeline/torvald-klaveness.webp";
@@ -38,8 +36,7 @@ export type TimelineEntry = {
 
 /*
  * Content from the current klaveness.com/about/about-us page, presented in
- * the new design. The timeline runs oldest to newest so the story reads in
- * order (the old site showed it newest first).
+ * the new design. The timeline runs newest to oldest.
  */
 export const aboutPage = {
   meta: {
@@ -77,54 +74,54 @@ export const aboutPage = {
     ],
     entries: [
       {
-        label: "1946",
+        label: "2026",
         paragraphs: [
-          "In 1946, a young Norwegian named Torvald Faye Klaveness established his first company. His idea was to provide technical management and Norwegian seafarers to American ship owners. He soon expanded into brokering reefer vessels and used the proceeds to contract his first vessel, the MV Balao in 1950.",
+          "Our flagship investment, Klaveness Combination Carriers, introduces a new generation of low carbon, zero-emission fuel prepared CABU vessels, along with a venture into wind power.",
         ],
-        image: t1946,
-        imageAlt: "Archive photograph of MV Balao, the first Klaveness vessel",
+        image: t2026,
+        imageAlt:
+          "A KCC combination carrier with rotor sails arriving in port at dusk, greeted by a tug’s water salute",
       },
       {
-        label: "1958",
+        label: "2024",
         paragraphs: [
-          "In 1958, Klaveness built one of the first specialised bulk carriers, for the transportation of fertiliser from Norway. Three years later, Klaveness also became the first to transport cement in bulk.",
+          "Klaveness Dry Bulk expands its commercial presence with the opening of a new office in Tokyo, Japan. The move strengthens Klaveness’ commitment to deliver localized client service and will open even more doors to the market Klaveness Dry Bulk and the wider Klaveness group.",
         ],
-        image: t1958,
-        imageAlt: "Archive photograph of a ship’s funnel bearing the Klaveness K",
+        image: t2024,
+        imageAlt: "JP Tower in Tokyo, home of the Klaveness Japan office",
       },
       {
-        label: "1960s",
+        label: "2022",
         paragraphs: [
-          "In 1960, Klaveness ordered six self-unloading 16,500 dwt. bulk carriers together with three Norwegian partners. The vessels became the start of Bulkhandling in 1963, the first shipping pool ever. Torvald Klaveness believed that he had to provide cost-efficient and predictable transport services to his customers and that he had to find new and creative ways to do so.",
+          "Ernst Meyer becomes President and CEO of the company. Meyer was appointed to the position in January 2022 following his successful tenure as Chief Operating Officer and Managing Director of Klaveness Ship Management (KSM).",
         ],
-        image: t1960s,
-        imageAlt: "Archive aerial photograph of a bulk carrier unloading in port",
+        image: t2022,
+        imageAlt: "Portrait of Ernst Meyer, President and CEO of Torvald Klaveness",
       },
       {
-        label: "Torvald Klaveness",
+        label: "2020",
         paragraphs: [
-          "His interest in developing new trades led him to partner with governments and companies in Africa, South America, Eastern Europe, Asia, and the former Soviet Union. These partnerships and pools enabled Klaveness to develop shipping solutions on a scale he could not have accomplished alone.",
-          "Throughout his career, Torvald Klaveness wanted to do business in such a way that he became a trusted partner. In turn, he put his trust in the resourceful people around him and particularly in the captains and crew.",
+          "Klaveness Dry Bulk joins forces with major Japanese trading house Marubeni to operate the world’s largest dry bulk Panamax pool, managed by MaruKlav Management Inc.",
         ],
-        image: tFounder,
-        imageAlt: "Portrait of Torvald Klaveness",
-        framed: true,
+        image: t2020,
+        imageAlt: "Marubeni and Klaveness flags side by side on a table",
       },
       {
-        label: "1975",
+        label: "2019",
         paragraphs: [
-          "Tom Erik Klaveness started working for the company in 1975 and took over as President and Chief Executive Officer in 1989. Under his command, the company developed into a large global player in the dry bulk market.",
+          "The company established Klaveness Combination Carriers (KCC) together with existing investors and successfully completed a placement on the Oslo Stock Exchange.",
         ],
-        image: t1975,
-        imageAlt: "Bulk carrier sailing out of Sydney Harbour at dawn",
+        image: t2019,
+        imageAlt: "The Oslo Stock Exchange building, Børsen",
       },
       {
-        label: "2006",
+        label: "2017",
         paragraphs: [
-          "In 2006, he handed over the job as Chief Executive Officer to his younger brother, Trond Harald Klaveness.",
+          "Klaveness spins out its digital activities as a separate company, Klaveness Digital AS with subsidiaries.",
+          "Their flagship product is established as the supply chain management solution CargoValue, with an ambition to become the market’s leading solution for managing seaborne transportation.",
         ],
-        image: t2006,
-        imageAlt: "Portrait of a Klaveness executive in the office",
+        image: t2017,
+        imageAlt: "Hand holding a phone showing a Klaveness Digital application",
       },
       {
         label: "2011",
@@ -137,70 +134,54 @@ export const aboutPage = {
           "Glass wall in the Klaveness office printed with “Improving the nature of shipping”",
       },
       {
-        label: "2017",
+        label: "2006",
         paragraphs: [
-          "Klaveness spins out its digital activities as a separate company, Klaveness Digital AS with subsidiaries.",
-          "Their flagship product is established as the supply chain management solution CargoValue, with an ambition to become the market’s leading solution for managing seaborne transportation.",
+          "In 2006, he handed over the job as Chief Executive Officer to his younger brother, Trond Harald Klaveness.",
         ],
-        image: t2017,
-        imageAlt: "Hand holding a phone showing a Klaveness Digital application",
+        image: t2006,
+        imageAlt: "Portrait of a Klaveness executive in the office",
       },
       {
-        label: "2019",
+        label: "1975",
         paragraphs: [
-          "The company established Klaveness Combination Carriers (KCC) together with existing investors and successfully completed a placement on the Oslo Stock Exchange.",
+          "Tom Erik Klaveness started working for the company in 1975 and took over as President and Chief Executive Officer in 1989. Under his command, the company developed into a large global player in the dry bulk market.",
         ],
-        image: t2019,
-        imageAlt: "The Oslo Stock Exchange building, Børsen",
+        image: t1975,
+        imageAlt: "Bulk carrier sailing out of Sydney Harbour at dawn",
       },
       {
-        label: "2020",
+        label: "Torvald Klaveness",
         paragraphs: [
-          "Klaveness Dry Bulk joins forces with major Japanese trading house Marubeni to operate the world’s largest dry bulk Panamax pool, managed by MaruKlav Management Inc.",
+          "His interest in developing new trades led him to partner with governments and companies in Africa, South America, Eastern Europe, Asia, and the former Soviet Union. These partnerships and pools enabled Klaveness to develop shipping solutions on a scale he could not have accomplished alone.",
+          "Throughout his career, Torvald Klaveness wanted to do business in such a way that he became a trusted partner. In turn, he put his trust in the resourceful people around him and particularly in the captains and crew.",
         ],
-        image: t2020,
-        imageAlt: "Marubeni and Klaveness flags side by side on a table",
+        image: tFounder,
+        imageAlt: "Portrait of Torvald Klaveness",
+        framed: true,
       },
       {
-        label: "2022",
+        label: "1960s",
         paragraphs: [
-          "Ernst Meyer becomes President and CEO of the company. Meyer was appointed to the position in January 2022 following his successful tenure as Chief Operating Officer and Managing Director of Klaveness Ship Management (KSM).",
+          "In 1960, Klaveness ordered six self-unloading 16,500 dwt. bulk carriers together with three Norwegian partners. The vessels became the start of Bulkhandling in 1963, the first shipping pool ever. Torvald Klaveness believed that he had to provide cost-efficient and predictable transport services to his customers and that he had to find new and creative ways to do so.",
         ],
-        image: t2022,
-        imageAlt: "Portrait of Ernst Meyer, President and CEO of Torvald Klaveness",
+        image: t1960s,
+        imageAlt: "Archive aerial photograph of a bulk carrier unloading in port",
       },
       {
-        label: "2022/23",
+        label: "1958",
         paragraphs: [
-          "Klaveness forges an investment team and establishes significant investment capacity.",
-          "The company subsequently establishes a Holding structure for the portfolio of businesses.",
+          "In 1958, Klaveness built one of the first specialised bulk carriers, for the transportation of fertiliser from Norway. Three years later, Klaveness also became the first to transport cement in bulk.",
         ],
-        image: t2022to23,
-        imageAlt: "Two members of the Klaveness investment team",
+        image: t1958,
+        imageAlt: "Archive photograph of a ship’s funnel bearing the Klaveness K",
       },
       {
-        label: "2023",
+        label: "1946",
         paragraphs: [
-          "After three years operating the world’s largest Panamax pool, Klaveness Dry Bulk and Marubeni enter the next phase of their partnership. The deal sees Marubeni agree a 25% investment stake in Klaveness Dry Bulk.",
+          "In 1946, a young Norwegian named Torvald Faye Klaveness established his first company. His idea was to provide technical management and Norwegian seafarers to American ship owners. He soon expanded into brokering reefer vessels and used the proceeds to contract his first vessel, the MV Balao in 1950.",
         ],
-        image: t2023,
-        imageAlt: "Klaveness Dry Bulk and Marubeni representatives signing their agreement",
-      },
-      {
-        label: "2024",
-        paragraphs: [
-          "Klaveness Dry Bulk expands its commercial presence with the opening of a new office in Tokyo, Japan. The move strengthens Klaveness’ commitment to deliver localized client service and will open even more doors to the market Klaveness Dry Bulk and the wider Klaveness group.",
-        ],
-        image: t2024,
-        imageAlt: "JP Tower in Tokyo, home of the Klaveness Japan office",
-      },
-      {
-        label: "2026",
-        paragraphs: [
-          "KCC’s new generation of low carbon, zero-emission fuel prepared CABU vessels are delivered, marking a new era for the company.",
-        ],
-        image: t2026,
-        imageAlt: "The combination carrier MV Baltazar at sea with its rotor sails",
+        image: t1946,
+        imageAlt: "Archive photograph of MV Balao, the first Klaveness vessel",
       },
     ] satisfies TimelineEntry[],
   },
