@@ -93,7 +93,10 @@ export default function KlavenessFinancePage() {
               {team.title}
             </h2>
 
-            <ul className="grid gap-[clamp(1.5rem,2.6vw,3rem)] sm:grid-cols-2">
+            {/* Two columns only when there is more than one person, so a single card keeps its width. */}
+            <ul
+              className={`grid gap-[clamp(1.5rem,2.6vw,3rem)] ${team.people.length > 1 ? "sm:grid-cols-2" : ""}`}
+            >
               {team.people.map(({ slug, email }) => {
                 const person = people[slug];
                 return (
@@ -108,7 +111,7 @@ export default function KlavenessFinancePage() {
                       />
                     </div>
                     <div className="flex min-w-0 flex-col">
-                      <p className="heading-display text-[clamp(1.125rem,1.55vw,1.75rem)] text-copy">
+                      <p className="heading-display text-[clamp(1.125rem,1.55vw,1.75rem)] whitespace-nowrap text-copy">
                         {person.name}
                       </p>
                       <p className="mt-1 text-body-sm font-light text-pretty text-copy">
