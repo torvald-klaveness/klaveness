@@ -171,24 +171,84 @@ const pressures = [
 
 const levels = [
   {
-    n: "ship",
     title: "Vessel efficiency",
     text: "How efficiently one ship uses energy.",
     focus: "Fuel used for the transport work done",
   },
   {
-    n: "vessel-position",
     title: "Port and voyage efficiency",
     text: "How efficiently a voyage or port call uses time and energy.",
     focus: "Sailing and waiting time, fuel and voyage costs",
   },
   {
-    n: "trust-and-responsibility",
     title: "Trading efficiency",
     text: "How decisions across companies affect the total cost of moving cargo.",
     focus: "Vessel use, contracts, coordination and inventory costs",
   },
 ] as const;
+
+/** Side view of a bulk carrier, 64 x 26 units; the hull is filled so lines behind it are hidden. */
+function Ship({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <path d="M0 16H64L57 26H6Z" className="te-art-fill" />
+      <path d="M8 16V6H20V16M10 9.5H18M12 6V2H16V6" />
+      <path d="M26 16V12H34V16M38 16V12H46V16M50 16V12H57V16" />
+    </g>
+  );
+}
+
+/** Wavy waterline from x over n crests of the given width. */
+const water = (x: number, y: number, n: number, w = 24) =>
+  `M${x} ${y}` + ` q${w / 2} -4 ${w} 0`.repeat(n);
+
+/**
+ * Line illustrations for the three levels of efficiency, each a wider scope
+ * than the last: one ship, one voyage between two ports, the network of trades.
+ */
+function LevelArt({ level }: { level: number }) {
+  return (
+    <svg viewBox="0 0 240 140" className="te-art" aria-hidden>
+      {level === 0 ? (
+        <>
+          <Ship x={72} y={58} s={1.5} />
+          <path d={water(36, 106, 7)} />
+          <path d="M93 28c0 0-7 9-7 13a7 7 0 0 0 14 0c0-4-7-13-7-13z" className="te-art-accent" />
+        </>
+      ) : level === 1 ? (
+        <>
+          <path d="M14 100H58M30 100V50M22 54H62M56 54V66M53 66H59" />
+          <path d="M182 100H226M210 100V50M178 54H218M184 54V66M181 66H187" />
+          <path d="M62 96Q120 52 178 96" strokeDasharray="3 5" />
+          <Ship x={101} y={58} s={0.6} />
+          <path d={water(10, 108, 11, 20)} />
+          <circle cx="150" cy="30" r="10" className="te-art-accent" />
+          <path d="M150 24V30H155" className="te-art-accent" />
+        </>
+      ) : (
+        <>
+          <path d="M44 38L120 22L196 38M44 38L64 110H176L196 38" />
+          <path
+            d="M120 70L44 38M120 70L120 22M120 70L196 38M120 70L64 110M120 70L176 110"
+            className="te-art-accent"
+          />
+          {[
+            [44, 38],
+            [120, 22],
+            [196, 38],
+            [64, 110],
+            [176, 110],
+          ].map(([cx, cy]) => (
+            <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="8" className="te-art-fill" />
+          ))}
+          <Ship x={104} y={96} s={0.5} />
+          <circle cx="120" cy="70" r="11" className="te-art-fill te-art-accent" />
+          <circle cx="120" cy="70" r="4.5" className="te-art-dot" />
+        </>
+      )}
+    </svg>
+  );
+}
 
 /** The report's seven categories of inefficiency, from the cargo owner's perspective. */
 const categories = [
@@ -230,7 +290,7 @@ const categories = [
 ] as const;
 
 const num = (i: number) => String(i + 1).padStart(2, "0");
-const delay = (i: number) => (i ? ` reveal-delay-${Math.min(i, 2)}` : "");
+const delay = (i: number) => (i ? `reveal-delay-${Math.min(i, 2)}` : "");
 
 export default function TradingEfficiencyExplainedPage() {
   return (
@@ -249,7 +309,7 @@ export default function TradingEfficiencyExplainedPage() {
             { key: "problem", label: "The problem", target: "te-problem" },
             { key: "pressure", label: "Why now", target: "te-pressure" },
             { key: "definition", label: "Definition", target: "te-definition" },
-            { key: "cost", label: "The cost", target: "te-cost" },
+            { key: "cost", label: "The opportunity", target: "te-cost" },
           ]}
         />
 
@@ -285,10 +345,7 @@ export default function TradingEfficiencyExplainedPage() {
               </div>
               <ol className="te-stops" aria-label="Shipment journey">
                 {journey.map((s) => (
-                  <li key={s.title} className="te-stop" tabIndex={0}>
-                    <span className="te-stop-ship" aria-hidden>
-                      <Ic n="ship" sizes="58px" />
-                    </span>
+                  <li key={s.title} className="te-stop">
                     <span className="te-stop-dot">
                       <Ic n={s.n} sizes="104px" />
                     </span>
@@ -445,7 +502,7 @@ export default function TradingEfficiencyExplainedPage() {
             </div>
             <ul className="mt-[clamp(1.75rem,3vw,3.5rem)] grid gap-x-[clamp(1.25rem,2.4vw,3rem)] gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
               {pressures.map((p, i) => (
-                <PhotoCard key={p.title} {...p} className={`reveal${delay(i)}`} />
+                <PhotoCard key={p.title} {...p} className={`reveal ${delay(i)}`} />
               ))}
             </ul>
           </div>
@@ -454,14 +511,15 @@ export default function TradingEfficiencyExplainedPage() {
         {/* A system challenge */}
         <section data-chapter="pressure" className={sectionY}>
           <div className="container-site">
-            <div className="grid gap-[clamp(1.5rem,3vw,3rem)] border-t border-copy pt-[clamp(2rem,3.4vw,4rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] md:gap-[5.3%]">
-              <div className="reveal">
+            {/* Its own panel, so it reads as a stand-alone statement between the sections. */}
+            <div className="reveal grid gap-[clamp(1.5rem,3vw,3rem)] rounded-media bg-panel px-[clamp(1.5rem,4.5vw,5.5rem)] py-[clamp(2.5rem,5vw,6rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] md:items-center md:gap-[5.3%]">
+              <div>
                 <Eyebrow>A system challenge</Eyebrow>
                 <h2 className="heading-display mt-[clamp(1rem,1.6vw,1.75rem)] text-section text-balance text-copy">
                   No single company can solve this alone.
                 </h2>
               </div>
-              <div className="reveal reveal-delay-1 space-y-[1.15em] text-body font-light text-pretty text-copy md:pt-[clamp(2.25rem,3.4vw,4rem)]">
+              <div className="space-y-[1.15em] text-body font-light text-pretty text-copy">
                 <p>
                   Contract structures, fixed timing and fragmented coordination mean that the party
                   able to act is often not the one that benefits.
@@ -495,10 +553,16 @@ export default function TradingEfficiencyExplainedPage() {
               {levels.map((l, i) => (
                 <li
                   key={l.title}
-                  className={`te-flow-step reveal${delay(i)}${i === levels.length - 1 ? "is-final" : ""}`}
+                  className={[
+                    "te-flow-step reveal",
+                    delay(i),
+                    i === levels.length - 1 && "is-final",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
                 >
                   <span className="num">{num(i)}</span>
-                  <Ic n={l.n} sizes="92px" />
+                  <LevelArt level={i} />
                   <strong>{l.title}</strong>
                   <span className="sub">{l.text}</span>
                   <span className="focus">
@@ -511,7 +575,7 @@ export default function TradingEfficiencyExplainedPage() {
           </div>
         </section>
 
-        {/* The cost: the report's seven categories and headline figures */}
+        {/* The opportunity: the report's seven categories of inefficiency */}
         <section
           id="te-cost"
           data-chapter="cost"
@@ -520,34 +584,21 @@ export default function TradingEfficiencyExplainedPage() {
           <div className="container-site">
             <div className="reveal te-copy">
               <Heading eyebrow="Where value is lost" title="Seven areas of friction.">
-                Looking at bulk shipping from the cargo owner’s perspective, around 50 possible
-                sources of inefficiency were reviewed and 14 assessed in detail. They fall into
-                seven categories.
+                Looking at bulk shipping from the cargo owner’s perspective, we believe there are
+                seven categories where inefficiencies in bulk shipping can be bucketed.
               </Heading>
             </div>
             <ul className="mt-[clamp(1.75rem,3vw,3.5rem)] grid gap-x-[clamp(1.25rem,2.4vw,3rem)] gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
               {categories.map((c, i) => (
-                <PhotoCard key={c.title} {...c} num={num(i)} className={`reveal${delay(i % 4)}`} />
+                <PhotoCard key={c.title} {...c} num={num(i)} className={`reveal ${delay(i % 4)}`} />
               ))}
-              <li className="reveal reveal-delay-2 flex flex-col justify-between gap-8 rounded-media bg-navy p-[clamp(1.5rem,2.2vw,2.5rem)] text-white">
-                <p className="text-eyebrow font-medium text-white/80 uppercase">The scale</p>
-                <div>
-                  <p className="heading-display text-[clamp(2.25rem,2.7vw,3.5rem)] leading-none whitespace-nowrap">
-                    USD ~7bn
-                  </p>
-                  <p className="mt-4 text-body-sm font-light text-pretty text-white/85">
-                    of avoidable cost identified and quantified so far in dry bulk and product
-                    tanker shipping. USD 10–20bn is illustrative of the wider potential, equivalent
-                    to 5–10% of total freight spend.
-                  </p>
+              {/* Seven cards leave one empty slot (two or four per row): a thin orange rule fills it. */}
+              <li aria-hidden className="reveal reveal-delay-2 hidden sm:block">
+                <div className="flex aspect-[4/3] items-center justify-center">
+                  <span className="h-px w-3/5 bg-orange" />
                 </div>
               </li>
             </ul>
-            <p className="reveal mt-[clamp(2.5rem,4vw,4.5rem)] max-w-[62rem] text-body-sm font-light text-pretty text-ink-muted">
-              Source: Torvald Klaveness,{" "}
-              <em>The cost of trading inefficiency in dry bulk and tanker shipping</em>, November
-              2026. Estimates differ in scope and should not be added together as a net saving.
-            </p>
           </div>
         </section>
       </div>

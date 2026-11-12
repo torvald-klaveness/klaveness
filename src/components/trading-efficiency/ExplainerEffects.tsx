@@ -45,7 +45,8 @@ export function ExplainerEffects({ chapters }: { chapters: Chapter[] }) {
       }
 
       const rect = root.getBoundingClientRect();
-      const visible = rect.top < -vh * 0.4 && rect.bottom > vh * 0.7;
+      // Shown as soon as the story below the hero fills the lower half of the screen.
+      const visible = rect.top < vh * 0.5 && rect.bottom > vh * 0.7;
       if (visible !== shownRef.current) {
         shownRef.current = visible;
         setShown(visible);
@@ -62,13 +63,18 @@ export function ExplainerEffects({ chapters }: { chapters: Chapter[] }) {
   }, [chapters]);
 
   return (
-    <nav className={`te-chapters${shown ? " is-shown" : ""}`} aria-label="Chapters">
+    <nav
+      className={["te-chapters", shown && "is-shown"].filter(Boolean).join(" ")}
+      aria-label="Chapters"
+    >
       {chapters.map((c, i) => (
         <a
           key={c.key}
           href={`#${c.target}`}
           aria-current={i === active ? "true" : undefined}
-          className={`te-chapter${i === active ? " is-active" : ""}${i < active ? " is-done" : ""}`}
+          className={["te-chapter", i === active && "is-active", i < active && "is-done"]
+            .filter(Boolean)
+            .join(" ")}
         >
           <i />
           <span>{c.label}</span>
