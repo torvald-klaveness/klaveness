@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
+import { ArrowRight } from "@/components/icons";
 import { PageHero } from "@/components/layout/PageHero";
 import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/blocks";
 import { ArrowLink } from "@/components/ui/ArrowLink";
@@ -21,8 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default function TradingEfficiencyPage() {
-  const { hero, intro, whyItMatters, opportunity, inefficiencies, whyNow, approach, explore } =
-    page;
+  const { hero, intro, whyItMatters, opportunity, whyNow, approach, explore } = page;
 
   return (
     <>
@@ -119,34 +120,6 @@ export default function TradingEfficiencyPage() {
         </div>
       </section>
 
-      {/* Where inefficiencies exist */}
-      <section
-        id="where-inefficiencies-exist"
-        aria-labelledby="inefficiencies-title"
-        className={sectionY}
-      >
-        <div className="container-site">
-          <h2 id="inefficiencies-title" className="reveal heading-display text-section text-copy">
-            {inefficiencies.title}
-          </h2>
-          <ol className="mt-[clamp(1.75rem,3vw,3.5rem)] grid gap-x-[clamp(1.25rem,2.4vw,3rem)] gap-y-8 sm:grid-cols-2 lg:grid-cols-5">
-            {inefficiencies.items.map((item, index) => (
-              <li
-                key={item}
-                className={`reveal ${index ? `reveal-delay-${Math.min(index, 2)}` : ""} border-t border-copy pt-[clamp(1rem,1.6vw,1.75rem)]`}
-              >
-                <span className="text-eyebrow font-medium text-orange-ink">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-[clamp(0.75rem,1.2vw,1.25rem)] text-label font-bold text-pretty text-copy">
-                  {item}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
       {/* Why now */}
       <section id="why-now" aria-labelledby="why-now-title" className={sectionY}>
         <div className={`container-site items-center ${split.imageText}`}>
@@ -202,16 +175,30 @@ export default function TradingEfficiencyPage() {
               <p className="text-body font-light text-pretty text-white/85">{explore.body}</p>
             </div>
             <ul className="mt-[clamp(2rem,3.6vw,4rem)] grid grid-cols-2 gap-[clamp(0.75rem,1.4vw,1.5rem)] lg:grid-cols-4">
-              {explore.topics.map((topic) => (
-                <li
-                  key={topic}
-                  className="flex min-h-[clamp(6rem,9vw,10rem)] items-end rounded-xl border border-white/15 bg-white/[0.04] p-[clamp(1rem,1.6vw,1.75rem)]"
-                >
+              {explore.topics.map((topic) => {
+                const label = (
                   <span className="heading-display text-[clamp(1.125rem,1.55vw,1.75rem)] text-pretty">
-                    {topic}
+                    {topic.label}
                   </span>
-                </li>
-              ))}
+                );
+                const tile =
+                  "flex min-h-[clamp(6rem,9vw,10rem)] rounded-xl border border-white/15 bg-white/[0.04] p-[clamp(1rem,1.6vw,1.75rem)]";
+                return (
+                  <li key={topic.label} className="flex">
+                    {topic.href ? (
+                      <Link
+                        href={topic.href}
+                        className={`${tile} group w-full flex-col justify-between gap-4 transition-colors hover:border-white/40 hover:bg-white/[0.08]`}
+                      >
+                        <ArrowRight className="size-5 self-end text-orange transition-transform duration-500 ease-out-expo group-hover:translate-x-1" />
+                        {label}
+                      </Link>
+                    ) : (
+                      <div className={`${tile} w-full items-end`}>{label}</div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

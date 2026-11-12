@@ -105,16 +105,6 @@
 .te-flow-step.is-final strong{color:#fff}
 .te-flow-step.is-final .sub{color:rgb(255 255 255 / .8)}
 
-/* ---------- Chapter timeline (fixed along the bottom) ---------- */
-.te-chapters{position:fixed;z-index:30;left:50%;bottom:18px;transform:translate(-50%,16px);display:flex;align-items:center;padding:.625rem 1.25rem;border-radius:999px;background:rgb(255 255 255 / .95);backdrop-filter:blur(14px);border:1px solid var(--color-line);opacity:0;pointer-events:none;transition:opacity .3s ease,transform .3s ease}
-.te-chapters.is-shown{opacity:1;transform:translate(-50%,0);pointer-events:auto}
-.te-chapter{position:relative;display:flex;align-items:center;gap:.5rem;padding:.25rem .75rem;font-size:var(--text-eyebrow);font-weight:500;text-transform:uppercase;letter-spacing:.02em;color:var(--color-ink-muted);text-decoration:none;white-space:nowrap;transition:color .3s ease}
-.te-chapter i{display:block;width:8px;height:8px;border-radius:50%;background:#fff;border:1px solid var(--color-ink-muted);transition:all .3s ease}
-.te-chapter.is-done i{background:var(--color-ink-muted)}
-.te-chapter.is-active{color:var(--color-copy)}
-.te-chapter.is-active i{background:var(--color-orange);border-color:var(--color-orange)}
-.te-chapter:hover{color:var(--color-copy)}
-
 /* ---------- Tablet / phone: no pinning, everything shown in its final state ---------- */
 @media (max-width:1050px){
   .te-grid{grid-template-columns:1fr}
@@ -126,8 +116,6 @@
   .te-steps,.te-caption{display:none}
   .te-problem .te-scrolly .links,.te-problem .te-scrolly .arrows,.te-problem .te-scrolly .te-hub{opacity:1!important}
   .te-leaks .te-lk{opacity:1!important;transform:none!important}
-  .te-chapter span{display:none}
-  .te-chapter.is-active span{display:inline}
 }
 @media (max-width:900px){
   .te-stops{grid-template-columns:1fr;gap:1.5rem;padding-top:0}
@@ -145,8 +133,6 @@
   .te-pipe-bar{width:100%}
   .te-leak-cols{grid-template-columns:1fr 1fr;padding-left:0;gap:1.25rem .75rem}
   .te-lk-stem{height:24px}
-  .te-chapters{padding:.5rem .75rem;bottom:12px}
-  .te-chapter{padding:.25rem .5rem}
 }
 
 @media (prefers-reduced-motion:reduce){

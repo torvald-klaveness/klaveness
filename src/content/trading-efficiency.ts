@@ -78,17 +78,6 @@ export const tradingEfficiencyPage = {
     // Client: "See report here (link)". Shown once the report URL is supplied.
     report: null as { label: string; href: string } | null,
   },
-  inefficiencies: {
-    title: "Where inefficiencies exist",
-    // Client draft: may become a drop-down list once each area has its own text.
-    items: [
-      "Arrival and port optimization",
-      "Asset utilization",
-      "Inventory management",
-      "Commercial incentives",
-      "Data sharing and visibility",
-    ],
-  },
   whyNow: {
     title: "Why now",
     paragraphs: [
@@ -112,7 +101,12 @@ export const tradingEfficiencyPage = {
   explore: {
     title: "Explore trading efficiency",
     body: "Trading efficiency represents one of the largest opportunities for value creation in shipping. Explore our latest research, insights, and industry perspectives on the challenges and opportunities ahead.",
-    // Not linked yet: destinations to come from the client.
-    topics: ["What is trading efficiency", "Research and reports", "Customer stories", "Through leadership"],
+    // Topics without an href are not linked yet: destinations to come from the client.
+    topics: [
+      { label: "What is trading efficiency", href: "/trading-efficiency/explained" },
+      { label: "Research and reports" },
+      { label: "Customer stories" },
+      { label: "Through leadership" },
+    ] as { label: string; href?: string }[],
   },
 } as const;
