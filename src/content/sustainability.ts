@@ -176,7 +176,7 @@ export const esgPage = {
       href: "/about/governance",
     },
     image: esgGovernanceImage,
-    imageAlt: "Aerial view of deep teal ocean water",
+    imageAlt: "Torvald Klaveness sign with the company logo in the Oslo office",
   },
 } as const;
 
