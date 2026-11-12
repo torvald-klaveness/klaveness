@@ -83,15 +83,25 @@ export function Photo({
   alt,
   sizes,
   className = "",
+  quality,
 }: {
   image: StaticImageData;
   alt: string;
   sizes: string;
   className?: string;
+  /** Optimizer quality (75 or 90, see next.config); 90 for detailed images. */
+  quality?: 75 | 90;
 }) {
   return (
     <div className={`reveal-image overflow-hidden rounded-media ${className}`}>
-      <Image src={image} alt={alt} placeholder="blur" sizes={sizes} className="h-auto w-full" />
+      <Image
+        src={image}
+        alt={alt}
+        placeholder="blur"
+        sizes={sizes}
+        quality={quality}
+        className="h-auto w-full"
+      />
     </div>
   );
 }

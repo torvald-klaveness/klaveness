@@ -32,7 +32,8 @@ export default function TradingEfficiencyPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="intro"
-        imagePosition="50% 50%"
+        imagePosition="50% 30%"
+        quality={90}
       />
 
       {/* Introduction */}

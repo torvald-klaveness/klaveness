@@ -9,6 +9,8 @@ type PageHeroProps = {
   /** Where the scroll cue points to. */
   nextId: string;
   imagePosition?: string;
+  /** Optimizer quality (75 or 90, see next.config); 90 for detailed images. */
+  quality?: 75 | 90;
 };
 
 /**
@@ -21,6 +23,7 @@ export function PageHero({
   image,
   nextId,
   imagePosition = "50% 50%",
+  quality,
 }: PageHeroProps) {
   return (
     <section
@@ -35,6 +38,7 @@ export function PageHero({
           preload
           placeholder="blur"
           sizes="100vw"
+          quality={quality}
           style={{ objectPosition: imagePosition }}
           className="motion-safe-only animate-hero-zoom object-cover"
         />

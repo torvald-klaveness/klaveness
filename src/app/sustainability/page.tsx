@@ -100,6 +100,7 @@ export default function SustainabilityPage() {
             image={te.image}
             alt={te.imageAlt}
             sizes="(min-width: 1136px) 73vw, 100vw"
+            quality={90}
             className="mt-[clamp(1.5rem,2.6vw,3rem)]"
           />
 
