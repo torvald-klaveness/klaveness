@@ -124,6 +124,18 @@ export function PeopleDirectory({ teams }: { teams: readonly Readonly<Team>[] })
                   </li>
                 );
               })}
+              {/* A thin orange rule fills the empty slots after a short last row (three-column layout). */}
+              {team.fillLastRow && !compact && team.members.length % 3 ? (
+                <li
+                  aria-hidden
+                  className="reveal row-span-3 hidden grid-rows-subgrid gap-y-0 md:grid"
+                  style={{ gridColumn: `span ${3 - (team.members.length % 3)}` }}
+                >
+                  <span className="flex items-center justify-center">
+                    <span className="h-px w-3/5 bg-orange" />
+                  </span>
+                </li>
+              ) : null}
             </ul>
           </section>
         );

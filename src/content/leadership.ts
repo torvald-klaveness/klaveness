@@ -229,7 +229,9 @@ export const boardPage = {
     {
       id: "board-of-directors",
       title: "Board of Directors",
-      layout: "compact",
+      layout: "large",
+      // Three on top, two below; an orange rule fills the empty slot.
+      fillLastRow: true,
       members: [
         "trond-harald-klaveness",
         "elisabeth-torstad",
@@ -244,8 +246,10 @@ export const boardPage = {
 export type Team = {
   id: string;
   title: string;
-  /** `large`: four per row. `compact`: five per row. */
+  /** `large`: three per row. `compact`: four per row. */
   layout: "large" | "compact";
+  /** Fill the empty space after a short last row with a thin orange rule. */
+  fillLastRow?: boolean;
   members: PersonSlug[];
 };
 
