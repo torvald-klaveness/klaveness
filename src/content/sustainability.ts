@@ -2,10 +2,10 @@ import icebergImage from "@/assets/images/sustainability/iceberg.webp";
 import heroTemporary from "@/assets/images/home/hero-ocean.webp";
 import esgEnvironmentalImage from "@/assets/images/sustainability/esg-environmental.webp";
 import esgGovernanceImage from "@/assets/images/sustainability/esg-governance.webp";
-import esgSocialImage from "@/assets/images/sustainability/esg-social.webp";
+import esgSocialImage from "@/assets/images/sustainability/esg-social-crew.webp";
 import ceoImage from "@/assets/images/sustainability/ernst-meyer-square.webp";
 import portholeImage from "@/assets/images/sustainability/porthole.webp";
-import shipMountainsImage from "@/assets/images/sustainability/ship-towards-mountains.webp";
+import stakeholdersHeroImage from "@/assets/images/sustainability/stakeholders-hero.webp";
 import tradingEfficiencyImage from "@/assets/images/sustainability/trading-efficiency.webp";
 import type { RichLine } from "@/content/types";
 
@@ -154,7 +154,7 @@ export const esgPage = {
       "Responsible engagement with communities and society.",
     ],
     image: esgSocialImage,
-    imageAlt: "Two Klaveness colleagues in conversation in the office",
+    imageAlt: "A smiling Klaveness crew member in orange workwear on deck, giving a fist bump",
   },
   governance: {
     label: "Governance",
@@ -181,12 +181,7 @@ export const esgPage = {
 } as const;
 
 export type StakeholderIcon =
-  | "employees"
-  | "customers"
-  | "financing"
-  | "regulators"
-  | "suppliers"
-  | "communities";
+  "employees" | "customers" | "financing" | "regulators" | "suppliers" | "communities";
 
 export const stakeholdersPage = {
   meta: {
@@ -202,7 +197,7 @@ export const stakeholdersPage = {
       { text: " through clear expectations and " },
       { text: "open dialogue", strong: true },
     ] satisfies RichLine,
-    image: shipMountainsImage,
+    image: stakeholdersHeroImage,
   },
   intro: {
     eyebrow: "Working with our stakeholders",
