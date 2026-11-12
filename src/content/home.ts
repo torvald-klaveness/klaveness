@@ -6,8 +6,8 @@ import kdbImage from "@/assets/images/home/klaveness-dry-bulk.webp";
 
 export const home = {
   hero: {
-    // Background video from the old site's homepage: drone footage of MV Ballard
-    // (Klaveness Combination Carriers) off Kwinana, October 2023. Files in public/videos.
+    // Background video: animated globe with trade routes (story-2026-11-12), cut to
+    // its last 14 seconds (from 0:16) so the loop starts there. Files in public/videos.
     video: {
       src: "/videos/home-hero.mp4",
       // Centre crop for phones, where the hero is portrait.

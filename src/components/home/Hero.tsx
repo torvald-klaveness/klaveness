@@ -28,9 +28,9 @@ export function Hero() {
           portraitSrc={hero.video.portraitSrc}
           className="absolute inset-0 size-full object-cover"
         />
-        {/* Navy veil as in the design (the old site showed the video at 50% over the same navy). */}
-        <div className="absolute inset-0 bg-navy/60" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgb(0_12_44/0.45)_100%)]" />
+        {/* Navy (#001446) veil at 50% over the video. */}
+        <div className="absolute inset-0 bg-navy/50" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgb(0_20_70/0.45)_100%)]" />
         {/* Extra scrim on phones, where the copy sits over the white superstructure and wake. */}
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(0deg,rgb(0_12_44/0.55),transparent)] md:hidden" />
       </div>
