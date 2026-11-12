@@ -98,7 +98,7 @@ export const dryBulkPage = {
     ],
     link: { label: "Explore Klaveness Digital", href: "https://www.klavenessdigital.com" },
     image: marketManagerImage,
-    imageAlt: "Tablet showing the Market Manager dashboard with freight charts",
+    imageAlt: "Phone showing a vessel’s performance charts and ratings in Market Manager",
   },
 } as const;
 
