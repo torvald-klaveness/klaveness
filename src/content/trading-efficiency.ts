@@ -1,7 +1,7 @@
 import clinkerImage from "@/assets/images/news/clinker-shipment.webp";
-import pentaImage from "@/assets/images/news/mv-penta.webp";
 import digitalShipImage from "@/assets/images/sustainability/stakeholders-digital-ship.webp";
 import heroImage from "@/assets/images/trading-efficiency/hero.webp";
+import approachImage from "@/assets/images/trading-efficiency/our-approach.webp";
 import type { RichLine } from "@/content/types";
 
 /*
@@ -106,8 +106,8 @@ export const tradingEfficiencyPage = {
       "We believe it represents one of the largest opportunities for value creation in shipping. While technology and innovation will play an important role, many of the greatest opportunities will require collaboration across the wider industry.",
       "Through our businesses, partnerships, and continued investment in innovation, we aim to contribute to this development and help advance trading efficiency across global seaborne supply chains.",
     ],
-    image: pentaImage,
-    imageAlt: "The Klaveness Japan team on the quayside in front of M/V Penta in Mizushima",
+    image: approachImage,
+    imageAlt: "Two Klaveness colleagues looking at a laptop together in the office",
   },
   explore: {
     title: "Explore trading efficiency",
