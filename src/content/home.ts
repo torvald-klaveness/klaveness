@@ -21,7 +21,6 @@ export const home = {
       { text: "the nature of", strong: false },
       { text: "Shipping", strong: true },
     ],
-    cta: { label: "Who we are", href: "/about/about-us" },
   },
 
   // Client's revised homepage text (October 2026).

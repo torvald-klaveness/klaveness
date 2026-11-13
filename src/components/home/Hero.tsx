@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { HeroVideo } from "@/components/home/HeroVideo";
-import { ArrowRight } from "@/components/icons";
 import { home } from "@/content/home";
 
 export function Hero() {
@@ -35,10 +33,11 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(0deg,rgb(0_12_44/0.55),transparent)] md:hidden" />
       </div>
 
-      <div className="container-site grid gap-12 pb-[clamp(4rem,11svh,6rem)] md:grid-cols-[1.15fr_1fr] md:items-end md:gap-16 md:pb-[clamp(5rem,24svh,14rem)]">
+      {/* Same 12-column grid as the intro below, so the title lines up with its text. */}
+      <div className="container-site grid pb-[clamp(4rem,11svh,6rem)] md:grid-cols-12 md:items-end md:gap-8 md:pb-[clamp(5rem,24svh,14rem)]">
         <h1
           id="hero-title"
-          className="motion-safe-only animate-rise border-l-2 border-orange pl-6 text-[clamp(2.25rem,3.45vw,4.25rem)] leading-[1.06] tracking-[0.01em] uppercase md:pl-8 lg:ml-20"
+          className="motion-safe-only animate-rise border-l-2 border-orange pl-6 text-[clamp(2.25rem,3.45vw,4.25rem)] leading-[1.06] tracking-[0.01em] uppercase md:col-span-7 md:pl-8"
         >
           {hero.title.map((line) => (
             <span key={line.text} className={`block ${line.strong ? "font-bold" : "font-light"}`}>
@@ -46,25 +45,6 @@ export function Hero() {
             </span>
           ))}
         </h1>
-
-        <div
-          className="motion-safe-only max-w-[clamp(26rem,30vw,36rem)] animate-rise md:pb-2"
-          style={{ animationDelay: "180ms" }}
-        >
-          <Link
-            href={hero.cta.href}
-            className="group inline-flex items-center gap-4 text-label font-semibold"
-          >
-            <span className="relative inline-flex size-11 items-center justify-center rounded-full bg-white text-navy transition-transform duration-500 ease-out-expo group-hover:scale-110">
-              <span
-                aria-hidden
-                className="absolute inset-0 rounded-full ring-1 ring-white/60 transition-[scale,opacity] duration-700 ease-out-expo group-hover:scale-150 group-hover:opacity-0"
-              />
-              <ArrowRight className="size-4 transition-transform duration-500 ease-out-expo group-hover:translate-x-0.5" />
-            </span>
-            {hero.cta.label}
-          </Link>
-        </div>
       </div>
     </section>
   );
