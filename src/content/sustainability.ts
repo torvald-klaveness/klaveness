@@ -155,7 +155,7 @@ export const esgPage = {
       "Responsible engagement with communities and society.",
     ],
     image: esgSocialImage,
-    imageAlt: "A smiling Klaveness crew member in orange workwear on deck, giving a fist bump",
+    imageAlt: "Two Klaveness crew members in hard hats reviewing documents on the deck of a vessel",
   },
   governance: {
     label: "Governance",
