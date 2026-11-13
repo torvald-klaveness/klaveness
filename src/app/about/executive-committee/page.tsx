@@ -28,7 +28,7 @@ export default function LeadershipPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="executive-committee"
-        imagePosition="50% 40%"
+        imagePosition="50% 50%"
       />
       <div
         className={`container-site ${sectionY} pt-[clamp(5rem,9vw,11rem)] pb-[clamp(6rem,10vw,12rem)]`}

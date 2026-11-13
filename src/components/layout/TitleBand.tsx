@@ -55,6 +55,8 @@ export function TitleBand({
             className="motion-safe-only animate-hero-zoom object-cover"
           />
           <div className="absolute inset-0 bg-navy" style={{ opacity: image.veil ?? 0.75 }} />
+          {/* Fade the top of the image into navy so the menu always sits on a calm background. */}
+          <div className="absolute inset-x-0 top-0 h-2/5 bg-[linear-gradient(180deg,rgb(0_20_70/0.9),transparent)]" />
         </div>
       ) : null}
       <div
