@@ -81,7 +81,7 @@ export const mainNav: NavItem[] = [
   {
     label: "News",
     href: "/news",
-    description: "Stories, announcements and insights from across the group.",
+    description: "Stories, announcements and insights from across the Group.",
   },
   {
     label: "Careers",

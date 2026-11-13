@@ -42,7 +42,7 @@ export const aboutPage = {
   meta: {
     title: "About us",
     description:
-      "Klaveness is a family-owned shipping group with nearly 80 years of heritage, working to improve trading efficiency across global seaborne supply chains.",
+      "Klaveness is a family-owned shipping group with 80 years of heritage, working to improve trading efficiency across global seaborne supply chains.",
   },
   hero: {
     eyebrow: "About us",
@@ -57,7 +57,7 @@ export const aboutPage = {
   whoWeAre: {
     eyebrow: "Who we are",
     statement:
-      "Torvald Klaveness is a family-owned shipping group with nearly 80 years of heritage in the shipping industry. Through our portfolio companies, we focus on exploring new ways to move cargo more efficiently across global seaborne supply chains by combining maritime expertise, innovative business models, and digital capabilities.",
+      "Torvald Klaveness is a family-owned shipping group with 80 years of heritage in the shipping industry. Through our portfolio companies, we focus on exploring new ways to move cargo more efficiently across global seaborne supply chains by combining maritime expertise, innovative business models, and digital capabilities.",
     paragraphs: [
       "While our companies operate in different parts of the value chain, they are united by a shared vision: improving the nature of shipping.",
     ],
@@ -85,7 +85,7 @@ export const aboutPage = {
       {
         label: "2024",
         paragraphs: [
-          "Klaveness Dry Bulk expands its commercial presence with the opening of a new office in Tokyo, Japan. The move strengthens Klaveness’ commitment to deliver localized client service and will open even more doors to the market Klaveness Dry Bulk and the wider Klaveness group.",
+          "Klaveness Dry Bulk expands its commercial presence with the opening of a new office in Tokyo, Japan. The move strengthens Klaveness’ commitment to deliver localized client service and will open even more doors to the Japanese market for Klaveness Dry Bulk and the wider Klaveness Group.",
         ],
         image: t2024,
         imageAlt: "JP Tower in Tokyo, home of the Klaveness Japan office",
@@ -170,7 +170,7 @@ export const aboutPage = {
       {
         label: "1958",
         paragraphs: [
-          "In 1958, Klaveness built one of the first specialised bulk carriers, for the transportation of fertiliser from Norway. Three years later, Klaveness also became the first to transport cement in bulk.",
+          "In 1958, Klaveness built one of the first specialized bulk carriers, for the transportation of fertilizer from Norway. Three years later, Klaveness also became the first to transport cement in bulk.",
         ],
         image: t1958,
         imageAlt: "Archive photograph of a ship’s funnel bearing the Klaveness K",
@@ -178,7 +178,7 @@ export const aboutPage = {
       {
         label: "1946",
         paragraphs: [
-          "In 1946, a young Norwegian named Torvald Faye Klaveness established his first company. His idea was to provide technical management and Norwegian seafarers to American ship owners. He soon expanded into brokering reefer vessels and used the proceeds to contract his first vessel, the MV Balao in 1950.",
+          "In 1946, a young Norwegian named Torvald Faye Klaveness established his first company. His idea was to provide technical management and Norwegian seafarers to American shipowners. He soon expanded into brokering reefer vessels and used the proceeds to contract his first vessel, the MV Balao in 1950.",
         ],
         image: t1946,
         imageAlt: "Archive photograph of MV Balao, the first Klaveness vessel",
@@ -188,9 +188,9 @@ export const aboutPage = {
   vision: {
     eyebrow: "Why we exist",
     statement:
-      "At Klaveness, everything we do is guided by a single vision: Improving the Nature of Shipping.",
+      "At Klaveness, everything we do is guided by a single vision: improving the nature of shipping.",
     paragraphs: [
-      "Shipping underpins global trade, yet many inefficiencies remain across the way we trade and transport cargo. We believe better outcomes come from finding smarter ways for cargo owners, ship owners, operators, and other stakeholders to work together. This belief is reflected in our focus on improving trading efficiency across global seaborne supply chains.",
+      "Shipping underpins global trade, yet many inefficiencies remain across the way we trade and transport cargo. We believe better outcomes come from finding smarter ways for cargo owners, shipowners, operators, and other stakeholders to work together. This belief is reflected in our focus on improving trading efficiency across global seaborne supply chains.",
       "This vision continues to guide our investments, our businesses, and the solutions we bring to market.",
     ],
     dimensionsTitle: "What it means to us:",
@@ -280,11 +280,11 @@ export const governancePage = {
     items: [
       "Trond Harald Klaveness is the sole owner and Chair of the Board of Rederiaksjeselskapet Torvald Klaveness (RASTK). The RASTK Board of Directors further comprises independent representatives with extensive corporate experience, Christian Rynning-Tønnesen, Rebekka Glasser Herlofsen, Elisabeth Tørstad, and Mehrdad Amini.",
       "Ernst Meyer is the President and CEO of Torvald Klaveness and heads up Klaveness Holding and the Klaveness Executive Committee.",
-      "Torvald Klaveness has incorporated a holding structure with a top management team responsible for developing and implementing corporate strategy, execute active ownership of the existing portfolio of companies, drive new strategic investments, and actively manage a portfolio of liquid financial investments.",
+      "Torvald Klaveness has incorporated a holding structure with a top management team responsible for developing and implementing corporate strategy, executing active ownership of the existing portfolio of companies, driving new strategic investments, and actively managing a portfolio of liquid financial investments.",
       "The Group’s portfolio companies include Klaveness Digital (100% owned), Klaveness Dry Bulk (75% owned by Klaveness and 25% owned by Marubeni Corporation), and Klaveness Combination Carriers (KCC), in which Klaveness holds approximately 44% of the shares. KCC is listed on the Oslo Stock Exchange.",
-      "KCC and KDB are governed through separate Boards of Directors, these consist of board representatives from the Holding team and external directors.",
-      "Company headquarters are Oslo, Norway, with subsidiaries operating in Singapore, Japan, Manila, and Dubai.",
-      "Safety, Risk Management, Compliance, Cyber-security, Human Rights and ESG in general are integral parts of our business. We have dedicated people, functions, policies, governance, and management attention in place to execute safe and responsible business practices. Our compliance program is mandatory for all employees, officers, and directors.",
+      "KCC and KDB are governed through separate Boards of Directors, which consist of board representatives from the Holding team and external directors.",
+      "Company headquarters are Oslo, Norway, with subsidiaries operating in Singapore, Tokyo, Manila, and Dubai.",
+      "Safety, risk management, compliance, cybersecurity, human rights and ESG in general are integral parts of our business. We have dedicated people, functions, policies, governance, and management attention in place to execute safe and responsible business practices. Our compliance program is mandatory for all employees, officers, and directors.",
       "We operate under a Code of Conduct that is accepted in writing by each employee, officer, and director.",
     ],
   },
@@ -416,7 +416,7 @@ export const compliancePage = {
       id: "code-of-conduct",
       title: "Code of Conduct",
       paragraphs: [
-        "Our Code of Conduct defines our core legal and ethical standards and applies to all Klaveness directors, officers and employees, both on shore and on board our vessels.",
+        "Our Code of Conduct defines our core legal and ethical standards and applies to all Klaveness directors, officers and employees, both on shore and at sea.",
         "The code provides a framework for Klaveness’ governance, and defines the most important principles and ethical norms that form the basis for how we create value in Klaveness and conduct our business.",
         "These principles and values are implemented in our governance documents.",
       ],
@@ -435,8 +435,8 @@ export const compliancePage = {
       id: "whistleblowing",
       title: "Reporting of Concerns (Whistleblowing)",
       paragraphs: [
-        "Torvald Klaveness promotes a culture of openness and transparency. This is important for both the overall work environment and the well-being of the individual employee. Moreover, it is a key to optimal business operations. We therefore encourage whistleblowing regarding blameworthy activities or circumstances within our business.",
-        "Employees and others who have reason to believe that there are blameworthy activities or circumstances (e.g. breach of applicable legislation) within our business have the right to and are encouraged to whistleblow. The same applies if they have reason to believe that there is a violation of Klaveness Code of Conduct.",
+        "Torvald Klaveness promotes a culture of openness and transparency. This is important for both the overall work environment and the wellbeing of the individual employee. Moreover, it is a key to optimal business operations. We therefore encourage whistleblowing regarding blameworthy activities or circumstances within our business.",
+        "Employees and others who have reason to believe that there are blameworthy activities or circumstances (e.g. breach of applicable legislation) within our business have the right to and are encouraged to whistleblow. The same applies if they have reason to believe that there is a violation of the Klaveness Code of Conduct.",
         "Employees who give notification in accordance with Section 2-4 of the Norwegian Working Environment Act and Klaveness Guidelines for Whistleblowing shall be protected against any unfavorable treatment as a reaction to the whistleblowing (“retaliation”).",
         "You can choose to be anonymous. In such case you will automatically be given a username and password so that you can log in to see the status of your case and securely communicate with the case handler. At any stage during the case handling you may also choose to reveal your identity.",
       ],

@@ -83,7 +83,7 @@ export const dryBulkPage = {
     title: "Baumarine by Klaveness",
     paragraphs: [
       "Baumarine is our global Panamax and Kamsarmax pool and strategic platform for shipowners in volatile freight markets.",
-      "Through scale, collaboration and data driven insight, we offer owners an alternative to traditional employment structures, putting owners back in control of their assets.",
+      "Through scale, collaboration and data-driven insight, we offer owners an alternative to traditional employment structures, putting owners back in control of their assets.",
     ],
     link: { label: "Explore Baumarine", href: "/companies/klaveness-dry-bulk/baumarine" },
     image: baumarineImage,
@@ -92,7 +92,7 @@ export const dryBulkPage = {
   innovation: {
     title: "Innovation is in our DNA",
     paragraphs: [
-      "Klaveness Dry Bulk developed its ‘Market Manager’ initiative to improve freight decision making and increase transparency in bulk shipping markets. What began as an internal innovation soon became a market facing digital solution.",
+      "Klaveness Dry Bulk developed its ‘Market Manager’ initiative to improve freight decision-making and increase transparency in bulk shipping markets. What began as an internal innovation soon became a market-facing digital solution.",
       "Today, these products are fully owned and developed by Klaveness Digital, the digital arm of Torvald Klaveness that focuses on delivering decision-support software solutions for the global maritime industry.",
       "We are proud of what we built at Klaveness Dry Bulk and the role it has played in strengthening freight decision-making for industrial clients. As ‘Market Manager’ continues to live and evolve within Klaveness Digital, we remain committed to advancing digital innovation across our commercial platform.",
     ],
@@ -129,7 +129,7 @@ export const baumarinePage = {
       "In 1963, the first shipping pool ever was created by shipping visionary Mr. Torvald Klaveness. The idea was spun out of his belief in providing cost-efficient and predictable transport services to his customers, and finding new and creative ways to do so.",
       "In Klaveness we believe in partnerships and collaboration and Baumarine, the largest dry bulk Panamax and Kamsarmax pool worldwide, is our flagship brand, connecting shipowners globally by leveraging our extensive market and industry expertise. In a volatile market where charterers often dictate timing, we empower owners by offering a compelling alternative.",
       "Through close collaboration, scale, and advanced data analytics, we put owners back in control of their assets. Our dedicated operations team ensures the preservation of your valuable assets and the well-being of your crew. We strive to be your trusted partner and closest ally throughout the decision-making process, providing guidance on purchase, employment alternatives, earnings potential, and asset sales.",
-      "Welcome to Baumarine, where we truly believe in being Stronger Together!",
+      "Welcome to Baumarine, where we truly believe in being Stronger Together.",
     ],
     image: baumarineTeamImage,
     imageAlt: "Michael Jørgensen walking and laughing with a colleague by the waterfront",
@@ -220,8 +220,9 @@ export const financePage = {
   },
   team: {
     title: "Meet our investment team",
-    people: [
-      { slug: "nadia-naess", email: "nan@klaveness.com" },
-    ] satisfies { slug: PersonSlug; email: string }[],
+    people: [{ slug: "nadia-naess", email: "nan@klaveness.com" }] satisfies {
+      slug: PersonSlug;
+      email: string;
+    }[],
   },
 } as const;

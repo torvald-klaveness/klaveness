@@ -14,7 +14,7 @@ export const tradingEfficiencyPage = {
   meta: {
     title: "Strategy",
     description:
-      "Improving the nature of shipping through trading efficiency: why it matters, the opportunity, where inefficiencies exist, and Klaveness' approach.",
+      "Improving the nature of shipping through trading efficiency: why it matters, the opportunity, where inefficiencies exist, and Klaveness’ approach.",
   },
   hero: {
     eyebrow: "Strategy",
@@ -26,7 +26,7 @@ export const tradingEfficiencyPage = {
   },
   intro: {
     statement:
-      "Shipping moves the world's food, energy, and raw materials. It is one of the most efficient industries in the world. Yet significant inefficiencies remain across the maritime value chain.",
+      "Shipping moves the world’s food, energy, and raw materials. It is one of the most efficient industries in the world. Yet significant inefficiencies remain across the maritime value chain.",
     paragraphs: [
       "Every day, decisions are made about how cargo is bought, sold, transported, stored, and delivered. Too often, those decisions are optimized for individual contracts, vessels, or organizations rather than the wider supply chain.",
       "At Klaveness, we believe greater value can be created when decisions are optimized across the broader shipping ecosystem. Improving trading efficiency is our approach to addressing these inefficiencies and creating better outcomes across the maritime value chain.",
@@ -47,7 +47,7 @@ export const tradingEfficiencyPage = {
     paragraphs: [
       [
         {
-          text: "Klaveness analyzed several inefficiencies across global dry bulk and tanker markets to better understand where value is lost and where opportunities exist to improve performance.",
+          text: "Klaveness reviewed around 50 potential sources of inefficiency across global dry bulk and tanker markets, and assessed 14 of them in detail, to better understand where value is lost and where opportunities exist to improve performance.",
         },
       ],
       [
@@ -91,7 +91,7 @@ export const tradingEfficiencyPage = {
   approach: {
     title: "Our approach",
     paragraphs: [
-      "Trading efficiency sits at the center of Klaveness' corporate direction and our vision to improve the nature of shipping.",
+      "Trading efficiency sits at the center of Klaveness’ corporate direction and our vision to improve the nature of shipping.",
       "We believe it represents one of the largest opportunities for value creation in shipping. While technology and innovation will play an important role, many of the greatest opportunities will require collaboration across the wider industry.",
       "Through our businesses, partnerships, and continued investment in innovation, we aim to contribute to this development and help advance trading efficiency across global seaborne supply chains.",
     ],
@@ -106,7 +106,7 @@ export const tradingEfficiencyPage = {
       { label: "What is trading efficiency", href: "/trading-efficiency/explained" },
       { label: "Research and reports" },
       { label: "Customer stories" },
-      { label: "Through leadership" },
+      { label: "Thought leadership" },
     ] as { label: string; href?: string }[],
   },
 } as const;

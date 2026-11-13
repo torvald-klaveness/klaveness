@@ -39,7 +39,7 @@ export const people = {
     role: "President & CEO",
     image: ernstMeyer,
     bio: [
-      "Ernst Meyer joined Torvald Klaveness in 2019 in the roles of Chief Operations Officer and Managing Director for Klaveness Ship Management. In January 2022, he was appointed new Chief Executive Officer for Torvald Klaveness. Prior to joining Torvald Klaveness, Meyer worked 20 years for Det Norske Veritas (DNV) in various executive positions.",
+      "Ernst Meyer joined Torvald Klaveness in 2019 in the roles of Chief Operating Officer and Managing Director for Klaveness Ship Management. In January 2022, he was appointed new Chief Executive Officer for Torvald Klaveness. Prior to joining Torvald Klaveness, Meyer worked 20 years for Det Norske Veritas (DNV) in various executive positions.",
       "He holds a Master of Sciences in Naval Architecture and Marine Engineering from the Norwegian University of Science and Technology in Trondheim.",
     ],
   },
@@ -95,7 +95,7 @@ export const people = {
     role: "EVP, Head of Dry Bulk",
     image: michaelJorgensen,
     bio: [
-      "With over two decades of shipping experience, Michael Jørgensen serves as EVP and Head of Dry Bulk at Torvald Klaveness, a leading ship operator known for integrating innovation, sustainability, and digital solutions into its operations. In addition to mainstream operations, Klaveness Dry Bulk and Marubeni Corporation run the Panamax pool Baumarine by MaruKlav, where Jørgensen holds the position of Managing Director.",
+      "With over two decades of shipping experience, Michael Jørgensen serves as EVP and Head of Dry Bulk at Torvald Klaveness. Klaveness Dry Bulk is a leading dry bulk operator known for integrating innovation, sustainability, and digital solutions into its operations. In addition to mainstream operations, Klaveness Dry Bulk and Marubeni Corporation run the Panamax pool Baumarine by MaruKlav, where Jørgensen holds the position of Managing Director.",
       "Driven by a passion for challenging the status quo and seeking new ways to deliver value, Jørgensen is dedicated to enhancing the sustainability and digitalization of bulk shipping and together with his team, launched the freight decision-making platform Market Manager by Klaveness in 2023.",
     ],
   },

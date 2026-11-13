@@ -81,7 +81,7 @@ export const workingWithUs = {
   meta: {
     title: "Working with us",
     description:
-      "Our vision, Improving the Nature of Shipping, our core values, personal and professional development through the Klaveness Academy, and employee benefits.",
+      "Our vision, improving the nature of shipping, our core values, personal and professional development through the Klaveness Academy, and employee benefits.",
   },
   hero: {
     eyebrow: "Working with us",
@@ -92,7 +92,7 @@ export const workingWithUs = {
     eyebrow: "Our vision",
     statement: [
       { text: "Our vision, " },
-      { text: "Improving the Nature of Shipping", strong: true },
+      { text: "improving the nature of shipping", strong: true },
       {
         text: ", reflects our belief that shipping can work better. By challenging convention and finding smarter ways to move cargo, we aim to support more resilient, decarbonized, and cost-effective seaborne supply chains.",
       },
@@ -151,9 +151,9 @@ export const lifeAtKlaveness = {
     lead: "At Klaveness, employees have the opportunity to work across businesses, functions, and geographies while helping address some of the most important challenges facing global trade and maritime supply chains.",
     paragraphs: [
       "We combine the reach of an international business with the agility and responsibility that comes from being a Group with a diverse portfolio of companies. This creates opportunities to take ownership, broaden experience, and make a meaningful impact.",
-      "Across the Group, we are united by a shared ambition to improve Trading Efficiency by finding better ways to align commercial, operational, and environmental considerations. Our culture is built on collaboration, trust, curiosity, and continuous improvement. We encourage employees to challenge established thinking, learn from one another, and contribute to shaping the future of shipping.",
+      "Across the Group, we are united by a shared ambition to improve trading efficiency by finding better ways to align commercial, operational, and environmental considerations. Our culture is built on collaboration, trust, curiosity, and continuous improvement. We encourage employees to challenge established thinking, learn from one another, and contribute to shaping the future of shipping.",
     ],
-    links: { "Trading Efficiency": "/trading-efficiency" },
+    links: { "trading efficiency": "/trading-efficiency" },
     image: placeToGrowImage,
     imageAlt: "Two Klaveness colleagues discussing ideas at a whiteboard in the Manila office",
   },

@@ -57,7 +57,7 @@ export const officesPage = {
       entities: [],
       paragraphs: [
         "Torvald Klaveness’ corporate head office is located in Oslo, Norway.",
-        "The management and support of our global activities, as well as day-to-day activities within commercial management, ship owning and ship management, are carried out from our office in Drammensveien 260, 0283 Oslo.",
+        "The management and support of our global activities, as well as day-to-day activities within investment, commercial management and ship management, are carried out from our office in Drammensveien 260, 0283 Oslo.",
       ],
       visiting: ["Drammensveien 260", "NO – 0283 Oslo, Norway"],
       postal: ["P.O.Box 182 Skøyen", "NO – 0212 Oslo, Norway"],

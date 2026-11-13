@@ -48,7 +48,7 @@ export const sustainabilityPage = {
     eyebrow: "What it means",
     paragraphs: [
       "For us, improving the nature of shipping means more than reducing emissions. It means conducting business responsibly, protecting the wellbeing of people, and strengthening the long-term resilience of the maritime industry.",
-      "We pursue this through innovative business models, new collaborations, and operational excellence working closely with our customers and partners. Our approach guides how we manage risk, engage with stakeholders, develop our people, and contribute to the industry's transition towards a safer, lower-emission future.",
+      "We pursue this through innovative business models, new collaborations, and operational excellence working closely with our customers and partners. Our approach guides how we manage risk, engage with stakeholders, develop our people, and contribute to the industry’s transition towards a safer, lower-emission future.",
     ],
     image: portholeImage,
     imageAlt: "Waves breaking on the open sea, seen through a blue porthole",
@@ -59,7 +59,7 @@ export const sustainabilityPage = {
     imageAlt:
       "Aerial view of a red bulk carrier at sea with a digital data overlay tracing its route",
     paragraphs: [
-      "Trading Efficiency is a key pillar of our sustainability approach. More efficient trading patterns, better asset utilization, improved planning, and stronger coordination between stakeholders can reduce emissions, lower resource consumption, improve safety, and create greater value across the supply chain.",
+      "Trading efficiency is a key pillar of our sustainability approach. More efficient trading patterns, better asset utilization, improved planning, and stronger coordination between stakeholders can reduce emissions, lower resource consumption, improve safety, and create greater value across the supply chain.",
       "Through the vessels, freight solutions and digital services of our portfolio companies, we help customers navigate an increasingly complex operating environment while contributing to a more sustainable shipping industry.",
     ],
     link: { label: "More about our strategy", href: "/trading-efficiency" },
@@ -127,8 +127,7 @@ export const esgPage = {
       "Reducing the impact of activities directly controlled by Torvald Klaveness.",
     ],
     image: esgEnvironmentalImage,
-    imageAlt:
-      "The deck of a Klaveness vessel stretching out to the bow at sunset, over an orange sea",
+    imageAlt: "The deck of a vessel stretching out to the bow at sunset, over an orange sea",
   },
   social: {
     label: "Social",
@@ -152,7 +151,7 @@ export const esgPage = {
       "Responsible engagement with communities and society.",
     ],
     image: esgSocialImage,
-    imageAlt: "Two Klaveness crew members in hard hats reviewing documents on the deck of a vessel",
+    imageAlt: "Two crew members in hard hats reviewing documents on the deck of a vessel",
   },
   governance: {
     label: "Governance",
