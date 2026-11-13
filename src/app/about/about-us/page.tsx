@@ -32,6 +32,7 @@ export default function AboutUsPage() {
         image={hero.image}
         nextId="who-we-are"
         imagePosition="50% 60%"
+        quality={90}
       />
 
       {/* Who we are */}

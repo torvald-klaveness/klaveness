@@ -36,6 +36,7 @@ export default function StakeholdersPage() {
         image={hero.image}
         nextId="working-with-stakeholders"
         imagePosition="50% 30%"
+        quality={90}
       />
 
       {/*
