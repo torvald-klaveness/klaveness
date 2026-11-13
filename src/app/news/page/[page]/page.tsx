@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import newsroomImage from "@/assets/images/news/newsroom-first-light.webp";
 import { TitleBand } from "@/components/layout/TitleBand";
 import { NewsCardItem } from "@/components/news/NewsCardItem";
 import { getNewsArticles, toNewsCard } from "@/lib/news/articles";
@@ -65,6 +66,7 @@ export default async function NewsArchivePage({ params }: PageProps<"/news/page/
         eyebrow="News"
         title="Newsroom"
         description={`Page ${page} of ${pages}`}
+        image={{ src: newsroomImage, veil: 0.2, position: "70% 40%" }}
         breadcrumb={[{ label: "News", href: "/news" }, { label: `Page ${page}` }]}
       />
 

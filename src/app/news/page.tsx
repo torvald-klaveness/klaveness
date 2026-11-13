@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
+import newsroomImage from "@/assets/images/news/newsroom-first-light.webp";
 import { TitleBand } from "@/components/layout/TitleBand";
 import { Newsroom, NewsroomGrid } from "@/components/news/Newsroom";
 import { mainNav } from "@/content/site";
@@ -37,6 +38,8 @@ export default async function NewsPage() {
         title="Newsroom"
         description={description}
         breadcrumb={[{ label: "News" }]}
+        // Brand graphic, already navy: a light veil keeps the orange horizon glow.
+        image={{ src: newsroomImage, veil: 0.2, position: "70% 40%" }}
       />
 
       <section aria-label="Articles" className="pt-[clamp(3rem,5vw,6rem)] pb-32 md:pb-44">
