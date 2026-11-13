@@ -66,7 +66,7 @@ export default async function NewsArchivePage({ params }: PageProps<"/news/page/
         eyebrow="News"
         title="Newsroom"
         description={`Page ${page} of ${pages}`}
-        image={{ src: newsroomImage, veil: 0.6, position: "100% 0%" }}
+        image={{ src: newsroomImage, veil: 0.6, position: "64% 50%" }}
         breadcrumb={[{ label: "News", href: "/news" }, { label: `Page ${page}` }]}
       />
 

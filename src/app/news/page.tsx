@@ -39,7 +39,7 @@ export default async function NewsPage() {
         description={description}
         breadcrumb={[{ label: "News" }]}
         // Klaveness Forum Dubai: the stage and audience under the usual navy veil.
-        image={{ src: newsroomImage, veil: 0.6, position: "100% 0%" }}
+        image={{ src: newsroomImage, veil: 0.6, position: "64% 50%" }}
       />
 
       <section aria-label="Articles" className="pt-[clamp(3rem,5vw,6rem)] pb-32 md:pb-44">
