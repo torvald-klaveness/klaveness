@@ -2,7 +2,7 @@ import icebergImage from "@/assets/images/sustainability/iceberg.webp";
 import esgEnvironmentalImage from "@/assets/images/sustainability/esg-environmental.webp";
 import esgGovernanceImage from "@/assets/images/sustainability/esg-governance.webp";
 import esgSocialImage from "@/assets/images/sustainability/esg-social-crew.webp";
-import esgHeroImage from "@/assets/images/sustainability/esg-hero-waves.webp";
+import esgHeroImage from "@/assets/images/sustainability/esg-hero-bow.webp";
 import heroImage from "@/assets/images/sustainability/hero-sunset.webp";
 import ceoImage from "@/assets/images/sustainability/ernst-meyer-square.webp";
 import portholeImage from "@/assets/images/sustainability/porthole.webp";

@@ -50,7 +50,7 @@ export default function EsgPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="environmental"
-        imagePosition="65% 92%"
+        imagePosition="20% 50%"
         quality={90}
       />
 
