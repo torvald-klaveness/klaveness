@@ -83,28 +83,27 @@ export default function EsgPage() {
       {/* Social */}
       <section id="social" aria-labelledby="social-title" className={`scroll-mt-16 ${sectionY}`}>
         <div className="container-site">
-          <div className="reveal md:w-[66.5%]">
-            <PillarEyebrow pillar="social" label={social.label} />
-            <div className="mt-[clamp(1.5rem,2.6vw,3rem)]">
-              <SubHeading>{social.working.heading}</SubHeading>
-              <Paragraphs items={social.working.paragraphs} className="space-y-[1.15em]" />
-            </div>
-          </div>
-
-          <div className={`mt-[clamp(2.5rem,4.6vw,5.5rem)] items-start ${split.imageText}`}>
+          {/* One photo + text pair like the other pillars, mirrored (photo left) for a zig-zag rhythm. */}
+          <div className={`items-start ${split.imageText}`}>
             <Photo
               image={social.image}
               alt={social.imageAlt}
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="order-2 md:order-none md:mt-[clamp(2rem,3.4vw,4rem)]"
+              className="order-2 md:order-none md:mt-[clamp(1rem,1.6vw,2rem)]"
             />
             <div className="reveal">
-              <SubHeading>{social.beyond.heading}</SubHeading>
-              <Paragraphs items={social.beyond.paragraphs} className="space-y-[1.15em]" />
+              <PillarEyebrow pillar="social" label={social.label} />
+              <div className="mt-[clamp(1.5rem,2.6vw,3rem)]">
+                <SubHeading>{social.working.heading}</SubHeading>
+                <Paragraphs items={social.working.paragraphs} className="space-y-[1.15em]" />
+              </div>
+              <div className="mt-[1.6em]">
+                <SubHeading>{social.beyond.heading}</SubHeading>
+                <Paragraphs items={social.beyond.paragraphs} className="space-y-[1.15em]" />
+              </div>
               <FocusList items={social.focus} />
             </div>
           </div>
-
         </div>
       </section>
 
@@ -142,7 +141,6 @@ export default function EsgPage() {
               className="md:mt-[clamp(1rem,1.6vw,2rem)]"
             />
           </div>
-
         </div>
       </section>
     </>

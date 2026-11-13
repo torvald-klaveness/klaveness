@@ -127,24 +127,21 @@ export const esgPage = {
       "Reducing the impact of activities directly controlled by Torvald Klaveness.",
     ],
     image: esgEnvironmentalImage,
-    imageAlt: "The deck of a Klaveness vessel stretching out to the bow at sunset, over an orange sea",
+    imageAlt:
+      "The deck of a Klaveness vessel stretching out to the bow at sunset, over an orange sea",
   },
   social: {
     label: "Social",
     working: {
       heading: "Creating a safe, inclusive and responsible working environment",
       paragraphs: [
-        "Torvald Klaveness seeks to provide a safe, inclusive and respectful working environment and to promote responsible employment practices across the Group.",
-        "We set expectations for health and safety, equal opportunities, professional development and respect for human and labor rights, while recognizing that individual portfolio companies must manage the specific people-related risks associated with their operations.",
-        "Through active ownership, dialogue and shared learning, we support our businesses in strengthening their organizational capabilities, workplace cultures and approach to people-related risks.",
+        "We set expectations for health and safety, equal opportunities, professional development and respect for human and labor rights. Through active ownership, dialogue and shared learning, we help our portfolio companies manage the people-related risks specific to their operations.",
       ],
     },
     beyond: {
       heading: "Contributing beyond our business",
       paragraphs: [
-        "We recognize a responsibility beyond our own activities and seek to contribute positively to the communities and societies connected to our business.",
-        "Our contribution includes promoting equal opportunities and responsible business conduct, supporting learning and competence development, and maintaining clear expectations for human and labor rights across our value chain.",
-        "We also support selected humanitarian and community initiatives, including organizations assisting people affected by conflict, displacement and hardship.",
+        "We seek to contribute positively to the communities and societies connected to our business, including selected humanitarian initiatives that assist people affected by conflict, displacement and hardship.",
       ],
     },
     focus: [
