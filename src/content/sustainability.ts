@@ -127,7 +127,7 @@ export const esgPage = {
       "Reducing the impact of activities directly controlled by Torvald Klaveness.",
     ],
     image: esgEnvironmentalImage,
-    imageAlt: "Close-up of ocean waves at sunset",
+    imageAlt: "Model of a Klaveness vessel with the K funnel mark, colleagues in a meeting behind it",
   },
   social: {
     label: "Social",
