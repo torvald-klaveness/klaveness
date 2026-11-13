@@ -1,8 +1,8 @@
 import icebergImage from "@/assets/images/sustainability/iceberg.webp";
-import heroTemporary from "@/assets/images/home/hero-ocean.webp";
 import esgEnvironmentalImage from "@/assets/images/sustainability/esg-environmental.webp";
 import esgGovernanceImage from "@/assets/images/sustainability/esg-governance.webp";
 import esgSocialImage from "@/assets/images/sustainability/esg-social-crew.webp";
+import esgHeroImage from "@/assets/images/sustainability/esg-hero-waves.webp";
 import heroImage from "@/assets/images/sustainability/hero-sunset.webp";
 import ceoImage from "@/assets/images/sustainability/ernst-meyer-square.webp";
 import portholeImage from "@/assets/images/sustainability/porthole.webp";
@@ -94,12 +94,12 @@ export const sustainabilityPage = {
 
 export const esgPage = {
   meta: {
-    title: "ESG priority",
+    title: "ESG priorities",
     description:
       "Klaveness is focused on creating long-term value by advancing environmental, social, and governance priorities across shipping.",
   },
   hero: {
-    eyebrow: "ESG priority",
+    eyebrow: "ESG priorities",
     statement: [
       { text: "Klaveness is focused on creating long-term value by advancing " },
       { text: "environmental", strong: true },
@@ -109,7 +109,7 @@ export const esgPage = {
       { text: "governance", strong: true },
       { text: " priorities across shipping." },
     ] satisfies RichLine,
-    image: heroTemporary,
+    image: esgHeroImage,
   },
   environmental: {
     label: "Environmental",

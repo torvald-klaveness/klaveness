@@ -74,7 +74,7 @@ export const mainNav: NavItem[] = [
     href: "/sustainability",
     children: [
       { label: "Sustainability", href: "/sustainability" },
-      { label: "ESG priority", href: "/sustainability/esg-priorities" },
+      { label: "ESG priorities", href: "/sustainability/esg-priorities" },
       { label: "Our stakeholders", href: "/sustainability/stakeholders" },
     ],
   },
