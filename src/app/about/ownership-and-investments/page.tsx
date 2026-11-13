@@ -30,7 +30,8 @@ export default function KlavenessFinancePage() {
         statement={hero.statement}
         image={hero.image}
         nextId="finance"
-        imagePosition="50% 50%"
+        imagePosition="60% 50%"
+        quality={90}
       />
 
       <section

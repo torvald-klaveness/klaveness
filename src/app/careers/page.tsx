@@ -31,7 +31,8 @@ export default function CareersPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="intro"
-        imagePosition="50% 45%"
+        imagePosition="20% 15%"
+        quality={90}
       />
 
       {/* Intro */}
