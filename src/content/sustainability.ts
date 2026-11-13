@@ -3,6 +3,7 @@ import heroTemporary from "@/assets/images/home/hero-ocean.webp";
 import esgEnvironmentalImage from "@/assets/images/sustainability/esg-environmental.webp";
 import esgGovernanceImage from "@/assets/images/sustainability/esg-governance.webp";
 import esgSocialImage from "@/assets/images/sustainability/esg-social-crew.webp";
+import heroImage from "@/assets/images/sustainability/hero-sunset.webp";
 import ceoImage from "@/assets/images/sustainability/ernst-meyer-square.webp";
 import portholeImage from "@/assets/images/sustainability/porthole.webp";
 import stakeholdersHeroImage from "@/assets/images/sustainability/stakeholders-hero.webp";
@@ -33,7 +34,7 @@ export const sustainabilityPage = {
       { text: "positive contribution", strong: true },
       { text: " to society" },
     ] satisfies RichLine,
-    image: heroTemporary,
+    image: heroImage,
   },
   approach: {
     eyebrow: "Our approach",

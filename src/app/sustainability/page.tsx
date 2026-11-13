@@ -32,7 +32,7 @@ export default function SustainabilityPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="approach"
-        imagePosition="62% 35%"
+        imagePosition="35% 0%"
       />
 
       {/* Our approach and strategy — CEO statement */}
