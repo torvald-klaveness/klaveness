@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
-import newsroomImage from "@/assets/images/news/newsroom-forum-dubai.webp";
 import { TitleBand } from "@/components/layout/TitleBand";
 import { Newsroom, NewsroomGrid } from "@/components/news/Newsroom";
 import { mainNav } from "@/content/site";
@@ -38,8 +37,6 @@ export default async function NewsPage() {
         title="Newsroom"
         description={description}
         breadcrumb={[{ label: "News" }]}
-        // Klaveness Forum Dubai: the stage and audience under the usual navy veil.
-        image={{ src: newsroomImage, veil: 0.6, position: "64% 50%" }}
       />
 
       <section aria-label="Articles" className="pt-[clamp(3rem,5vw,6rem)] pb-32 md:pb-44">

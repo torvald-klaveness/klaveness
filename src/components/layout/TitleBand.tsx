@@ -1,4 +1,4 @@
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -15,16 +15,8 @@ type TitleBandProps = {
   breadcrumb?: Crumb[];
   /** Extra lines under the title (an article's date and categories). */
   children?: ReactNode;
-  /**
-   * Optional image behind the navy veil and gradient (an article's cover).
-   * `veil` is the navy overlay opacity (default 0.75); `position` the crop.
-   */
-  image?: {
-    src: string | StaticImageData;
-    unoptimized?: boolean;
-    veil?: number;
-    position?: string;
-  };
+  /** Optional photo behind the navy veil and gradient (an article's cover). */
+  image?: { src: string; unoptimized?: boolean };
 };
 
 /**
@@ -50,13 +42,9 @@ export function TitleBand({
             preload
             unoptimized={image.unoptimized}
             sizes="100vw"
-            quality={typeof image.src === "string" ? undefined : 90}
-            style={image.position ? { objectPosition: image.position } : undefined}
             className="motion-safe-only animate-hero-zoom object-cover"
           />
-          <div className="absolute inset-0 bg-navy" style={{ opacity: image.veil ?? 0.75 }} />
-          {/* Fade the top of the image into navy so the menu always sits on a calm background. */}
-          <div className="absolute inset-x-0 top-0 h-2/5 bg-[linear-gradient(180deg,rgb(0_20_70/0.9),transparent)]" />
+          <div className="absolute inset-0 bg-navy/75" />
         </div>
       ) : null}
       <div
