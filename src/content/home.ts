@@ -81,7 +81,7 @@ export const home = {
     body: "Since 1946, Klaveness has introduced new vessel concepts, business models, and technologies that have helped move the industry forward. Explore the milestones, people, and ideas behind our journey.",
     link: { label: "Discover our history", href: "/about/about-us#history" },
     image: historyImage,
-    imageAlt: "Archive photograph of a sailor in a captain’s cap on board a sailing boat",
+    imageAlt: "Archive photograph of founder Torvald Klaveness in a captain’s cap on board a sailing boat",
   },
 
   presence: {
