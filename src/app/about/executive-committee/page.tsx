@@ -4,12 +4,14 @@ import { PeopleDirectory } from "@/components/about/PeopleDirectory";
 import { PageHero } from "@/components/layout/PageHero";
 import { sectionY } from "@/components/sustainability/blocks";
 import { leadershipPage as page } from "@/content/leadership";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/about/executive-committee" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/about/executive-committee",
@@ -26,7 +28,7 @@ export default function LeadershipPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="executive-committee"
-        imagePosition="50% 40%"
+        imagePosition="50% 50%"
       />
       <div
         className={`container-site ${sectionY} pt-[clamp(5rem,9vw,11rem)] pb-[clamp(6rem,10vw,12rem)]`}

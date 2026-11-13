@@ -6,15 +6,17 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/blocks";
 import { financePage as page } from "@/content/companies";
 import { bioHref, people } from "@/content/leadership";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
-  alternates: { canonical: "/companies/klaveness-finance" },
+  alternates: { canonical: "/about/ownership-and-investments" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
-    url: "/companies/klaveness-finance",
+    url: "/about/ownership-and-investments",
   },
 };
 
@@ -28,12 +30,13 @@ export default function KlavenessFinancePage() {
         statement={hero.statement}
         image={hero.image}
         nextId="finance"
-        imagePosition="50% 50%"
+        imagePosition="60% 50%"
+        quality={90}
       />
 
       <section
         id="finance"
-        aria-label="Klaveness Finance"
+        aria-label="Ownership and Investments"
         className={`scroll-mt-16 ${sectionY} pt-[clamp(5rem,9vw,11rem)]`}
       >
         <div className={`container-site items-center ${split.textImage}`}>
@@ -91,22 +94,25 @@ export default function KlavenessFinancePage() {
               {team.title}
             </h2>
 
-            <ul className="grid gap-[clamp(1.5rem,2.6vw,3rem)] sm:grid-cols-2">
+            {/* Two columns only when there is more than one person, so a single card keeps its width. */}
+            <ul
+              className={`grid gap-[clamp(1.5rem,2.6vw,3rem)] ${team.people.length > 1 ? "sm:grid-cols-2" : ""}`}
+            >
               {team.people.map(({ slug, email }) => {
                 const person = people[slug];
                 return (
                   <li key={slug} className="flex gap-[clamp(1rem,1.6vw,1.75rem)]">
-                    <div className="relative aspect-[4/5] w-[clamp(5.5rem,7.5vw,8.5rem)] shrink-0 overflow-hidden rounded-[clamp(0.75rem,1vw,1.25rem)] bg-mist">
+                    <div className="relative aspect-[4/5] w-[clamp(9rem,15vw,17rem)] shrink-0 overflow-hidden rounded-[clamp(0.75rem,1vw,1.25rem)] bg-mist">
                       <Image
                         src={person.image}
                         alt={`Portrait of ${person.name}`}
                         fill
-                        sizes="136px"
+                        sizes="(min-width: 768px) 15vw, 144px"
                         className="object-cover object-[50%_20%]"
                       />
                     </div>
                     <div className="flex min-w-0 flex-col">
-                      <p className="heading-display text-[clamp(1.125rem,1.55vw,1.75rem)] text-copy">
+                      <p className="heading-display text-[clamp(1.125rem,1.55vw,1.75rem)] whitespace-nowrap text-copy">
                         {person.name}
                       </p>
                       <p className="mt-1 text-body-sm font-light text-pretty text-copy">

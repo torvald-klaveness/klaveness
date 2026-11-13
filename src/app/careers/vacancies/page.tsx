@@ -8,12 +8,14 @@ import { sectionY } from "@/components/sustainability/blocks";
 import { careersPages, vacanciesPage as page } from "@/content/careers";
 import { formatNewsDate } from "@/lib/news/shared";
 import { site } from "@/content/site";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: careersPages.vacancies.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: careersPages.vacancies.href,

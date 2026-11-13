@@ -48,7 +48,7 @@ export const mainNav: NavItem[] = [
       { label: "About us", href: "/about/about-us" },
       { label: "Governance", href: "/about/governance" },
       { label: "Leadership team", href: "/about/executive-committee" },
-      { label: "Board of directors", href: "/about/board-of-directors" },
+      { label: "Ownership and Investments", href: "/about/ownership-and-investments" },
       { label: "Financials", href: "/about/financials" },
       { label: "Compliance", href: "/about/compliance" },
     ],
@@ -66,24 +66,22 @@ export const mainNav: NavItem[] = [
       },
       { label: "Klaveness Digital", href: "https://www.klavenessdigital.com", external: true },
       { label: "Klaveness Dry Bulk", href: "/companies/klaveness-dry-bulk" },
-      // Formerly Klaveness Holding (client, Oct 2026).
-      { label: "Klaveness Finance", href: "/companies/klaveness-finance" },
     ],
   },
-  { label: "Trading Efficiency", href: "/trading-efficiency" },
+  { label: "Strategy", href: "/trading-efficiency" },
   {
     label: "Sustainability",
     href: "/sustainability",
     children: [
       { label: "Sustainability", href: "/sustainability" },
-      { label: "ESG priority", href: "/sustainability/esg-priorities" },
+      { label: "ESG priorities", href: "/sustainability/esg-priorities" },
       { label: "Our stakeholders", href: "/sustainability/stakeholders" },
     ],
   },
   {
     label: "News",
     href: "/news",
-    description: "Stories, announcements and insights from across the group.",
+    description: "Stories, announcements and insights from across the Group.",
   },
   {
     label: "Careers",

@@ -8,12 +8,18 @@ import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { sustainabilityPage as page } from "@/content/sustainability";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/sustainability" },
-  openGraph: { title: page.meta.title, description: page.meta.description, url: "/sustainability" },
+  openGraph: {
+    ...sharedOpenGraph,
+    title: page.meta.title,
+    description: page.meta.description,
+    url: "/sustainability",
+  },
 };
 
 export default function SustainabilityPage() {
@@ -26,7 +32,8 @@ export default function SustainabilityPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="approach"
-        imagePosition="62% 35%"
+        imagePosition="35% 0%"
+        quality={90}
       />
 
       {/* Our approach and strategy — CEO statement */}
@@ -94,6 +101,7 @@ export default function SustainabilityPage() {
             image={te.image}
             alt={te.imageAlt}
             sizes="(min-width: 1136px) 73vw, 100vw"
+            quality={90}
             className="mt-[clamp(1.5rem,2.6vw,3rem)]"
           />
 

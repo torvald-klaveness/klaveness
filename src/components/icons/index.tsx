@@ -12,6 +12,8 @@ const base = {
   focusable: false,
 } as const;
 
+const accent = "var(--color-navy-50)";
+
 export function ArrowRight(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" {...base} strokeWidth={1.5} {...props}>
@@ -32,8 +34,8 @@ export function CompassIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 40 40" {...base} {...props}>
       <circle cx="20" cy="20" r="15.5" />
-      <path d="M26.5 13.5 22.2 22.2 13.5 26.5l4.3-8.7z" />
-      <path d="M17.8 17.8 22.2 22.2" />
+      <path d="M26.5 13.5 22.2 22.2 13.5 26.5l4.3-8.7z" stroke={accent} />
+      <path d="M17.8 17.8 22.2 22.2" stroke={accent} />
     </svg>
   );
 }
@@ -41,8 +43,8 @@ export function CompassIcon(props: IconProps) {
 export function ChartIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 40 40" {...base} {...props}>
-      <rect x="7" y="22" width="6" height="11" rx="0.75" />
-      <rect x="17" y="15" width="6" height="18" rx="0.75" />
+      <rect x="7" y="22" width="6" height="11" rx="0.75" stroke={accent} />
+      <rect x="17" y="15" width="6" height="18" rx="0.75" stroke={accent} />
       <rect x="27" y="7" width="6" height="26" rx="0.75" />
     </svg>
   );
@@ -52,7 +54,7 @@ export function LeafIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 40 40" {...base} {...props}>
       <path d="M33 7C17 7 9 14.5 9 24.5c0 3 1 5.6 2.6 7.6C21.5 32 33 26 33 7Z" />
-      <path d="M7 34c6.5-7.5 13-14.5 21-21" />
+      <path d="M7 34c6.5-7.5 13-14.5 21-21" stroke={accent} />
     </svg>
   );
 }
@@ -62,7 +64,7 @@ export function NewsIcon(props: IconProps) {
     <svg viewBox="0 0 40 40" {...base} {...props}>
       <path d="M9 8.5h18.5v24a2 2 0 0 0 2 2H11a2 2 0 0 1-2-2z" />
       <path d="M27.5 15H32v17.5a2 2 0 0 1-4 0" />
-      <path d="M13.5 14h9.5M13.5 19.5h9.5M13.5 25h6" />
+      <path d="M13.5 14h9.5M13.5 19.5h9.5M13.5 25h6" stroke={accent} />
     </svg>
   );
 }
@@ -88,7 +90,7 @@ export function DocumentIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 40 40" {...base} {...props}>
       <path d="M10 4.5h14l8 8v23H10z" />
-      <path d="M24 4.5v8h8M15 20h12M15 25h12M15 30h8" />
+      <path d="M24 4.5v8h8M15 20h12M15 25h12M15 30h8" stroke={accent} />
     </svg>
   );
 }

@@ -19,6 +19,7 @@ import {
 } from "@/lib/news/articles";
 import { categorySlug, formatNewsDate } from "@/lib/news/shared";
 import { newsArticleJsonLd } from "@/lib/structured-data";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 // Articles come from the content repo; new ones render on their first visit.
 export const revalidate = 900;
@@ -33,19 +34,30 @@ export async function generateMetadata({ params }: PageProps<"/news/[slug]">): P
   const article = await getNewsArticle((await params).slug);
   if (!article) return {};
   const path = `/news/${article.slug}`;
+  const { cover } = await getArticleImages(article);
   return {
     title: article.title,
     description: article.description || undefined,
     alternates: { canonical: path },
     openGraph: {
+      ...sharedOpenGraph,
       type: "article",
       title: article.title,
       description: article.description || undefined,
       url: path,
       publishedTime: article.date,
-      images: article.cover
-        ? [{ url: absolute(article.cover.src), alt: article.cover.alt }]
-        : undefined,
+      modifiedTime: article.updated,
+      images:
+        cover && article.cover
+          ? [
+              {
+                url: absolute(cover.src),
+                width: cover.width,
+                height: cover.height,
+                alt: article.cover.alt,
+              },
+            ]
+          : sharedOpenGraph.images,
     },
   };
 }
@@ -62,7 +74,9 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
       <JsonLd
         data={newsArticleJsonLd({
           ...article,
-          image: article.cover ? absolute(article.cover.src) : undefined,
+          image: cover
+            ? { url: absolute(cover.src), width: cover.width, height: cover.height }
+            : undefined,
         })}
       />
 

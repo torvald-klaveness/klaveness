@@ -6,12 +6,14 @@ import { Paragraphs, sectionY } from "@/components/sustainability/blocks";
 import { DocumentCard } from "@/components/ui/DocumentCard";
 import { compliancePage as page } from "@/content/about";
 import { complianceDocuments, whistleblowingPortal } from "@/content/documents";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/about/compliance" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/about/compliance",

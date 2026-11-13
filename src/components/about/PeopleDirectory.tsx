@@ -62,7 +62,7 @@ export function PeopleDirectory({ teams }: { teams: readonly Readonly<Team>[] })
               // Each card spans three shared rows (photo, name, role), so names and
               // roles line up across a row even when a name wraps to two lines.
               className={`mt-[clamp(1.75rem,3vw,3.5rem)] grid grid-cols-2 gap-x-[clamp(1rem,2vw,2.5rem)] gap-y-[clamp(2rem,3.4vw,4rem)] ${
-                compact ? "md:grid-cols-3 lg:grid-cols-5" : "md:grid-cols-3 lg:grid-cols-4"
+                compact ? "md:grid-cols-4 lg:grid-cols-4" : "md:grid-cols-3 lg:grid-cols-3"
               }`}
             >
               {team.members.map((slug, index) => {
@@ -124,6 +124,18 @@ export function PeopleDirectory({ teams }: { teams: readonly Readonly<Team>[] })
                   </li>
                 );
               })}
+              {/* A thin orange rule fills the empty slots after a short last row (three-column layout). */}
+              {team.fillLastRow && !compact && team.members.length % 3 ? (
+                <li
+                  aria-hidden
+                  className="reveal row-span-3 hidden grid-rows-subgrid gap-y-0 md:grid"
+                  style={{ gridColumn: `span ${3 - (team.members.length % 3)}` }}
+                >
+                  <span className="flex items-center justify-center">
+                    <span className="h-px w-3/5 bg-orange" />
+                  </span>
+                </li>
+              ) : null}
             </ul>
           </section>
         );

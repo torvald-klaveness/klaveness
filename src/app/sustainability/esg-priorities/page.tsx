@@ -8,18 +8,19 @@ import {
   Paragraphs,
   Photo,
   SubHeading,
-  TargetsCard,
   sectionY,
   split,
 } from "@/components/sustainability/blocks";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { esgPage as page, type EsgPillarKey } from "@/content/sustainability";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/sustainability/esg-priorities" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/sustainability/esg-priorities",
@@ -40,7 +41,7 @@ function PillarEyebrow({ pillar, label }: { pillar: EsgPillarKey; label: string 
 }
 
 export default function EsgPage() {
-  const { hero, environmental: env, social, governance: gov, performanceYear } = page;
+  const { hero, environmental: env, social, governance: gov } = page;
 
   return (
     <>
@@ -49,7 +50,8 @@ export default function EsgPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="environmental"
-        imagePosition="62% 35%"
+        imagePosition="20% 50%"
+        quality={90}
       />
 
       {/* Environmental */}
@@ -64,8 +66,8 @@ export default function EsgPage() {
               <PillarEyebrow pillar="environmental" label={env.label} />
               <div className="mt-[clamp(1.5rem,2.6vw,3rem)]">
                 <SubHeading>{env.heading}</SubHeading>
-                <Paragraphs items={env.paragraphs} />
-                <FocusList items={env.focus} />
+                <Paragraphs items={env.paragraphs} className="space-y-[1.15em]" />
+                <FocusList items={env.focus} title={env.focusTitle} />
               </div>
             </div>
             <Photo
@@ -75,51 +77,33 @@ export default function EsgPage() {
               className="md:mt-[clamp(1rem,1.6vw,2rem)]"
             />
           </div>
-
-          <TargetsCard {...env.card} year={performanceYear} />
-
-          <p className="mt-[clamp(1.25rem,1.9vw,2.25rem)] text-body font-light text-copy italic">
-            {env.note.text}{" "}
-            <a
-              href={env.note.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-ink underline decoration-orange/40 underline-offset-4 transition-colors hover:decoration-orange"
-            >
-              {env.note.linkLabel}
-              <span className="sr-only"> (Klaveness Combination Carriers, opens in a new tab)</span>
-            </a>
-            .
-          </p>
         </div>
       </section>
 
       {/* Social */}
       <section id="social" aria-labelledby="social-title" className={`scroll-mt-16 ${sectionY}`}>
         <div className="container-site">
-          <div className="reveal md:w-[66.5%]">
-            <PillarEyebrow pillar="social" label={social.label} />
-            <div className="mt-[clamp(1.5rem,2.6vw,3rem)]">
-              <SubHeading>{social.klass.heading}</SubHeading>
-              <Paragraphs items={social.klass.paragraphs} />
-            </div>
-          </div>
-
-          <div className={`mt-[clamp(2.5rem,4.6vw,5.5rem)] items-start ${split.imageText}`}>
+          {/* One photo + text pair like the other pillars, mirrored (photo left) for a zig-zag rhythm. */}
+          <div className={`items-start ${split.imageText}`}>
             <Photo
               image={social.image}
               alt={social.imageAlt}
               sizes="(min-width: 768px) 50vw, 100vw"
-              className="order-2 md:order-none md:mt-[clamp(2rem,3.4vw,4rem)]"
+              className="order-2 md:order-none md:mt-[clamp(1rem,1.6vw,2rem)]"
             />
             <div className="reveal">
-              <SubHeading>{social.people.heading}</SubHeading>
-              <Paragraphs items={social.people.paragraphs} />
+              <PillarEyebrow pillar="social" label={social.label} />
+              <div className="mt-[clamp(1.5rem,2.6vw,3rem)]">
+                <SubHeading>{social.working.heading}</SubHeading>
+                <Paragraphs items={social.working.paragraphs} className="space-y-[1.15em]" />
+              </div>
+              <div className="mt-[1.6em]">
+                <SubHeading>{social.beyond.heading}</SubHeading>
+                <Paragraphs items={social.beyond.paragraphs} className="space-y-[1.15em]" />
+              </div>
               <FocusList items={social.focus} />
             </div>
           </div>
-
-          <TargetsCard {...social.card} year={performanceYear} />
         </div>
       </section>
 
@@ -135,7 +119,7 @@ export default function EsgPage() {
               <PillarEyebrow pillar="governance" label={gov.label} />
               <div className="mt-[clamp(1.5rem,2.6vw,3rem)]">
                 <SubHeading>{gov.heading}</SubHeading>
-                <Paragraphs items={gov.paragraphs} links={gov.links} />
+                <Paragraphs items={gov.paragraphs} className="space-y-[1.15em]" />
                 <FocusList items={gov.focus} />
                 <p className="mt-[1.6em] text-body font-light text-copy">
                   {gov.structureNote.text}{" "}
@@ -157,8 +141,6 @@ export default function EsgPage() {
               className="md:mt-[clamp(1rem,1.6vw,2rem)]"
             />
           </div>
-
-          <TargetsCard {...gov.card} year={performanceYear} />
         </div>
       </section>
     </>

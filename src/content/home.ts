@@ -3,12 +3,11 @@ import historyImage from "@/assets/images/home/history.webp";
 import kccImage from "@/assets/images/home/klaveness-combination-carriers.webp";
 import kdImage from "@/assets/images/home/klaveness-digital.webp";
 import kdbImage from "@/assets/images/home/klaveness-dry-bulk.webp";
-import financeImage from "@/assets/images/companies/klaveness-finance/team.webp";
 
 export const home = {
   hero: {
-    // Background video from the old site's homepage: drone footage of MV Ballard
-    // (Klaveness Combination Carriers) off Kwinana, October 2023. Files in public/videos.
+    // Background video: animated globe with trade routes (story-2026-11-12), cut to
+    // its last 14 seconds (from 0:16) so the loop starts there. Files in public/videos.
     video: {
       src: "/videos/home-hero.mp4",
       // Centre crop for phones, where the hero is portrait.
@@ -22,30 +21,30 @@ export const home = {
       { text: "the nature of", strong: false },
       { text: "Shipping", strong: true },
     ],
-    // Client's corrected text (email, October 2026).
-    lead: "Klaveness is a pioneering shipping group delivering a portfolio of physical and digital solutions to the maritime industry. We focus on increasing trading efficiency to support more resilient, decarbonized and cost-effective seaborne supply chains.",
-    cta: { label: "Explore Klaveness", href: "#who-we-are" },
   },
 
   // Client's revised homepage text (October 2026).
   intro: {
     eyebrow: "Who we are",
-    title: "For 80 years, Klaveness has challenged the status quo in shipping.",
-    body: "Founded in 1946, we’ve built a portfolio of businesses centered on finding better ways to move cargo and improve how shipping works.",
+    title: "For 80 years, Torvald Klaveness has challenged the status quo.",
+    // Under the heading, left column.
+    story: [
+      "Shipping has been our business since 1946, and we’ve never stopped asking how it could be better. Today, we believe global trade can be far less wasteful.",
+      "We are a pioneering shipping group that develops and invests in companies working to remove inefficiencies in the way cargo is traded and transported by sea.",
+      "Better for our customers, and better for the world they ship in.",
+    ],
     link: { label: "About us", href: "/about/about-us" },
   },
 
   // Entry points (client: "News, Trading Efficiency, Sustainability").
   entryPoints: [
     { icon: "news", title: "News", href: "/news" },
-    { icon: "chart", title: "Trading Efficiency", href: "/trading-efficiency" },
+    { icon: "chart", title: "Strategy", href: "/trading-efficiency" },
     { icon: "leaf", title: "Sustainability", href: "/sustainability" },
   ],
 
   businesses: {
     eyebrow: "Our portfolio companies",
-    title:
-      "Our portfolio companies combine maritime expertise, innovative business models, and digital capabilities to address some of shipping’s most complex challenges.",
     items: [
       {
         name: "Klaveness Combination Carriers",
@@ -73,14 +72,6 @@ export const home = {
         imageAlt:
           "Aerial view of bulk carriers moored at a terminal, with the Klaveness Dry Bulk logo",
       },
-      {
-        name: "Klaveness Finance",
-        body: "Klaveness Finance provides strategic direction, capital allocation, and active ownership across the Klaveness portfolio.",
-        href: "/companies/klaveness-finance",
-        external: false,
-        image: financeImage,
-        imageAlt: "Two Klaveness colleagues talking in the office, with the Klaveness symbol",
-      },
     ],
   },
 
@@ -90,7 +81,7 @@ export const home = {
     body: "Since 1946, Klaveness has introduced new vessel concepts, business models, and technologies that have helped move the industry forward. Explore the milestones, people, and ideas behind our journey.",
     link: { label: "Discover our history", href: "/about/about-us#history" },
     image: historyImage,
-    imageAlt: "Archive photograph of a sailor in a captain’s cap on board a sailing boat",
+    imageAlt: "Archive photograph of founder Torvald Klaveness in a captain’s cap on board a sailing boat",
   },
 
   presence: {

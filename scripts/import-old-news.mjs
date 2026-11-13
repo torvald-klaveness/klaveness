@@ -60,7 +60,6 @@ const LEADERSHIP = [
   "ernst-meyer",
   "trine-hellum",
   "fabian-flaaten",
-  "goran-andreassen",
   "engebret-dahm",
   "ingrid-kylstad",
   "michael-jorgensen",

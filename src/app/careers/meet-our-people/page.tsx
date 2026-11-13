@@ -6,12 +6,14 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Paragraphs, sectionY } from "@/components/sustainability/blocks";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { careersPages, meetOurPeople as page } from "@/content/careers";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: careersPages.people.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: careersPages.people.href,

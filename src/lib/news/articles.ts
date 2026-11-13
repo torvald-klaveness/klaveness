@@ -64,6 +64,9 @@ function parseArticle(raw: string, file: string, snapshot: NewsSnapshot): NewsAr
   if (!SLUG_PATTERN.test(slug)) throw new Error(`"slug" must be lowercase words joined by hyphens`);
   const date = required("publishedAt");
   if (!DATE_PATTERN.test(date)) throw new Error(`"publishedAt" must look like 2026-10-19`);
+  const updated = text("updatedAt") || undefined;
+  if (updated && !DATE_PATTERN.test(updated))
+    throw new Error(`"updatedAt" must look like 2026-10-19`);
   const body = match[2].trim();
   if (!body) throw new Error("the article has no text");
 
@@ -84,6 +87,7 @@ function parseArticle(raw: string, file: string, snapshot: NewsSnapshot): NewsAr
     title: required("title"),
     description: text("description"),
     date,
+    updated,
     categories,
     cover,
     body,

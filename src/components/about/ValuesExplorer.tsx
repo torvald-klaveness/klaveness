@@ -91,7 +91,7 @@ export function ValuesExplorer({
               >
                 <Icon
                   className={`size-[clamp(2.25rem,2.6vw,3.25rem)] shrink-0 transition-colors duration-300 ${
-                    selected ? "text-orange" : "text-ink-faint group-hover:text-ink-muted"
+                    selected ? "text-orange" : "text-navy group-hover:text-orange"
                   }`}
                 />
                 <span

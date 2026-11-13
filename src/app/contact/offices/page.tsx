@@ -10,12 +10,14 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { type OfficeDetail, contactPages, mapsHref, officesPage as page } from "@/content/contact";
 import { offices } from "@/content/offices";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: contactPages.offices.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: contactPages.offices.href,
