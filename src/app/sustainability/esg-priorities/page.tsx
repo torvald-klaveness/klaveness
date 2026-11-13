@@ -51,6 +51,7 @@ export default function EsgPage() {
         image={hero.image}
         nextId="environmental"
         imagePosition="65% 92%"
+        quality={90}
       />
 
       {/* Environmental */}

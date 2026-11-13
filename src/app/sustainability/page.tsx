@@ -33,6 +33,7 @@ export default function SustainabilityPage() {
         image={hero.image}
         nextId="approach"
         imagePosition="35% 0%"
+        quality={90}
       />
 
       {/* Our approach and strategy — CEO statement */}

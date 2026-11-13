@@ -167,6 +167,7 @@ export default function TradingEfficiencyExplainedPage() {
         ]}
         image={heroImage}
         nextId="te-definition"
+        quality={90}
       />
 
       <div id="te-story">
