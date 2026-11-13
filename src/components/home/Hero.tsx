@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative isolate flex h-[100svh] max-h-[62rem] min-h-[40rem] items-end overflow-hidden bg-navy text-white"
+      className="relative isolate flex h-[74svh] max-h-[56rem] min-h-[32rem] items-end overflow-hidden bg-navy text-white"
     >
       <div aria-hidden className="absolute inset-0 -z-10">
         <Image
@@ -34,7 +34,7 @@ export function Hero() {
       </div>
 
       {/* Same 12-column grid as the intro below, so the title lines up with its text. */}
-      <div className="container-site grid pb-[clamp(4rem,11svh,6rem)] md:grid-cols-12 md:items-end md:gap-8 md:pb-[clamp(5rem,24svh,14rem)]">
+      <div className="container-site grid pb-[clamp(4rem,11svh,6rem)] md:grid-cols-12 md:items-end md:gap-8 md:pb-[clamp(4rem,12svh,8rem)]">
         <h1
           id="hero-title"
           className="motion-safe-only animate-rise border-l-2 border-orange pl-6 text-[clamp(2.25rem,3.45vw,4.25rem)] leading-[1.06] tracking-[0.01em] uppercase md:col-span-7 md:pl-8"
