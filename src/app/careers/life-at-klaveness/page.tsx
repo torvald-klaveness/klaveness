@@ -66,9 +66,15 @@ export default function LifeAtKlavenessPage() {
         aria-labelledby="equal-opportunities-title"
         className={`scroll-mt-16 ${sectionY}`}
       >
-        <div className={`container-site items-center ${split.imageText}`}>
-          <Photo image={eo.image} alt={eo.imageAlt} sizes="(min-width: 768px) 50vw, 100vw" />
-          <div className="reveal">
+        {/* Portrait photo in a narrower column, so it balances the text beside it. */}
+        <div className="container-site grid items-center gap-12 md:grid-cols-[38%_minmax(0,1fr)] md:gap-[8%]">
+          <Photo
+            image={eo.image}
+            alt={eo.imageAlt}
+            sizes="(min-width: 768px) 38vw, 100vw"
+            className="mx-auto w-full max-w-[26rem] md:max-w-none"
+          />
+          <div className="reveal md:max-w-[38rem]">
             <h2 id="equal-opportunities-title" className="heading-display text-section text-copy">
               {eo.title}
             </h2>
