@@ -36,7 +36,7 @@ export default function OfficesPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="around-the-clock"
-        imagePosition="60% 50%"
+        imagePosition="50% 45%"
       />
 
       {/* Live map: every pin jumps to its office below */}

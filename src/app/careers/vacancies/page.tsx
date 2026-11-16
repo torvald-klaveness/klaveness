@@ -32,7 +32,7 @@ export default function VacanciesPage() {
         statement={hero.statement}
         image={hero.image}
         nextId="current-vacancies"
-        imagePosition="50% 50%"
+        imagePosition="50% 78%"
       />
 
       <section

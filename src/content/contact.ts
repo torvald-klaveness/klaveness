@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image";
 
 import officeDubai from "@/assets/images/contact/office-dubai.webp";
+import officesHero from "@/assets/images/contact/offices-hero.webp";
 import officeManila from "@/assets/images/contact/office-manila.webp";
 import officeOslo from "@/assets/images/contact/office-oslo.webp";
 import officeSingapore from "@/assets/images/contact/office-singapore.webp";
@@ -46,7 +47,7 @@ export const officesPage = {
       { text: "Torvald Klaveness has a global presence with offices in " },
       { text: "Oslo, Dubai, Singapore, Tokyo, and Manila", strong: true },
     ] satisfies RichLine,
-    image: officeOslo,
+    image: officesHero,
   },
   offices: [
     {
