@@ -47,7 +47,7 @@ export const dryBulkPage = {
     closing:
       "As a leading operator in the global dry bulk industry and manager of the world’s largest Panamax pool, we aim to align cargo and vessel economics through disciplined execution and differentiated structures.",
     image: teamImage,
-    imageAlt: "Klaveness Dry Bulk colleagues talking in front of the operations screens",
+    imageAlt: "A Klaveness Dry Bulk colleague working at his screens, with the Klaveness Dry Bulk logo",
   },
   services: {
     eyebrow: "Our services",
