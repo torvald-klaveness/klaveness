@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export type Crumb = { label: string; href?: string };
 
@@ -51,6 +53,7 @@ export function TitleBand({
       />
 
       <div className="container-site">
+        {breadcrumb?.length ? <JsonLd data={breadcrumbJsonLd(breadcrumb)} /> : null}
         {breadcrumb?.length ? (
           <nav aria-label="Breadcrumb" className="motion-safe-only mb-10 animate-rise">
             <ol className="flex flex-wrap items-center gap-2 text-[0.8125rem] text-white/55">

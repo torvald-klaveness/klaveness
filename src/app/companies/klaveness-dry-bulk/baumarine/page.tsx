@@ -6,12 +6,14 @@ import { Paragraphs, Photo, sectionY, split } from "@/components/sustainability/
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { RichText } from "@/components/ui/RichText";
 import { baumarinePage as page } from "@/content/companies";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: "/companies/klaveness-dry-bulk/baumarine" },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: "/companies/klaveness-dry-bulk/baumarine",

@@ -2,9 +2,6 @@ import type { NextConfig } from "next";
 
 import newsRedirects from "./src/content/news-redirects.json";
 
-// News images are served from the content repo (see src/lib/news/config.ts).
-const newsRepo = process.env.NEWS_CONTENT_REPO?.trim() || "torvald-klaveness/klaveness-content";
-
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
@@ -13,22 +10,32 @@ const nextConfig: NextConfig = {
     qualities: [75, 90],
     // Extra steps at common laptop widths so full-bleed images aren't oversized.
     deviceSizes: [640, 750, 828, 1080, 1280, 1440, 1680, 1920, 2048, 2560],
-    remotePatterns: [new URL(`https://raw.githubusercontent.com/${newsRepo}/**`)],
+    // News images come through our own /news-media route (src/app/news-media).
   },
   // Keep links to the old Squarespace URLs working.
   async redirects() {
     return [
       { source: "/sustainability/our-approach", destination: "/sustainability", permanent: true },
       { source: "/about-us", destination: "/about/about-us", permanent: true },
+      // The Board of Directors now lives on the Governance page.
+      {
+        source: "/about/board-of-directors",
+        destination: "/about/governance#board-of-directors",
+        permanent: true,
+      },
       {
         source: "/careers/equal-opportunities",
         destination: "/careers/life-at-klaveness#equal-opportunities",
         permanent: true,
       },
-      // Klaveness Holding is now Klaveness Finance, under Companies.
-      ...["/businesses/klaveness-holding", "/about/klaveness-holding"].map((source) => ({
+      // Klaveness Holding is now Ownership and Investments, under About.
+      ...[
+        "/businesses/klaveness-holding",
+        "/about/klaveness-holding",
+        "/companies/klaveness-finance",
+      ].map((source) => ({
         source,
-        destination: "/companies/klaveness-finance",
+        destination: "/about/ownership-and-investments",
         permanent: true,
       })),
       {
@@ -41,7 +48,6 @@ const nextConfig: NextConfig = {
         "ernst-meyer",
         "trine-hellum",
         "fabian-flaaten",
-        "goran-andreassen",
         "engebret-dahm",
         "ingrid-kylstad",
         "michael-jorgensen",
@@ -52,6 +58,12 @@ const nextConfig: NextConfig = {
         destination: `/about/executive-committee#${slug}`,
         permanent: true,
       })),
+      // Gøran Andreassen has left; his old bio page goes to the team page.
+      {
+        source: "/goran-andreassen",
+        destination: "/about/executive-committee",
+        permanent: true,
+      },
       // Same for the Board of Directors bios (the old site spelled one slug "trstad").
       ...[
         ["trond-harald-klaveness", "trond-harald-klaveness"],
@@ -61,7 +73,7 @@ const nextConfig: NextConfig = {
         ["mehrdad-amini", "mehrdad-amini"],
       ].map(([from, to]) => ({
         source: `/${from}`,
-        destination: `/about/board-of-directors#${to}`,
+        destination: `/about/governance#${to}`,
         permanent: true,
       })),
       {
@@ -78,6 +90,26 @@ const nextConfig: NextConfig = {
       { source: "/about", destination: "/about/about-us", permanent: false },
       { source: "/contact", destination: "/contact/offices", permanent: false },
       { source: "/team", destination: "/contact/team", permanent: true },
+      // Other pages from the old sitemap, each to its closest new page.
+      ...[
+        ["/home", "/"],
+        ["/homepage-2026", "/"],
+        ["/businesses/klaveness-combination-carriers", "https://www.combinationcarriers.com"],
+        ["/businesses/klaveness-digital", "https://www.klavenessdigital.com"],
+        [
+          "/businesses/klaveness-ship-management",
+          "/news/torvald-klaveness-sells-klaveness-ship-management-as-to-osm-thome",
+        ],
+        ["/market-manager", "/companies/klaveness-dry-bulk"],
+        ["/vep", "/companies/klaveness-dry-bulk"],
+        ["/tellef-thorleifsson", "/about/governance"],
+        ["/sustainability/our-partners", "/sustainability/stakeholders"],
+        ["/emergency", "/contact/offices"],
+        ["/recruitment-privacy-notice", "/privacy-policy#recruitment-privacy-notice"],
+        ["/redefining-shipping-2024", "/news/redefining-shipping-in-geneva-the-journey-to-2050"],
+        ["/klaveness-supply-chain-summit-2024", "/news"],
+        ["/kcc-naming-ceremony-mv-baltazar-and-klaveness-forum-perth", "/news"],
+      ].map(([source, destination]) => ({ source, destination, permanent: true })),
       // Old Newsroom addresses: dated or tidied slugs, and articles from before
       // 2021 that were not brought over (written by scripts/import-old-news.mjs).
       ...Object.entries(newsRedirects.moved).map(([source, destination]) => ({

@@ -6,12 +6,14 @@ import { sectionY } from "@/components/sustainability/blocks";
 import { contactPages, teamPage as page } from "@/content/contact";
 import { bioHref, bioPages, people, type PersonSlug } from "@/content/leadership";
 import { teamSections } from "@/content/team";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 export const metadata: Metadata = {
   title: page.meta.title,
   description: page.meta.description,
   alternates: { canonical: contactPages.team.href },
   openGraph: {
+    ...sharedOpenGraph,
     title: page.meta.title,
     description: page.meta.description,
     url: contactPages.team.href,

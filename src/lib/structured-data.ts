@@ -58,7 +58,8 @@ export const newsArticleJsonLd = (article: {
   title: string;
   description: string;
   date: string;
-  image?: string;
+  updated?: string;
+  image?: { url: string; width: number; height: number };
 }) => {
   const url = `${site.url}/news/${article.slug}`;
   return {
@@ -68,7 +69,8 @@ export const newsArticleJsonLd = (article: {
     headline: article.title,
     description: article.description || undefined,
     datePublished: article.date,
-    image: article.image ? [article.image] : undefined,
+    dateModified: article.updated ?? article.date,
+    image: article.image ? [{ "@type": "ImageObject", ...article.image }] : undefined,
     url,
     mainEntityOfPage: url,
     inLanguage: "en",
@@ -76,3 +78,15 @@ export const newsArticleJsonLd = (article: {
     publisher: { "@id": orgId },
   };
 };
+
+/** The visible breadcrumb trail; the current page (last, without a link) has no `item`. */
+export const breadcrumbJsonLd = (crumbs: { label: string; href?: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [{ label: "Home", href: "/" }, ...crumbs].map((crumb, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: crumb.label,
+    item: crumb.href ? `${site.url}${crumb.href === "/" ? "" : crumb.href}` : undefined,
+  })),
+});

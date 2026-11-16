@@ -1,16 +1,24 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, type MouseEvent } from "react";
 
 import { NewsCardItem } from "@/components/news/NewsCardItem";
-import type { NewsCard, NewsCategory } from "@/lib/news/shared";
-
-const PAGE_SIZE = 12;
+import {
+  NEWS_PAGE_SIZE as PAGE_SIZE,
+  newsPageHref,
+  type NewsCard,
+  type NewsCategory,
+} from "@/lib/news/shared";
 
 type NewsroomProps = { articles: NewsCard[]; categories: NewsCategory[] };
 
-/** Category filters and the article grid. The filter lives in ?category= so it survives "back". */
+/**
+ * Category filters and the article grid. The filter lives in ?category= so it
+ * survives "back". Filters and "Show more news" are real links (to ?category=
+ * and the archive pages) so search engines can follow them; in the browser
+ * they update the grid in place.
+ */
 export function Newsroom(props: NewsroomProps) {
   const active = useSearchParams().get("category");
   return <NewsroomGrid {...props} active={active} />;
@@ -37,9 +45,10 @@ export function NewsroomGrid({
   const visible = filtered.slice(0, count);
   const matching = current ? filtered.length : (total ?? filtered.length);
 
-  const select = (slug: string | null) => {
-    const url = slug ? `?category=${slug}` : window.location.pathname;
-    window.history.replaceState(null, "", url);
+  const categoryHref = (slug: string | null) => (slug ? `/news?category=${slug}` : "/news");
+  const select = (event: MouseEvent, slug: string | null) => {
+    event.preventDefault();
+    window.history.replaceState(null, "", categoryHref(slug));
   };
 
   const pill =
@@ -56,24 +65,24 @@ export function NewsroomGrid({
         aria-label="Filter news by topic"
         className="flex flex-wrap gap-2.5 md:gap-3"
       >
-        <button
-          type="button"
-          aria-pressed={!current}
-          onClick={() => select(null)}
+        <a
+          href={categoryHref(null)}
+          aria-current={!current ? "true" : undefined}
+          onClick={(event) => select(event, null)}
           className={`${pill} ${pillState(!current)}`}
         >
           All news
-        </button>
+        </a>
         {categories.map((category) => (
-          <button
+          <a
             key={category.slug}
-            type="button"
-            aria-pressed={current?.slug === category.slug}
-            onClick={() => select(category.slug)}
+            href={categoryHref(category.slug)}
+            aria-current={current?.slug === category.slug ? "true" : undefined}
+            onClick={(event) => select(event, category.slug)}
             className={`${pill} ${pillState(current?.slug === category.slug)}`}
           >
             {category.name}
-          </button>
+          </a>
         ))}
       </div>
 
@@ -92,13 +101,16 @@ export function NewsroomGrid({
 
       {matching > count ? (
         <div className="mt-[clamp(3.5rem,5vw,6rem)] flex justify-center">
-          <button
-            type="button"
-            onClick={() => setShown({ filter: current?.slug, count: count + PAGE_SIZE })}
+          <a
+            href={newsPageHref(Math.floor(count / PAGE_SIZE) + 1)}
+            onClick={(event) => {
+              event.preventDefault();
+              setShown({ filter: current?.slug, count: count + PAGE_SIZE });
+            }}
             className={`${pill} border-navy px-8 text-copy hover:bg-navy hover:text-white`}
           >
             Show more news
-          </button>
+          </a>
         </div>
       ) : null}
     </>

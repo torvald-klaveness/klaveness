@@ -87,20 +87,21 @@ export function SiteHeader() {
         </a>
 
         <div
-          className={`flex items-center justify-between px-6 transition-[height] duration-500 ease-out-expo md:px-[clamp(2.5rem,4.2vw,5rem)] ${
+          className={`container-site flex items-center justify-between transition-[height] duration-500 ease-out-expo ${
             solid ? "h-[4.5rem]" : "h-20 md:h-[clamp(6rem,9.4vw,11.25rem)]"
           }`}
         >
           <Link href="/" aria-label={`${site.name} — home`} className="relative z-10 shrink-0">
+            {/* The logo mark alone; the full logo stays in the footer. */}
             <Logo
-              variant="stacked"
-              className="h-8 w-auto md:h-[clamp(2.25rem,2.45vw,2.95rem)]"
+              variant="symbol"
+              className="h-7 w-auto md:h-[clamp(2rem,2.3vw,2.75rem)]"
               title={site.name}
             />
           </Link>
 
           <nav aria-label="Main" className="hidden lg:block">
-            <ul className="flex items-center gap-1">
+            <ul className="-mr-[clamp(0.875rem,1.5vw,1.75rem)] flex items-center gap-1">
               {mainNav.map((item) => {
                 const active = inSection(pathname, item);
                 return (

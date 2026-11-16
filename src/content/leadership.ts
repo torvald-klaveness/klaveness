@@ -9,7 +9,6 @@ import trondHaraldKlaveness from "@/assets/images/about/people/trond-harald-klav
 import engebretDahm from "@/assets/images/about/people/engebret-dahm.webp";
 import ernstMeyer from "@/assets/images/about/people/ernst-meyer.webp";
 import fabianFlaaten from "@/assets/images/about/people/fabian-flaaten.webp";
-import goranAndreassen from "@/assets/images/about/people/goran-andreassen.webp";
 import henrikSembRonningen from "@/assets/images/about/people/henrik-semb-ronningen.webp";
 import ingridKylstad from "@/assets/images/about/people/ingrid-kylstad.webp";
 import michaelJorgensen from "@/assets/images/about/people/michael-jorgensen.webp";
@@ -40,7 +39,7 @@ export const people = {
     role: "President & CEO",
     image: ernstMeyer,
     bio: [
-      "Ernst Meyer joined Torvald Klaveness in 2019 in the roles of Chief Operations Officer and Managing Director for Klaveness Ship Management. In January 2022, he was appointed new Chief Executive Officer for Torvald Klaveness. Prior to joining Torvald Klaveness, Meyer worked 20 years for Det Norske Veritas (DNV) in various executive positions.",
+      "Ernst Meyer joined Torvald Klaveness in 2019 in the roles of Chief Operating Officer and Managing Director for Klaveness Ship Management. In January 2022, he was appointed new Chief Executive Officer for Torvald Klaveness. Prior to joining Torvald Klaveness, Meyer worked 20 years for Det Norske Veritas (DNV) in various executive positions.",
       "He holds a Master of Sciences in Naval Architecture and Marine Engineering from the Norwegian University of Science and Technology in Trondheim.",
     ],
   },
@@ -64,17 +63,6 @@ export const people = {
     bio: [
       "Fabian Flaaten has been with Torvald Klaveness as Chief Financial Officer (CFO) since October 2025. Prior to that, he served as CFO of House of Control for over 10 years, where he played a key role in scaling the company from a venture-backed growth phase through IPO and later acquisition. Earlier experience included 10 years with Aker Solutions in Norway and the U.S., taking on roles in commercial management, cost control, and business development on large subsea projects.",
       "He holds a Master of Arts in Economics & Management from The University of St. Andrews and studies at BI Norwegian Business School.",
-    ],
-  },
-  "goran-andreassen": {
-    group: "leadership",
-    slug: "goran-andreassen",
-    name: "Gøran Andreassen",
-    role: "Chief Strategic Investment Officer",
-    image: goranAndreassen,
-    bio: [
-      "Gøran Andreassen has more than 20 years of experience across private equity, investment banking and industry positions. He joined Torvald Klaveness from the role as Senior Partner in OMP Capital and prior to that Partner in HitecVision, where he served on the board of multiple portfolio companies during his seven years with the firm. Previous positions include Partner with Clarksons Platou and various managerial and engineering roles in DNV and Aker Solutions.",
-      "Andreassen holds a MSc in Mechanical Engineering from NTNU.",
     ],
   },
   "engebret-dahm": {
@@ -107,7 +95,7 @@ export const people = {
     role: "EVP, Head of Dry Bulk",
     image: michaelJorgensen,
     bio: [
-      "With over two decades of shipping experience, Michael Jørgensen serves as EVP and Head of Dry Bulk at Torvald Klaveness, a leading ship operator known for integrating innovation, sustainability, and digital solutions into its operations. In addition to mainstream operations, Klaveness Dry Bulk and Marubeni Corporation run the Panamax pool Baumarine by MaruKlav, where Jørgensen holds the position of Managing Director.",
+      "With over two decades of shipping experience, Michael Jørgensen serves as EVP and Head of Dry Bulk at Torvald Klaveness. Klaveness Dry Bulk is a leading dry bulk operator known for integrating innovation, sustainability, and digital solutions into its operations. In addition to mainstream operations, Klaveness Dry Bulk and Marubeni Corporation run the Panamax pool Baumarine by MaruKlav, where Jørgensen holds the position of Managing Director.",
       "Driven by a passion for challenging the status quo and seeking new ways to deliver value, Jørgensen is dedicated to enhancing the sustainability and digitalization of bulk shipping and together with his team, launched the freight decision-making platform Market Manager by Klaveness in 2023.",
     ],
   },
@@ -221,7 +209,6 @@ export const leadershipPage = {
         "ernst-meyer",
         "trine-hellum",
         "fabian-flaaten",
-        "goran-andreassen",
         "engebret-dahm",
         "ingrid-kylstad",
         "michael-jorgensen",
@@ -231,38 +218,20 @@ export const leadershipPage = {
       id: "holding-management-team",
       title: "Holding Management Team",
       layout: "compact",
-      members: [
-        "ernst-meyer",
-        "goran-andreassen",
-        "henrik-semb-ronningen",
-        "fabian-flaaten",
-        "nadia-naess",
-      ],
+      members: ["ernst-meyer", "henrik-semb-ronningen", "fabian-flaaten", "nadia-naess"],
     },
   ] satisfies Team[],
 } as const;
 
-/* Content from klaveness.com/about/board-of-directors. */
+/* Board of Directors, shown on the Governance page (the old Board page redirects there). */
 export const boardPage = {
-  meta: {
-    title: "Board of directors",
-    description:
-      "Klaveness’ Board of Directors comprises a diverse background of experiences and perspectives.",
-  },
-  hero: {
-    eyebrow: "Board of directors",
-    statement: [
-      { text: "Klaveness’ Board of Directors comprises a diverse background of " },
-      { text: "experiences and perspectives", strong: true },
-    ] satisfies RichLine,
-    // Same photograph as on the current site's Board page.
-    image: heroImage,
-  },
   teams: [
     {
       id: "board-of-directors",
       title: "Board of Directors",
-      layout: "compact",
+      layout: "large",
+      // Three on top, two below; an orange rule fills the empty slot.
+      fillLastRow: true,
       members: [
         "trond-harald-klaveness",
         "elisabeth-torstad",
@@ -277,14 +246,16 @@ export const boardPage = {
 export type Team = {
   id: string;
   title: string;
-  /** `large`: four per row. `compact`: five per row. */
+  /** `large`: three per row. `compact`: four per row. */
   layout: "large" | "compact";
+  /** Fill the empty space after a short last row with a thin orange rule. */
+  fillLastRow?: boolean;
   members: PersonSlug[];
 };
 
 export const bioPages = {
   leadership: "/about/executive-committee",
-  board: "/about/board-of-directors",
+  board: "/about/governance",
 } as const;
 
 /** Link that opens a person's bio panel on the page it lives on. */

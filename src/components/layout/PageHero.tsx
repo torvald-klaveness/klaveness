@@ -9,6 +9,8 @@ type PageHeroProps = {
   /** Where the scroll cue points to. */
   nextId: string;
   imagePosition?: string;
+  /** Optimizer quality (75 or 90, see next.config); 90 for detailed images. */
+  quality?: 75 | 90;
 };
 
 /**
@@ -21,6 +23,7 @@ export function PageHero({
   image,
   nextId,
   imagePosition = "50% 50%",
+  quality,
 }: PageHeroProps) {
   return (
     <section
@@ -35,6 +38,7 @@ export function PageHero({
           preload
           placeholder="blur"
           sizes="100vw"
+          quality={quality}
           style={{ objectPosition: imagePosition }}
           className="motion-safe-only animate-hero-zoom object-cover"
         />
@@ -43,11 +47,14 @@ export function PageHero({
       </div>
 
       <div className="container-site pt-[clamp(4rem,6vw,7rem)] text-center">
-        <p className="motion-safe-only animate-rise text-eyebrow font-semibold uppercase">
-          {eyebrow}
-        </p>
+        {/* The label names the page, so it is the h1; the statement is the design's large line. */}
         <h1
           id="page-title"
+          className="motion-safe-only animate-rise text-eyebrow font-semibold uppercase"
+        >
+          {eyebrow}
+        </h1>
+        <p
           className="motion-safe-only mx-auto mt-[clamp(0.75rem,1vw,1.25rem)] max-w-[min(66rem,100%)] animate-rise text-lead font-light text-balance"
           style={{ animationDelay: "120ms" }}
         >
@@ -60,7 +67,7 @@ export function PageHero({
               <span key={index}>{part.text}</span>
             ),
           )}
-        </h1>
+        </p>
       </div>
 
       <a

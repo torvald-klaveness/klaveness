@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
-  keywords: [
-    "Klaveness",
-    "Torvald Klaveness",
-    "shipping",
-    "maritime",
-    "dry bulk",
-    "combination carriers",
-    "decarbonization",
-    "maritime digital solutions",
-  ],
   openGraph: {
     type: "website",
     siteName: site.name,

@@ -5,6 +5,8 @@ import { TitleBand } from "@/components/layout/TitleBand";
 import { Newsroom, NewsroomGrid } from "@/components/news/Newsroom";
 import { mainNav } from "@/content/site";
 import { getNewsArticles, getNewsCategories, toNewsCard } from "@/lib/news/articles";
+import { NEWS_PAGE_SIZE } from "@/lib/news/shared";
+import { sharedOpenGraph } from "@/lib/metadata";
 
 // Articles come from the content repo; see src/lib/news/config.ts.
 export const revalidate = 900;
@@ -15,7 +17,12 @@ export const metadata: Metadata = {
   title: "Newsroom",
   description,
   alternates: { canonical: "/news" },
-  openGraph: { title: "Newsroom", description, url: "/news" },
+  openGraph: {
+    ...sharedOpenGraph,
+    title: "Newsroom",
+    description,
+    url: "/news",
+  },
 };
 
 export default async function NewsPage() {
@@ -37,7 +44,7 @@ export default async function NewsPage() {
           <Suspense
             fallback={
               <NewsroomGrid
-                articles={cards.slice(0, 12)}
+                articles={cards.slice(0, NEWS_PAGE_SIZE)}
                 total={cards.length}
                 categories={categories}
                 active={null}
