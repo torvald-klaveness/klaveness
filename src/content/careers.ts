@@ -70,7 +70,7 @@ export const careersHome = {
       "Students at Klaveness are encouraged to contribute, challenge established thinking, and develop skills that support their future careers, whether that journey continues with us or takes them elsewhere.",
     ],
     image: studentsImage,
-    imageAlt: "A smiling Klaveness intern in orange overalls and a hard hat on site",
+    imageAlt: "A smiling Klaveness intern in orange overalls and a hard hat in a ship’s engine room",
   },
 } as const;
 
@@ -165,7 +165,7 @@ export const lifeAtKlaveness = {
       "Our commitment extends across recruitment, development, compensation, promotion, and leadership opportunities, regardless of gender, gender identity, ethnicity, religion, sexual orientation, disability, or social status.",
     ],
     image: equalOpportunitiesImage,
-    imageAlt: "The Klaveness team in Manila gathered outside the office",
+    imageAlt: "A smiling Klaveness colleague in orange overalls and a hard hat at a shipyard",
   },
   facts: {
     title: "Key facts and figures",
